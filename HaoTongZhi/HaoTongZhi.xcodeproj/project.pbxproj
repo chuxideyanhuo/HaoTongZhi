@@ -7,25 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DF4B7CA21CF6103006E6E80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B7C921CF6103006E6E80 /* AppDelegate.m */; };
-		0DF4B7CD21CF6103006E6E80 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B7CC21CF6103006E6E80 /* ViewController.m */; };
-		0DF4B7D021CF6103006E6E80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF4B7CE21CF6103006E6E80 /* Main.storyboard */; };
 		0DF4B7D221CF6105006E6E80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DF4B7D121CF6105006E6E80 /* Assets.xcassets */; };
 		0DF4B7D521CF6105006E6E80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF4B7D321CF6105006E6E80 /* LaunchScreen.storyboard */; };
-		0DF4B7D821CF6105006E6E80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B7D721CF6105006E6E80 /* main.m */; };
+		0DF4B7F821CF854D006E6E80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B7EF21CF854D006E6E80 /* main.m */; };
+		0DF4B7F921CF854D006E6E80 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B7F121CF854D006E6E80 /* AppDelegate.m */; };
+		0DF4B7FD21CF85BA006E6E80 /* HTZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B7FC21CF85BA006E6E80 /* HTZMeViewController.m */; };
+		0DF4B80021CF8607006E6E80 /* HTZPlatformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B7FF21CF8607006E6E80 /* HTZPlatformViewController.m */; };
+		0DF4B80321CF861D006E6E80 /* HTZOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80221CF861D006E6E80 /* HTZOrderViewController.m */; };
+		0DF4B80621CF8635006E6E80 /* HTZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80521CF8635006E6E80 /* HTZHomeViewController.m */; };
+		0DF4B80A21CF87CF006E6E80 /* HTZTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80921CF87CF006E6E80 /* HTZTabBarController.m */; };
+		0DF4B80D21CF8BF3006E6E80 /* HTZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80C21CF8BF3006E6E80 /* HTZNavigationController.m */; };
+		0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80F21CF9166006E6E80 /* UIView+HTZFrame.m */; };
+		0DF4B81321CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B81221CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0DF4B7C521CF6103006E6E80 /* HaoTongZhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaoTongZhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DF4B7C821CF6103006E6E80 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0DF4B7C921CF6103006E6E80 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0DF4B7CB21CF6103006E6E80 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0DF4B7CC21CF6103006E6E80 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0DF4B7CF21CF6103006E6E80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DF4B7D121CF6105006E6E80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DF4B7D421CF6105006E6E80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DF4B7D621CF6105006E6E80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DF4B7D721CF6105006E6E80 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0DF4B7EC21CF854D006E6E80 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0DF4B7EF21CF854D006E6E80 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0DF4B7F121CF854D006E6E80 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0DF4B7FB21CF85BA006E6E80 /* HTZMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZMeViewController.h; sourceTree = "<group>"; };
+		0DF4B7FC21CF85BA006E6E80 /* HTZMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZMeViewController.m; sourceTree = "<group>"; };
+		0DF4B7FE21CF8607006E6E80 /* HTZPlatformViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZPlatformViewController.h; sourceTree = "<group>"; };
+		0DF4B7FF21CF8607006E6E80 /* HTZPlatformViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZPlatformViewController.m; sourceTree = "<group>"; };
+		0DF4B80121CF861D006E6E80 /* HTZOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZOrderViewController.h; sourceTree = "<group>"; };
+		0DF4B80221CF861D006E6E80 /* HTZOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZOrderViewController.m; sourceTree = "<group>"; };
+		0DF4B80421CF8635006E6E80 /* HTZHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZHomeViewController.h; sourceTree = "<group>"; };
+		0DF4B80521CF8635006E6E80 /* HTZHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZHomeViewController.m; sourceTree = "<group>"; };
+		0DF4B80721CF86C8006E6E80 /* HTZPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZPrefixHeader.pch; sourceTree = "<group>"; };
+		0DF4B80821CF87CF006E6E80 /* HTZTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZTabBarController.h; sourceTree = "<group>"; };
+		0DF4B80921CF87CF006E6E80 /* HTZTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZTabBarController.m; sourceTree = "<group>"; };
+		0DF4B80B21CF8BF3006E6E80 /* HTZNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZNavigationController.h; sourceTree = "<group>"; };
+		0DF4B80C21CF8BF3006E6E80 /* HTZNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZNavigationController.m; sourceTree = "<group>"; };
+		0DF4B80E21CF9166006E6E80 /* UIView+HTZFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+HTZFrame.h"; sourceTree = "<group>"; };
+		0DF4B80F21CF9166006E6E80 /* UIView+HTZFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTZFrame.m"; sourceTree = "<group>"; };
+		0DF4B81121CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+HTZExtension.h"; sourceTree = "<group>"; };
+		0DF4B81221CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+HTZExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +78,199 @@
 		0DF4B7C721CF6103006E6E80 /* HaoTongZhi */ = {
 			isa = PBXGroup;
 			children = (
-				0DF4B7C821CF6103006E6E80 /* AppDelegate.h */,
-				0DF4B7C921CF6103006E6E80 /* AppDelegate.m */,
-				0DF4B7CB21CF6103006E6E80 /* ViewController.h */,
-				0DF4B7CC21CF6103006E6E80 /* ViewController.m */,
-				0DF4B7CE21CF6103006E6E80 /* Main.storyboard */,
+				0DF4B7DE21CF854D006E6E80 /* Classes */,
 				0DF4B7D121CF6105006E6E80 /* Assets.xcassets */,
 				0DF4B7D321CF6105006E6E80 /* LaunchScreen.storyboard */,
 				0DF4B7D621CF6105006E6E80 /* Info.plist */,
-				0DF4B7D721CF6105006E6E80 /* main.m */,
 			);
 			path = HaoTongZhi;
+			sourceTree = "<group>";
+		};
+		0DF4B7DE21CF854D006E6E80 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B7E321CF854D006E6E80 /* Home */,
+				0DF4B7DF21CF854D006E6E80 /* Order */,
+				0DF4B7E721CF854D006E6E80 /* Platform */,
+				0DF4B7F221CF854D006E6E80 /* Me */,
+				0DF4B7EB21CF854D006E6E80 /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		0DF4B7DF21CF854D006E6E80 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B7E021CF854D006E6E80 /* Controller */,
+				0DF4B7E121CF854D006E6E80 /* Model */,
+				0DF4B7E221CF854D006E6E80 /* View */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		0DF4B7E021CF854D006E6E80 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B80121CF861D006E6E80 /* HTZOrderViewController.h */,
+				0DF4B80221CF861D006E6E80 /* HTZOrderViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0DF4B7E121CF854D006E6E80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0DF4B7E221CF854D006E6E80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0DF4B7E321CF854D006E6E80 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B7E421CF854D006E6E80 /* Controller */,
+				0DF4B7E521CF854D006E6E80 /* Model */,
+				0DF4B7E621CF854D006E6E80 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0DF4B7E421CF854D006E6E80 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B80421CF8635006E6E80 /* HTZHomeViewController.h */,
+				0DF4B80521CF8635006E6E80 /* HTZHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0DF4B7E521CF854D006E6E80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0DF4B7E621CF854D006E6E80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0DF4B7E721CF854D006E6E80 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B7E821CF854D006E6E80 /* Controller */,
+				0DF4B7E921CF854D006E6E80 /* Model */,
+				0DF4B7EA21CF854D006E6E80 /* View */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		0DF4B7E821CF854D006E6E80 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B7FE21CF8607006E6E80 /* HTZPlatformViewController.h */,
+				0DF4B7FF21CF8607006E6E80 /* HTZPlatformViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0DF4B7E921CF854D006E6E80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0DF4B7EA21CF854D006E6E80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0DF4B7EB21CF854D006E6E80 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B7EE21CF854D006E6E80 /* Controller */,
+				0DF4B7ED21CF854D006E6E80 /* Category */,
+				0DF4B7F021CF854D006E6E80 /* View */,
+				0DF4B7EF21CF854D006E6E80 /* main.m */,
+				0DF4B7EC21CF854D006E6E80 /* AppDelegate.h */,
+				0DF4B7F121CF854D006E6E80 /* AppDelegate.m */,
+				0DF4B80721CF86C8006E6E80 /* HTZPrefixHeader.pch */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		0DF4B7ED21CF854D006E6E80 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B80E21CF9166006E6E80 /* UIView+HTZFrame.h */,
+				0DF4B80F21CF9166006E6E80 /* UIView+HTZFrame.m */,
+				0DF4B81121CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.h */,
+				0DF4B81221CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		0DF4B7EE21CF854D006E6E80 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B80821CF87CF006E6E80 /* HTZTabBarController.h */,
+				0DF4B80921CF87CF006E6E80 /* HTZTabBarController.m */,
+				0DF4B80B21CF8BF3006E6E80 /* HTZNavigationController.h */,
+				0DF4B80C21CF8BF3006E6E80 /* HTZNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0DF4B7F021CF854D006E6E80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0DF4B7F221CF854D006E6E80 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B7F321CF854D006E6E80 /* Controller */,
+				0DF4B7F621CF854D006E6E80 /* Model */,
+				0DF4B7F721CF854D006E6E80 /* View */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		0DF4B7F321CF854D006E6E80 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0DF4B7FB21CF85BA006E6E80 /* HTZMeViewController.h */,
+				0DF4B7FC21CF85BA006E6E80 /* HTZMeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0DF4B7F621CF854D006E6E80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0DF4B7F721CF854D006E6E80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +333,6 @@
 			files = (
 				0DF4B7D521CF6105006E6E80 /* LaunchScreen.storyboard in Resources */,
 				0DF4B7D221CF6105006E6E80 /* Assets.xcassets in Resources */,
-				0DF4B7D021CF6103006E6E80 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,23 +343,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF4B7CD21CF6103006E6E80 /* ViewController.m in Sources */,
-				0DF4B7D821CF6105006E6E80 /* main.m in Sources */,
-				0DF4B7CA21CF6103006E6E80 /* AppDelegate.m in Sources */,
+				0DF4B80321CF861D006E6E80 /* HTZOrderViewController.m in Sources */,
+				0DF4B81321CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m in Sources */,
+				0DF4B80021CF8607006E6E80 /* HTZPlatformViewController.m in Sources */,
+				0DF4B7F921CF854D006E6E80 /* AppDelegate.m in Sources */,
+				0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */,
+				0DF4B7FD21CF85BA006E6E80 /* HTZMeViewController.m in Sources */,
+				0DF4B80A21CF87CF006E6E80 /* HTZTabBarController.m in Sources */,
+				0DF4B80621CF8635006E6E80 /* HTZHomeViewController.m in Sources */,
+				0DF4B80D21CF8BF3006E6E80 /* HTZNavigationController.m in Sources */,
+				0DF4B7F821CF854D006E6E80 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0DF4B7CE21CF6103006E6E80 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DF4B7CF21CF6103006E6E80 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0DF4B7D321CF6105006E6E80 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,6 +487,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5479YZ2SB;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = HaoTongZhi/Classes/Other/HTZPrefixHeader.pch;
 				INFOPLIST_FILE = HaoTongZhi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -307,6 +509,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B5479YZ2SB;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = HaoTongZhi/Classes/Other/HTZPrefixHeader.pch;
 				INFOPLIST_FILE = HaoTongZhi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (

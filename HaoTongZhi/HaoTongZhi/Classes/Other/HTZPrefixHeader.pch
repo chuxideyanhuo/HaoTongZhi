@@ -1,0 +1,27 @@
+//
+//  HTZPrefixHeader.pch
+//  HaoTongZhi
+//
+//  Created by liuzhiyong on 2018/12/23.
+//  Copyright © 2018年 com.cscec.xbjs. All rights reserved.
+//
+
+#ifndef HTZPrefixHeader_pch
+#define HTZPrefixHeader_pch
+
+#import "UIView+HTZFrame.h"
+#import "UIBarButtonItem+HTZExtension.h"
+
+#ifdef DEBUG
+#define HTZLog(...) NSLog(__VA_ARGS__)
+#else
+#define HTZLog(...)
+#endif
+
+#define HTZLogFunc HTZLog(@"%s", __func__)
+
+#define HTZRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define HTZGlobalBg HTZRGBColor(223, 223, 223)
+
+#endif /* HTZPrefixHeader_pch */

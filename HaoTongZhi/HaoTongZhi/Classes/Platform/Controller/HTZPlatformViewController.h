@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  HTZPlatformViewController.h
 //  HaoTongZhi
 //
 //  Created by liuzhiyong on 2018/12/23.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface HTZPlatformViewController : UIViewController
 
 @end
-
