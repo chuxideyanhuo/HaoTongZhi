@@ -19,9 +19,11 @@
 		0DF4B80D21CF8BF3006E6E80 /* HTZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80C21CF8BF3006E6E80 /* HTZNavigationController.m */; };
 		0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80F21CF9166006E6E80 /* UIView+HTZFrame.m */; };
 		0DF4B81321CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B81221CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m */; };
+		CA6A6106655A472D76F901B0 /* libPods-HaoTongZhi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoTongZhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF4B7C521CF6103006E6E80 /* HaoTongZhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaoTongZhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF4B7D121CF6105006E6E80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DF4B7D421CF6105006E6E80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		0DF4B80F21CF9166006E6E80 /* UIView+HTZFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTZFrame.m"; sourceTree = "<group>"; };
 		0DF4B81121CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+HTZExtension.h"; sourceTree = "<group>"; };
 		0DF4B81221CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+HTZExtension.m"; sourceTree = "<group>"; };
+		7CB97FF59BB070DE6DAA605F /* Pods-HaoTongZhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoTongZhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaoTongZhi/Pods-HaoTongZhi.debug.xcconfig"; sourceTree = "<group>"; };
+		B4C1D7704FEEB71E8E91C1A7 /* Pods-HaoTongZhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoTongZhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaoTongZhi/Pods-HaoTongZhi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +57,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6A6106655A472D76F901B0 /* libPods-HaoTongZhi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07A43900CA89118DB71C0F08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CB97FF59BB070DE6DAA605F /* Pods-HaoTongZhi.debug.xcconfig */,
+				B4C1D7704FEEB71E8E91C1A7 /* Pods-HaoTongZhi.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		0DF4B7BC21CF6103006E6E80 = {
 			isa = PBXGroup;
 			children = (
 				0DF4B7C721CF6103006E6E80 /* HaoTongZhi */,
 				0DF4B7C621CF6103006E6E80 /* Products */,
+				07A43900CA89118DB71C0F08 /* Pods */,
+				1CF40E392F59C289C46B2716 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +289,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1CF40E392F59C289C46B2716 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,9 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF4B7DB21CF6105006E6E80 /* Build configuration list for PBXNativeTarget "HaoTongZhi" */;
 			buildPhases = (
+				269434578FDBF5192F0296C7 /* [CP] Check Pods Manifest.lock */,
 				0DF4B7C121CF6103006E6E80 /* Sources */,
 				0DF4B7C221CF6103006E6E80 /* Frameworks */,
 				0DF4B7C321CF6103006E6E80 /* Resources */,
+				F8B28D72DCFD657D069FE1DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,6 +363,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		269434578FDBF5192F0296C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HaoTongZhi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8B28D72DCFD657D069FE1DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HaoTongZhi/Pods-HaoTongZhi-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HaoTongZhi/Pods-HaoTongZhi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DF4B7C121CF6103006E6E80 /* Sources */ = {
@@ -482,6 +549,7 @@
 		};
 		0DF4B7DC21CF6105006E6E80 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB97FF59BB070DE6DAA605F /* Pods-HaoTongZhi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -491,10 +559,7 @@
 				GCC_PREFIX_HEADER = HaoTongZhi/Classes/Other/HTZPrefixHeader.pch;
 				INFOPLIST_FILE = HaoTongZhi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cscec.xbjs.htz.pgapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -504,6 +569,7 @@
 		};
 		0DF4B7DD21CF6105006E6E80 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4C1D7704FEEB71E8E91C1A7 /* Pods-HaoTongZhi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -513,10 +579,7 @@
 				GCC_PREFIX_HEADER = HaoTongZhi/Classes/Other/HTZPrefixHeader.pch;
 				INFOPLIST_FILE = HaoTongZhi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cscec.xbjs.htz.pgapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

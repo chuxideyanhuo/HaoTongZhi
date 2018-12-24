@@ -1,5 +1,11 @@
 platform :ios, '8.0'
 
+source 'https://github.com/CocoaPods/Specs.git'
+
 target 'HaoTongZhi' do
-pod 'AFNetworking', '~> 3.0'
+    pod 'AFNetworking'
+    pod 'Masonry'
+    pod 'SVProgressHUD'
+    pod 'MJExtension'
+    pod 'MJRefresh'
 end
