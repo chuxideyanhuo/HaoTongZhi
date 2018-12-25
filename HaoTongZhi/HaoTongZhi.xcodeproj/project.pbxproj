@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D5B837721D27C720000D31B /* HTZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B837621D27C720000D31B /* HTZLoginViewController.m */; };
+		0D5B837A21D27F250000D31B /* HTZLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5B837921D27F250000D31B /* HTZLoginView.m */; };
 		0DF4B7D221CF6105006E6E80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DF4B7D121CF6105006E6E80 /* Assets.xcassets */; };
 		0DF4B7D521CF6105006E6E80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF4B7D321CF6105006E6E80 /* LaunchScreen.storyboard */; };
 		0DF4B7F821CF854D006E6E80 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B7EF21CF854D006E6E80 /* main.m */; };
@@ -24,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoTongZhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D5B837521D27C720000D31B /* HTZLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZLoginViewController.h; sourceTree = "<group>"; };
+		0D5B837621D27C720000D31B /* HTZLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZLoginViewController.m; sourceTree = "<group>"; };
+		0D5B837821D27F250000D31B /* HTZLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZLoginView.h; sourceTree = "<group>"; };
+		0D5B837921D27F250000D31B /* HTZLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZLoginView.m; sourceTree = "<group>"; };
 		0DF4B7C521CF6103006E6E80 /* HaoTongZhi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaoTongZhi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF4B7D121CF6105006E6E80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DF4B7D421CF6105006E6E80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -271,6 +277,8 @@
 			children = (
 				0DF4B7FB21CF85BA006E6E80 /* HTZMeViewController.h */,
 				0DF4B7FC21CF85BA006E6E80 /* HTZMeViewController.m */,
+				0D5B837521D27C720000D31B /* HTZLoginViewController.h */,
+				0D5B837621D27C720000D31B /* HTZLoginViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -285,6 +293,8 @@
 		0DF4B7F721CF854D006E6E80 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0D5B837821D27F250000D31B /* HTZLoginView.h */,
+				0D5B837921D27F250000D31B /* HTZLoginView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -412,6 +422,7 @@
 			files = (
 				0DF4B80321CF861D006E6E80 /* HTZOrderViewController.m in Sources */,
 				0DF4B81321CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m in Sources */,
+				0D5B837721D27C720000D31B /* HTZLoginViewController.m in Sources */,
 				0DF4B80021CF8607006E6E80 /* HTZPlatformViewController.m in Sources */,
 				0DF4B7F921CF854D006E6E80 /* AppDelegate.m in Sources */,
 				0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */,
@@ -420,6 +431,7 @@
 				0DF4B80621CF8635006E6E80 /* HTZHomeViewController.m in Sources */,
 				0DF4B80D21CF8BF3006E6E80 /* HTZNavigationController.m in Sources */,
 				0DF4B7F821CF854D006E6E80 /* main.m in Sources */,
+				0D5B837A21D27F250000D31B /* HTZLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,7 +571,10 @@
 				GCC_PREFIX_HEADER = HaoTongZhi/Classes/Other/HTZPrefixHeader.pch;
 				INFOPLIST_FILE = HaoTongZhi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cscec.xbjs.htz.pgapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -579,7 +594,10 @@
 				GCC_PREFIX_HEADER = HaoTongZhi/Classes/Other/HTZPrefixHeader.pch;
 				INFOPLIST_FILE = HaoTongZhi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cscec.xbjs.htz.pgapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
