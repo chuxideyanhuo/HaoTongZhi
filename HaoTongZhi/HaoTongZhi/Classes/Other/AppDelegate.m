@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "HTZTabBarController.h"
+#import "HTZNavigationController.h"
+#import "HTZLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +22,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [[HTZTabBarController alloc] init];
     [self.window makeKeyAndVisible];
+    
+    HTZNavigationController *nav = [[HTZNavigationController alloc] initWithRootViewController:[HTZLoginViewController new]];
+    [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+    
     return YES;
 }
 
