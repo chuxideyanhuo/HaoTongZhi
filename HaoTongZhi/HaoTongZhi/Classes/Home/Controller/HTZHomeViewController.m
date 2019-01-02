@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+    bt.backgroundColor = [UIColor redColor];
+    [self.view addSubview:bt];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

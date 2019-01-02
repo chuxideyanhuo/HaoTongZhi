@@ -8,6 +8,7 @@
 
 #import "HTZLoginViewController.h"
 #import "HTZRegisterViewController.h"
+#import "HTZForgetPasswordViewController.h"
 
 @interface HTZLoginViewController ()
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -55,7 +56,8 @@
 #pragma mark - 忘记密码
 - (IBAction)forgetButtonClick:(UIButton *)sender
 {
-    HTZLogFunc;
+    HTZForgetPasswordViewController *forgetPaaswordVC = [[HTZForgetPasswordViewController alloc] init];
+    [self.navigationController pushViewController:forgetPaaswordVC animated:YES];
 }
 
 #pragma mark - 自动登录

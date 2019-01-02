@@ -12,6 +12,8 @@
 		0D13956E21DA52E500C2E3A9 /* CALayer+BorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D13956D21DA52E500C2E3A9 /* CALayer+BorderColor.m */; };
 		0D13957221DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D13957021DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.m */; };
 		0D13957321DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D13957121DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.xib */; };
+		0D38247621DD11D4009C263F /* HTZModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D38247421DD11D4009C263F /* HTZModifyPasswordViewController.m */; };
+		0D38247721DD11D4009C263F /* HTZModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D38247521DD11D4009C263F /* HTZModifyPasswordViewController.xib */; };
 		0DDB2F9921D7C62400339101 /* UIColor+HTZHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB2F9821D7C62400339101 /* UIColor+HTZHex.m */; };
 		0DDB2F9C21D7C74100339101 /* NSString+HTZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB2F9B21D7C74100339101 /* NSString+HTZExtension.m */; };
 		0DDB2F9F21D7C82F00339101 /* UIView+HTZBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB2F9E21D7C82F00339101 /* UIView+HTZBezier.m */; };
@@ -45,6 +47,9 @@
 		0D13956F21DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZForgetPasswordViewController.h; sourceTree = "<group>"; };
 		0D13957021DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZForgetPasswordViewController.m; sourceTree = "<group>"; };
 		0D13957121DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZForgetPasswordViewController.xib; sourceTree = "<group>"; };
+		0D38247321DD11D4009C263F /* HTZModifyPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZModifyPasswordViewController.h; sourceTree = "<group>"; };
+		0D38247421DD11D4009C263F /* HTZModifyPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZModifyPasswordViewController.m; sourceTree = "<group>"; };
+		0D38247521DD11D4009C263F /* HTZModifyPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZModifyPasswordViewController.xib; sourceTree = "<group>"; };
 		0DDB2F9721D7C62400339101 /* UIColor+HTZHex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+HTZHex.h"; sourceTree = "<group>"; };
 		0DDB2F9821D7C62400339101 /* UIColor+HTZHex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HTZHex.m"; sourceTree = "<group>"; };
 		0DDB2F9A21D7C74100339101 /* NSString+HTZExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HTZExtension.h"; sourceTree = "<group>"; };
@@ -338,6 +343,9 @@
 				0D13956F21DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.h */,
 				0D13957021DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.m */,
 				0D13957121DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.xib */,
+				0D38247321DD11D4009C263F /* HTZModifyPasswordViewController.h */,
+				0D38247421DD11D4009C263F /* HTZModifyPasswordViewController.m */,
+				0D38247521DD11D4009C263F /* HTZModifyPasswordViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -428,6 +436,7 @@
 				0D13957321DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.xib in Resources */,
 				0DDB2FBA21D7D19B00339101 /* HTZLoginViewController.xib in Resources */,
 				0DF4B7D521CF6105006E6E80 /* LaunchScreen.storyboard in Resources */,
+				0D38247721DD11D4009C263F /* HTZModifyPasswordViewController.xib in Resources */,
 				0DF4B7D221CF6105006E6E80 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +500,7 @@
 				0DF4B7F921CF854D006E6E80 /* AppDelegate.m in Sources */,
 				0DDB2FAF21D7D0DF00339101 /* HTZOrderViewController.m in Sources */,
 				0D13956721DA12AF00C2E3A9 /* HTZRegisterViewController.m in Sources */,
+				0D38247621DD11D4009C263F /* HTZModifyPasswordViewController.m in Sources */,
 				0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */,
 				0DF4B80A21CF87CF006E6E80 /* HTZTabBarController.m in Sources */,
 				0DDB2F9C21D7C74100339101 /* NSString+HTZExtension.m in Sources */,

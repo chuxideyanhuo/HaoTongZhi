@@ -7,6 +7,7 @@
 //
 
 #import "HTZForgetPasswordViewController.h"
+#import "HTZModifyPasswordViewController.h"
 
 @interface HTZForgetPasswordViewController ()
 
@@ -16,5 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"找回密码";
+//    self.navigationController.navigationBar.translucent = NO;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
+- (IBAction)verificationButtonClick:(UIButton *)sender
+{
+    HTZModifyPasswordViewController *modifyPaaswordVC = [[HTZModifyPasswordViewController alloc] init];
+    [self.navigationController pushViewController:modifyPaaswordVC animated:YES];
+}
+
 @end
