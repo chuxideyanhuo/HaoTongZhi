@@ -7,6 +7,7 @@
 //
 
 #import "HTZRegisterViewController.h"
+#import "HTZPerfectInformationViewController.h"
 
 @interface HTZRegisterViewController ()
 
@@ -25,4 +26,12 @@
 //    self.view.layer.borderColor
 //    self.view.layer.masksToBounds
 }
+
+- (IBAction)submitButtonClick:(UIButton *)sender
+{
+    HTZPerfectInformationViewController *perfectInfoVC = [[HTZPerfectInformationViewController alloc] init];
+    [self.navigationController pushViewController:perfectInfoVC animated:YES];
+    
+}
+
 @end

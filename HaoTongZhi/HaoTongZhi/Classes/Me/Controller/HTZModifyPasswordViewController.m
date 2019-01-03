@@ -19,4 +19,9 @@
     self.title = @"修改密码";
 }
 
+- (IBAction)submitButtonClick:(UIButton *)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 @end
