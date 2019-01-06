@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HTZInviteFriendsViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLy-pF-Wih" userLabel="背景">
+                    <rect key="frame" x="10" y="10" width="355" height="271"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sbT-ch-5cI">
+                            <rect key="frame" x="88.5" y="15" width="177.5" height="177.5"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="sbT-ch-5cI" secondAttribute="height" multiplier="1:1" id="TSc-MC-ESh"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保存二维码，发送给微信好友，好友扫码下载。即可与你一起享用“好砼智”提供的服务" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaY-7k-kzf">
+                            <rect key="frame" x="10" y="222.5" width="335" height="33.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="YaY-7k-kzf" secondAttribute="bottom" constant="15" id="5qv-qm-GUX"/>
+                        <constraint firstItem="YaY-7k-kzf" firstAttribute="top" secondItem="sbT-ch-5cI" secondAttribute="bottom" constant="30" id="6h7-eI-JJ6"/>
+                        <constraint firstItem="sbT-ch-5cI" firstAttribute="centerX" secondItem="CLy-pF-Wih" secondAttribute="centerX" id="Ds3-m8-tNY"/>
+                        <constraint firstAttribute="trailing" secondItem="YaY-7k-kzf" secondAttribute="trailing" constant="10" id="SV5-qK-exI"/>
+                        <constraint firstItem="YaY-7k-kzf" firstAttribute="leading" secondItem="CLy-pF-Wih" secondAttribute="leading" constant="10" id="a5i-7D-Cbv"/>
+                        <constraint firstItem="sbT-ch-5cI" firstAttribute="width" secondItem="CLy-pF-Wih" secondAttribute="width" multiplier="0.5" id="dGE-er-YX1"/>
+                        <constraint firstItem="sbT-ch-5cI" firstAttribute="top" secondItem="CLy-pF-Wih" secondAttribute="top" constant="15" id="pWz-oD-jLM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CLy-pF-Wih" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="5zJ-ly-llc"/>
+                <constraint firstItem="CLy-pF-Wih" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="vWF-sP-wgL"/>
+                <constraint firstAttribute="trailing" secondItem="CLy-pF-Wih" secondAttribute="trailing" constant="10" id="xba-Vu-80u"/>
+            </constraints>
+            <point key="canvasLocation" x="87.5" y="97.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HTZMeTableViewHeader">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAk-Md-ZL7" userLabel="背景">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                    <subviews>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eTu-cH-iRC" userLabel="头像">
+                            <rect key="frame" x="10" y="5" width="70" height="70"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="eTu-cH-iRC" secondAttribute="height" multiplier="1:1" id="nu7-Kj-Q20"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcF-oK-0oG" userLabel="名字">
+                            <rect key="frame" x="100" y="0.0" width="265" height="80"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0039215686274509803" green="0.50196078431372548" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="hcF-oK-0oG" secondAttribute="bottom" id="7ti-Sd-Tq0"/>
+                        <constraint firstItem="eTu-cH-iRC" firstAttribute="leading" secondItem="aAk-Md-ZL7" secondAttribute="leading" constant="10" id="PBn-Uk-C97"/>
+                        <constraint firstItem="hcF-oK-0oG" firstAttribute="top" secondItem="aAk-Md-ZL7" secondAttribute="top" id="Sje-t7-SJi"/>
+                        <constraint firstAttribute="bottom" secondItem="eTu-cH-iRC" secondAttribute="bottom" constant="5" id="VZz-YP-3MP"/>
+                        <constraint firstAttribute="height" constant="80" id="ih2-Ye-bQ3"/>
+                        <constraint firstItem="eTu-cH-iRC" firstAttribute="top" secondItem="aAk-Md-ZL7" secondAttribute="top" constant="5" id="iyI-04-KU8"/>
+                        <constraint firstItem="hcF-oK-0oG" firstAttribute="leading" secondItem="eTu-cH-iRC" secondAttribute="trailing" constant="20" id="tIf-To-34f"/>
+                        <constraint firstAttribute="trailing" secondItem="hcF-oK-0oG" secondAttribute="trailing" constant="10" id="tyk-ye-Bot"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274509803915" green="0.95294117647058818" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aAk-Md-ZL7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ABB-iQ-to1"/>
+                <constraint firstAttribute="trailing" secondItem="aAk-Md-ZL7" secondAttribute="trailing" id="iDv-NG-3Y7"/>
+                <constraint firstItem="aAk-Md-ZL7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xId-MD-ilu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="62.5" y="-200"/>
+        </view>
+    </objects>
+</document>

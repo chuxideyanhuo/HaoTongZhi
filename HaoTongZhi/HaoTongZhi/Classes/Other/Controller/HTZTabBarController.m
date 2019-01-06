@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tabBar.barTintColor = [UIColor whiteColor];
     // 通过appearance统一设置所有UITabBarItem的文字属性,后面带有UI_APPEARANCE_SELECTOR的方法, 都可以通过appearance对象来统一设置
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];

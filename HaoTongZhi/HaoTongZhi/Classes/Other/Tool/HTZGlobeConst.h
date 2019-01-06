@@ -6,7 +6,6 @@
 //  Copyright © 2018年 com.cscec.xbjs. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 #import "UIView+HTZFrame.h"
@@ -38,3 +37,5 @@
 #define HTZBlackFontColor [UIColor colorWithHexString:@"303030"]
 #define HTZActivityAreaBackgroundColor [UIColor colorWithHexString:@"FFFFFF"]
 #define HTZBadgeColor [UIColor colorWithHexString:@"E70014"]
+
+UIKIT_EXTERN CGFloat const HTZMargin;
