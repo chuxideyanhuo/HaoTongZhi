@@ -33,8 +33,6 @@
 #pragma mark - 只显示文字的HUD
 + (void)showTextHUDWithStatus:(NSString *)status
 {
-//    [SVProgressHUD showWithStatus:status];
-    
     [self setHUDFadeInAnimationDuration:0.5];
     [self showHUDImage:nil status:status];
     [self dismissHUDWithDelay:1.0];
