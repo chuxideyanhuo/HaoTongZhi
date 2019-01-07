@@ -26,6 +26,7 @@
 		0D38247721DD11D4009C263F /* HTZModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D38247521DD11D4009C263F /* HTZModifyPasswordViewController.xib */; };
 		0D5C0B3921E2573500BA0974 /* HTZSettingData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D5C0B3821E2573400BA0974 /* HTZSettingData.plist */; };
 		0D5C0B3B21E2632100BA0974 /* HTZOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5C0B3A21E2632100BA0974 /* HTZOrderViewController.xib */; };
+		0D6D467B21E345EE00D9C073 /* HTZProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6D467A21E345EE00D9C073 /* HTZProgressHUD.m */; };
 		0D88173721DE473C00BE96FF /* HTZPerfectInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88173521DE473B00BE96FF /* HTZPerfectInformationViewController.m */; };
 		0D88173821DE473C00BE96FF /* HTZPerfectInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D88173621DE473B00BE96FF /* HTZPerfectInformationViewController.xib */; };
 		0D88173C21DE6DC600BE96FF /* HTZRegisterSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D88173A21DE6DC600BE96FF /* HTZRegisterSuccessViewController.m */; };
@@ -90,6 +91,8 @@
 		0D38247521DD11D4009C263F /* HTZModifyPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZModifyPasswordViewController.xib; sourceTree = "<group>"; };
 		0D5C0B3821E2573400BA0974 /* HTZSettingData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HTZSettingData.plist; sourceTree = "<group>"; };
 		0D5C0B3A21E2632100BA0974 /* HTZOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZOrderViewController.xib; sourceTree = "<group>"; };
+		0D6D467921E345EE00D9C073 /* HTZProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZProgressHUD.h; sourceTree = "<group>"; };
+		0D6D467A21E345EE00D9C073 /* HTZProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZProgressHUD.m; sourceTree = "<group>"; };
 		0D88173421DE473B00BE96FF /* HTZPerfectInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZPerfectInformationViewController.h; sourceTree = "<group>"; };
 		0D88173521DE473B00BE96FF /* HTZPerfectInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZPerfectInformationViewController.m; sourceTree = "<group>"; };
 		0D88173621DE473B00BE96FF /* HTZPerfectInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZPerfectInformationViewController.xib; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				0DDB2FA221D7CDEE00339101 /* HTZGlobeConst.m */,
 				0DDB2FA421D7CF7200339101 /* HTZNetworkTool.h */,
 				0DDB2FA521D7CF7200339101 /* HTZNetworkTool.m */,
+				0D6D467921E345EE00D9C073 /* HTZProgressHUD.h */,
+				0D6D467A21E345EE00D9C073 /* HTZProgressHUD.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -614,6 +619,7 @@
 				0DDB2FA621D7CF7200339101 /* HTZNetworkTool.m in Sources */,
 				0DF0BAE921E06F1A004A5573 /* HTZMeItem.m in Sources */,
 				0DF4B80D21CF8BF3006E6E80 /* HTZNavigationController.m in Sources */,
+				0D6D467B21E345EE00D9C073 /* HTZProgressHUD.m in Sources */,
 				0DDB2FA321D7CDEE00339101 /* HTZGlobeConst.m in Sources */,
 				0D88173721DE473C00BE96FF /* HTZPerfectInformationViewController.m in Sources */,
 				0DDB2F9F21D7C82F00339101 /* UIView+HTZBezier.m in Sources */,

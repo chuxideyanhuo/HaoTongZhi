@@ -18,6 +18,7 @@
 #import <MJExtension/MJExtension.h>
 #import <AFNetworking/AFNetworking.h>
 #import "HTZNetworkTool.h"
+#import "HTZProgressHUD.h"
 
 
 #ifdef DEBUG
@@ -38,4 +39,53 @@
 #define HTZActivityAreaBackgroundColor [UIColor colorWithHexString:@"FFFFFF"]
 #define HTZBadgeColor [UIColor colorWithHexString:@"E70014"]
 
+
+/** 域名 */
+UIKIT_EXTERN NSString * const HTZDomainString;
+
+/***************************************用户模块******************************************/
+/** 登录接口 */
+UIKIT_EXTERN NSString * const HTZUserLoginInterface;
+/** 注册接口 */
+UIKIT_EXTERN NSString * const HTZUserRegisterInterface;
+/** 找回密码接口 */
+UIKIT_EXTERN NSString * const HTZUserFindPasswordSecurityCodeInterface;
+/** 找回密码-重置密码接口 */
+UIKIT_EXTERN NSString * const HTZUserFindPasswordResetInterface;
+/** 更新密码接口 */
+UIKIT_EXTERN NSString * const HTZUserResetPasswordInterface;
+/** 用户详情接口 */
+UIKIT_EXTERN NSString * const HTZUserDetailInterface;
+
+/***************************************订单模块******************************************/
+/** 创建订单接口 */
+UIKIT_EXTERN NSString * const HTZOrderCreateInterface;
+/** 订单详情接口 */
+UIKIT_EXTERN NSString * const HTZOrderDetailInterface;
+/** 订单列表接口 */
+UIKIT_EXTERN NSString * const HTZOrderListInterface;
+/** 删除订单接口 */
+UIKIT_EXTERN NSString * const HTZOrderDeleteInterface;
+
+/***************************************物流模块******************************************/
+/** 创建物流单接口 */
+UIKIT_EXTERN NSString * const HTZExpressCreateInterface;
+/** 物流单详情接口 */
+UIKIT_EXTERN NSString * const HTZExpressDetailInterface;
+/** 物流单信息同步接口 */
+UIKIT_EXTERN NSString * const HTZExpressInformationSyncInterface;
+/** 物流单状态变更接口 */
+UIKIT_EXTERN NSString * const HTZExpressStateInterface;
+
+/***************************************物流模块******************************************/
+/** 订单评价接口 */
+UIKIT_EXTERN NSString * const HTZCommentOrderInterface;
+/** 物流评价接口 */
+UIKIT_EXTERN NSString * const HTZCommentExpressInterface;
+/** 客户评价接口 */
+UIKIT_EXTERN NSString * const HTZCommentCustomerInterface;
+/** 搅拌厂评价接口 */
+UIKIT_EXTERN NSString * const HTZCommentMixPlantInterface;
+
+/** 边缘距离 */
 UIKIT_EXTERN CGFloat const HTZMargin;

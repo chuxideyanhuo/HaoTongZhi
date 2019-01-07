@@ -11,6 +11,8 @@
 #import "HTZForgetPasswordViewController.h"
 
 @interface HTZLoginViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 
 @end
 
@@ -43,7 +45,26 @@
 #pragma mark - 登录
 - (IBAction)loginButtonClick:(UIButton *)sender
 {
-    HTZLogFunc;
+    if (!self.mobileTextField.text.length || !self.passwordTextField.text.length) {
+        return;
+    }
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",HTZDomainString,HTZUserLoginInterface];
+    NSDictionary *params = @{@"mobile":self.mobileTextField.text,@"password":self.passwordTextField.text};
+    
+//    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+    [HTZNetworkTool postUrl:urlString params:params success:^(NSDictionary *responseObj) {
+        HTZLog(@"responseObj------%@",responseObj);
+        if ([responseObj[@"code"] integerValue] == 0) {
+            [HTZProgressHUD showDefaultHUDWithStatus:responseObj[@"msg"]];
+//            [SVProgressHUD showWithStatus:@"message" maskType:SVProgressHUDMaskTypeBlack];
+            //需要存储用户信息
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }else{
+            [HTZProgressHUD showTextHUDWithStatus:responseObj[@"msg"]];
+        }
+    } failure:^(NSError *error) {
+        HTZLog(@"error------%@",error);
+    }];
 }
 
 #pragma mark - 注册
@@ -72,6 +93,6 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

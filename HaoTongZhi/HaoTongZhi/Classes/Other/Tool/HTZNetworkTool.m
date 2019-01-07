@@ -19,6 +19,7 @@
     
     //1.获得请求管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
     //2.发送GET请求
     [mgr GET:url parameters:dictM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
@@ -40,8 +41,12 @@
     
     //1.获得请求管理者
     AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+    AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
+    response.removesKeysWithNullValues = YES;
+    mgr.responseSerializer = response;
     //2.发送POST请求
-    [mgr POST:url parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [mgr POST:url parameters:dictM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);
         }

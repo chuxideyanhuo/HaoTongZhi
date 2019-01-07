@@ -8,7 +8,12 @@
 
 #import "HTZOrderViewController.h"
 
+static NSString * const HTZCategoryId = @"category";
+static NSString * const HTZOrderId = @"order";
+
 @interface HTZOrderViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
+@property (weak, nonatomic) IBOutlet UITableView *orderTableView;
 
 @end
 
