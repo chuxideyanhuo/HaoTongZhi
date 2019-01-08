@@ -35,6 +35,8 @@
 		0D96920721E3C05300A71DE7 /* HTZOrderCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D96920521E3C05300A71DE7 /* HTZOrderCategoryCell.xib */; };
 		0D96920B21E3C0AC00A71DE7 /* HTZOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96920921E3C0AC00A71DE7 /* HTZOrderCell.m */; };
 		0D96920C21E3C0AC00A71DE7 /* HTZOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D96920A21E3C0AC00A71DE7 /* HTZOrderCell.xib */; };
+		0DDA16C521E50AC800C1F65F /* HTZOrderCategoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA16C421E50AC800C1F65F /* HTZOrderCategoryItem.m */; };
+		0DDA16C821E50ADE00C1F65F /* HTZOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDA16C721E50ADE00C1F65F /* HTZOrderItem.m */; };
 		0DDB2F9921D7C62400339101 /* UIColor+HTZHex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB2F9821D7C62400339101 /* UIColor+HTZHex.m */; };
 		0DDB2F9C21D7C74100339101 /* NSString+HTZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB2F9B21D7C74100339101 /* NSString+HTZExtension.m */; };
 		0DDB2F9F21D7C82F00339101 /* UIView+HTZBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDB2F9E21D7C82F00339101 /* UIView+HTZBezier.m */; };
@@ -109,6 +111,10 @@
 		0D96920821E3C0AC00A71DE7 /* HTZOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZOrderCell.h; sourceTree = "<group>"; };
 		0D96920921E3C0AC00A71DE7 /* HTZOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZOrderCell.m; sourceTree = "<group>"; };
 		0D96920A21E3C0AC00A71DE7 /* HTZOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZOrderCell.xib; sourceTree = "<group>"; };
+		0DDA16C321E50AC800C1F65F /* HTZOrderCategoryItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZOrderCategoryItem.h; sourceTree = "<group>"; };
+		0DDA16C421E50AC800C1F65F /* HTZOrderCategoryItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZOrderCategoryItem.m; sourceTree = "<group>"; };
+		0DDA16C621E50ADE00C1F65F /* HTZOrderItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZOrderItem.h; sourceTree = "<group>"; };
+		0DDA16C721E50ADE00C1F65F /* HTZOrderItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZOrderItem.m; sourceTree = "<group>"; };
 		0DDB2F9721D7C62400339101 /* UIColor+HTZHex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+HTZHex.h"; sourceTree = "<group>"; };
 		0DDB2F9821D7C62400339101 /* UIColor+HTZHex.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HTZHex.m"; sourceTree = "<group>"; };
 		0DDB2F9A21D7C74100339101 /* NSString+HTZExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+HTZExtension.h"; sourceTree = "<group>"; };
@@ -260,6 +266,10 @@
 		0DF4B7E121CF854D006E6E80 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0DDA16C321E50AC800C1F65F /* HTZOrderCategoryItem.h */,
+				0DDA16C421E50AC800C1F65F /* HTZOrderCategoryItem.m */,
+				0DDA16C621E50ADE00C1F65F /* HTZOrderItem.h */,
+				0DDA16C721E50ADE00C1F65F /* HTZOrderItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -640,11 +650,13 @@
 				0DF4B80D21CF8BF3006E6E80 /* HTZNavigationController.m in Sources */,
 				0D6D467B21E345EE00D9C073 /* HTZProgressHUD.m in Sources */,
 				0DDB2FA321D7CDEE00339101 /* HTZGlobeConst.m in Sources */,
+				0DDA16C821E50ADE00C1F65F /* HTZOrderItem.m in Sources */,
 				0D88173721DE473C00BE96FF /* HTZPerfectInformationViewController.m in Sources */,
 				0DDB2F9F21D7C82F00339101 /* UIView+HTZBezier.m in Sources */,
 				0D2905B421E1C91200D83D60 /* HTZSettingViewController.m in Sources */,
 				0DF4B7F821CF854D006E6E80 /* main.m in Sources */,
 				0DF0BAE521E06B63004A5573 /* HTZMeCell.m in Sources */,
+				0DDA16C521E50AC800C1F65F /* HTZOrderCategoryItem.m in Sources */,
 				0D96920621E3C05300A71DE7 /* HTZOrderCategoryCell.m in Sources */,
 				0DDB2FAC21D7D0B100339101 /* HTZHomeViewController.m in Sources */,
 				0DE33C9121E10FD600B54302 /* HTZMeTableViewHeader.m in Sources */,

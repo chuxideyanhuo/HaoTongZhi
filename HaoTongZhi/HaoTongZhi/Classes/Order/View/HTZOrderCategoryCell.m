@@ -7,18 +7,30 @@
 //
 
 #import "HTZOrderCategoryCell.h"
+#import "HTZOrderCategoryItem.h"
+
+@interface HTZOrderCategoryCell()
+@property (weak, nonatomic) IBOutlet UILabel *categoryNameLabel;
+
+@end
 
 @implementation HTZOrderCategoryCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.backgroundColor = HTZGlobalBackgroundColor;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)setCategoryItem:(HTZOrderCategoryItem *)categoryItem
+{
+    _categoryItem = categoryItem;
+    self.categoryNameLabel.text = categoryItem.name;
+}
 
-    // Configure the view for the selected state
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+    self.categoryNameLabel.textColor = selected ? HTZMainColor : HTZBlackFontColor;
 }
 
 @end
