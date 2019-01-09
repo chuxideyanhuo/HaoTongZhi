@@ -92,6 +92,7 @@
 		0D2905B121E1C91200D83D60 /* HTZSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZSettingViewController.h; sourceTree = "<group>"; };
 		0D2905B221E1C91200D83D60 /* HTZSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZSettingViewController.m; sourceTree = "<group>"; };
 		0D2905B321E1C91200D83D60 /* HTZSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZSettingViewController.xib; sourceTree = "<group>"; };
+		0D38013821E6437F00D63A1D /* HTZSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZSingleton.h; sourceTree = "<group>"; };
 		0D38247321DD11D4009C263F /* HTZModifyPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZModifyPasswordViewController.h; sourceTree = "<group>"; };
 		0D38247421DD11D4009C263F /* HTZModifyPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZModifyPasswordViewController.m; sourceTree = "<group>"; };
 		0D38247521DD11D4009C263F /* HTZModifyPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZModifyPasswordViewController.xib; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 				0DDB2FA521D7CF7200339101 /* HTZNetworkTool.m */,
 				0D6D467921E345EE00D9C073 /* HTZProgressHUD.h */,
 				0D6D467A21E345EE00D9C073 /* HTZProgressHUD.m */,
+				0D38013821E6437F00D63A1D /* HTZSingleton.h */,
 			);
 			path = Tool;
 			sourceTree = "<group>";

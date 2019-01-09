@@ -9,8 +9,10 @@
 #import "HTZOrderViewController.h"
 #import "HTZOrderCategoryCell.h"
 #import "HTZOrderCell.h"
+#import "HTZOrderCategoryItem.h"
+#import "HTZOrderItem.h"
 
-
+#define HTZSelectedCategory self.categories[self.categoryTableView.indexPathForSelectedRow.row]
 static NSString * const HTZCategoryId = @"category";
 static NSString * const HTZOrderId = @"order";
 
@@ -19,10 +21,24 @@ static NSString * const HTZOrderId = @"order";
 @property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
 /** 右边的订单表格 */
 @property (weak, nonatomic) IBOutlet UITableView *orderTableView;
-
+/** 请求工具对象 */
+@property (nonatomic, strong) HTZNetworkTool *networkTool;
+/** 左边的类别数据 */
+@property (nonatomic, strong) NSArray *categories;
+/** 请求参数 */
+@property (nonatomic, strong) NSMutableDictionary *params;
 @end
 
 @implementation HTZOrderViewController
+
+#pragma mark - 懒加载
+- (HTZNetworkTool *)networkTool
+{
+    if (!_networkTool) {
+        _networkTool = [HTZNetworkTool sharedNetworkTool];
+    }
+    return _networkTool;
+}
 
 - (void)viewDidLoad
 {
@@ -54,9 +70,9 @@ static NSString * const HTZOrderId = @"order";
 #pragma mark - 添加刷新控件
 - (void)setupRefresh
 {
-    self.orderTableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewUsers)];
+    self.orderTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewUsers)];
     
-    self.orderTableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
+    self.orderTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
 }
 
 #pragma mark - 加载左侧的类别数据
@@ -66,92 +82,93 @@ static NSString * const HTZOrderId = @"order";
     [HTZProgressHUD showDefaultHUD];
     
     // 发送请求
-//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    params[@"a"] = @"category";
-//    params[@"c"] = @"subscribe";
-//    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-//        // 隐藏指示器
-//        [HTZProgressHUD dismiss];
-//
-//        // 服务器返回的JSON数据
-//        self.categories = [XMGRecommendCategory objectArrayWithKeyValuesArray:responseObject[@"list"]];
-//
-//        // 刷新表格
-//        [self.categoryTableView reloadData];
-//
-//        // 默认选中首行
-//        [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
-//
-//        // 让用户表格进入下拉刷新状态
-//        [self.userTableView.header beginRefreshing];
-//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//        // 显示失败信息
-//        [SVProgressHUD showErrorWithStatus:@"加载推荐信息失败!"];
-//    }];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",HTZDomainString,HTZOrderListInterface];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [self.networkTool postUrl:urlString params:params success:^(id responseObject) {
+        
+        // 隐藏指示器
+        [HTZProgressHUD dismissHUD];
+        
+        // 服务器返回的JSON数据
+        self.categories = [HTZOrderCategoryItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        
+        // 刷新表格
+        [self.categoryTableView reloadData];
+        
+        // 默认选中首行
+        [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
+        
+        // 让用户表格进入下拉刷新状态
+        [self.orderTableView.mj_header beginRefreshing];
+        
+    } failure:^(NSError *error) {
+        // 显示失败信息
+        [HTZProgressHUD showErrorHUDWithStatus:@"加载信息失败!"];
+    }];
 }
 
 #pragma mark - 加载用户数据
 - (void)loadNewUsers
 {
-    XMGRecommendCategory *rc = XMGSelectedCategory;
+    HTZOrderCategoryItem *item = HTZSelectedCategory;
     
     // 设置当前页码为1
-    rc.currentPage = 1;
+    item.currentPage = 1;
+    
+    // 请求参数
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",HTZDomainString,HTZOrderListInterface];
     
     // 请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
-    params[@"c"] = @"subscribe";
-    params[@"category_id"] = @(rc.id);
-    params[@"page"] = @(rc.currentPage);
+    params[@"category_id"] = @(item.id);
+    params[@"page"] = @(item.currentPage);
     self.params = params;
     
     // 发送请求给服务器, 加载右侧的数据
-    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self.networkTool postUrl:urlString params:params success:^(id responseObject) {
         // 字典数组 -> 模型数组
-        NSArray *users = [XMGRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        NSArray *orders = [HTZOrderItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
         // 清除所有旧数据
-        [rc.users removeAllObjects];
+        [item.orders removeAllObjects];
         
         // 添加到当前类别对应的用户数组中
-        [rc.users addObjectsFromArray:users];
+        [item.orders addObjectsFromArray:orders];
         
         // 保存总数
-        rc.total = [responseObject[@"total"] integerValue];
+        item.total = [responseObject[@"total"] integerValue];
         
         // 不是最后一次请求
         if (self.params != params) return;
         
         // 刷新右边的表格
-        [self.userTableView reloadData];
+        [self.orderTableView reloadData];
         
         // 结束刷新
-        [self.userTableView.header endRefreshing];
+        [self.orderTableView.mj_header endRefreshing];
         
         // 让底部控件结束刷新
         [self checkFooterState];
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    } failure:^(NSError *error) {
         if (self.params != params) return;
         
         // 提醒
-        [SVProgressHUD showErrorWithStatus:@"加载用户数据失败"];
+        [HTZProgressHUD showErrorHUDWithStatus:@"加载数据失败"];
         
         // 结束刷新
-        [self.userTableView.header endRefreshing];
+        [self.orderTableView.mj_header endRefreshing];
     }];
+    
 }
 
 - (void)loadMoreUsers
 {
-    XMGRecommendCategory *category = XMGSelectedCategory;
+    HTZOrderCategoryItem *item = HTZSelectedCategory;
     
     // 发送请求给服务器, 加载右侧的数据
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
-    params[@"c"] = @"subscribe";
-    params[@"category_id"] = @(category.id);
-    params[@"page"] = @(++category.currentPage);
+    params[@"category_id"] = @(item.id);
+    params[@"page"] = @(++item.currentPage);
     self.params = params;
     
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {

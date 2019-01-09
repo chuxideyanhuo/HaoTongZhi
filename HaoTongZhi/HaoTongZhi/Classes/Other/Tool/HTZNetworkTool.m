@@ -9,8 +9,9 @@
 #import "HTZNetworkTool.h"
 
 @implementation HTZNetworkTool
+HTZSingletonM(NetworkTool)
 
-+ (void)getUrl:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
+- (void)getUrl:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     NSMutableDictionary *dictM = [self getFixedParams];
     dictM[@"params"] = params;
@@ -32,7 +33,7 @@
     }];
 }
 
-+ (void)postUrl:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
+- (void)postUrl:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
     NSMutableDictionary *dictM = [self getFixedParams];
     dictM[@"params"] = params;
@@ -57,7 +58,7 @@
     }];
 }
 
-+ (NSMutableDictionary *)getFixedParams
+- (NSMutableDictionary *)getFixedParams
 {
     NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
     dictM[@"app_key"] = @"app_ios";
@@ -68,7 +69,7 @@
     return dictM;
 }
 
-+ (NSString *)dateFormat
+- (NSString *)dateFormat
 {
     // 格式化时间
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -80,7 +81,7 @@
     return dateString;
 }
 
-//+ (NSString *)creatSignWithDictionary:(NSMutableDictionary *)dictM
+//- (NSString *)creatSignWithDictionary:(NSMutableDictionary *)dictM
 //{    NSMutableArray *array = [NSMutableArray array];
 //    [dictM enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
 //        NSString *joineString = [NSString stringWithFormat:@"%@=%@",key,obj];
@@ -99,7 +100,7 @@
 //    return resultString;
 //}
 
-+ (NSString *)creatSignWithDictionary:(NSMutableDictionary *)dictM
+- (NSString *)creatSignWithDictionary:(NSMutableDictionary *)dictM
 {
     NSArray *keys = [dictM allKeys];
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];

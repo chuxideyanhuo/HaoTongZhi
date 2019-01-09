@@ -22,6 +22,10 @@
 + (void)dismissHUD;
 /** 延迟销毁HUD */
 + (void)dismissHUDWithDelay:(NSTimeInterval)delay;
+/** 显示错误的HUD */
++ (void)showErrorHUDWithStatus:(NSString*)status;
+/** 显示成功的HUD */
++ (void)showSuccessHUDWithStatus:(nullable NSString*)status;
 /** 设置HUD显示的动画时间 */
 + (void)setHUDFadeInAnimationDuration:(NSTimeInterval)delay;
 /** 设置HUD销毁的动画时间 */

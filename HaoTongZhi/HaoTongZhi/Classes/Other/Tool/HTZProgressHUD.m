@@ -50,6 +50,16 @@
     [SVProgressHUD dismissWithDelay:delay];
 }
 
++ (void)showErrorHUDWithStatus:(NSString*)status
+{
+    [SVProgressHUD showErrorWithStatus:status];
+}
+
++ (void)showSuccessHUDWithStatus:(nullable NSString*)status
+{
+    [SVProgressHUD showSuccessWithStatus:status];
+}
+
 #pragma mark - 设置HUD显示的动画时间
 + (void)setHUDFadeInAnimationDuration:(NSTimeInterval)delay
 {
