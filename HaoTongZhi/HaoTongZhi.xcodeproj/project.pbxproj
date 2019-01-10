@@ -24,6 +24,8 @@
 		0D2905B521E1C91200D83D60 /* HTZSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2905B321E1C91200D83D60 /* HTZSettingViewController.xib */; };
 		0D2AD25D21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2AD25B21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.m */; };
 		0D2AD25E21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2AD25C21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.xib */; };
+		0D2AD26621E756C80086B4EE /* HTZAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2AD26421E756C80086B4EE /* HTZAboutUsViewController.m */; };
+		0D2AD26721E756C80086B4EE /* HTZAboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2AD26521E756C80086B4EE /* HTZAboutUsViewController.xib */; };
 		0D38247621DD11D4009C263F /* HTZModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D38247421DD11D4009C263F /* HTZModifyPasswordViewController.m */; };
 		0D38247721DD11D4009C263F /* HTZModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D38247521DD11D4009C263F /* HTZModifyPasswordViewController.xib */; };
 		0D5C0B3921E2573500BA0974 /* HTZSettingData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D5C0B3821E2573400BA0974 /* HTZSettingData.plist */; };
@@ -97,6 +99,9 @@
 		0D2AD25A21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZModifyPersonalInformationViewController.h; sourceTree = "<group>"; };
 		0D2AD25B21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZModifyPersonalInformationViewController.m; sourceTree = "<group>"; };
 		0D2AD25C21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZModifyPersonalInformationViewController.xib; sourceTree = "<group>"; };
+		0D2AD26321E756C80086B4EE /* HTZAboutUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZAboutUsViewController.h; sourceTree = "<group>"; };
+		0D2AD26421E756C80086B4EE /* HTZAboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZAboutUsViewController.m; sourceTree = "<group>"; };
+		0D2AD26521E756C80086B4EE /* HTZAboutUsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZAboutUsViewController.xib; sourceTree = "<group>"; };
 		0D38013821E6437F00D63A1D /* HTZSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZSingleton.h; sourceTree = "<group>"; };
 		0D38247321DD11D4009C263F /* HTZModifyPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZModifyPasswordViewController.h; sourceTree = "<group>"; };
 		0D38247421DD11D4009C263F /* HTZModifyPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZModifyPasswordViewController.m; sourceTree = "<group>"; };
@@ -450,6 +455,9 @@
 				0D2905B121E1C91200D83D60 /* HTZSettingViewController.h */,
 				0D2905B221E1C91200D83D60 /* HTZSettingViewController.m */,
 				0D2905B321E1C91200D83D60 /* HTZSettingViewController.xib */,
+				0D2AD26321E756C80086B4EE /* HTZAboutUsViewController.h */,
+				0D2AD26421E756C80086B4EE /* HTZAboutUsViewController.m */,
+				0D2AD26521E756C80086B4EE /* HTZAboutUsViewController.xib */,
 				0DDB2FB621D7D19B00339101 /* HTZLoginViewController.h */,
 				0DDB2FB721D7D19B00339101 /* HTZLoginViewController.m */,
 				0DDB2FB821D7D19B00339101 /* HTZLoginViewController.xib */,
@@ -573,6 +581,7 @@
 				0D2905A621E1C7F900D83D60 /* HTZOriginalModifyPasswordViewController.xib in Resources */,
 				0D96920C21E3C0AC00A71DE7 /* HTZOrderCell.xib in Resources */,
 				0D88173821DE473C00BE96FF /* HTZPerfectInformationViewController.xib in Resources */,
+				0D2AD26721E756C80086B4EE /* HTZAboutUsViewController.xib in Resources */,
 				0D13957321DA8E3F00C2E3A9 /* HTZForgetPasswordViewController.xib in Resources */,
 				0DDB2FBA21D7D19B00339101 /* HTZLoginViewController.xib in Resources */,
 				0D2905B021E1C8CD00D83D60 /* HTZAdviceFeedbackViewController.xib in Resources */,
@@ -662,6 +671,7 @@
 				0DF4B80D21CF8BF3006E6E80 /* HTZNavigationController.m in Sources */,
 				0D6D467B21E345EE00D9C073 /* HTZProgressHUD.m in Sources */,
 				0DDB2FA321D7CDEE00339101 /* HTZGlobeConst.m in Sources */,
+				0D2AD26621E756C80086B4EE /* HTZAboutUsViewController.m in Sources */,
 				0DDA16C821E50ADE00C1F65F /* HTZOrderItem.m in Sources */,
 				0D88173721DE473C00BE96FF /* HTZPerfectInformationViewController.m in Sources */,
 				0DDB2F9F21D7C82F00339101 /* UIView+HTZBezier.m in Sources */,
@@ -806,7 +816,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5479YZ2SB;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = HaoTongZhi/Classes/Other/HTZPrefixHeader.pch;
 				INFOPLIST_FILE = HaoTongZhi/Info.plist;
@@ -829,7 +839,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5479YZ2SB;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = HaoTongZhi/Classes/Other/HTZPrefixHeader.pch;
 				INFOPLIST_FILE = HaoTongZhi/Info.plist;

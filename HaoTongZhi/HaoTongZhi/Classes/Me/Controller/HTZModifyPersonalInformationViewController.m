@@ -16,8 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"修改信息";
+    // 设置导航栏标题
+    self.navigationItem.title = @"修改信息";
     self.navigationController.navigationBar.translucent = NO;
+    
 }
 
 @end

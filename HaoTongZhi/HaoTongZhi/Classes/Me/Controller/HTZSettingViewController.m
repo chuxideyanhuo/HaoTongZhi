@@ -9,6 +9,7 @@
 #import "HTZSettingViewController.h"
 #import "HTZMeCell.h"
 #import "HTZMeItem.h"
+#import "HTZLoginViewController.h"
 
 static NSString * const HTZSettingId = @"setting";
 typedef enum : NSUInteger {
@@ -89,21 +90,46 @@ typedef enum : NSUInteger {
     
     switch ([item.type integerValue]) {
         case HTZSettingOptionTypeClearCache:
-            [self jumpViewControllerWithClass:@""];
+//            [self jumpViewControllerWithClass:@""];
+            [self clearCache];
             break;
         case HTZSettingOptionTypeVersionUpdate:
-            [self jumpViewControllerWithClass:@""];
+//            [self jumpViewControllerWithClass:@""];
+            [self versionUpdate];
             break;
         case HTZSettingOptionTypeAboutUs:
-            [self jumpViewControllerWithClass:@""];
+            [self jumpViewControllerWithClass:@"HTZAboutUsViewController"];
             break;
     }
 }
 
+#pragma mark - 清除缓存
+- (void)clearCache
+{
+    
+}
+
+#pragma mark - 版本更新
+- (void)versionUpdate
+{
+    
+}
+
+#pragma mark - 跳转控制器
 - (void)jumpViewControllerWithClass:(NSString *)class
 {
     UIViewController *vc = [[NSClassFromString(class) alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - 退出登录
+- (IBAction)exitLoginButtonClick:(UIButton *)sender
+{
+    HTZLoginViewController *loginVC = [[HTZLoginViewController alloc] init];
+    [self presentViewController:loginVC animated:YES completion:^{
+        self.tabBarController.selectedIndex = 0;
+        [self.navigationController popToRootViewControllerAnimated:NO];
+    }];
 }
 
 @end
