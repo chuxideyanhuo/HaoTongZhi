@@ -16,7 +16,8 @@
 
 @implementation HTZOrderCategoryCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     self.backgroundColor = HTZGlobalBackgroundColor;
 }

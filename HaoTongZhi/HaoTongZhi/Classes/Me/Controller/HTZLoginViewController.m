@@ -50,19 +50,19 @@
     }
     NSString *urlString = [NSString stringWithFormat:@"%@%@",HTZDomainString,HTZUserLoginInterface];
     NSDictionary *params = @{@"mobile":self.mobileTextField.text,@"password":self.passwordTextField.text};
-    
-//    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
-    [HTZNetworkTool postUrl:urlString params:params success:^(NSDictionary *responseObj) {
+    [HTZProgressHUD showDefaultHUD];
+    [[HTZNetworkTool new] postUrl:urlString params:params success:^(NSDictionary *responseObj) {
         HTZLog(@"responseObj------%@",responseObj);
+        [HTZProgressHUD dismissHUD];
         if ([responseObj[@"code"] integerValue] == 0) {
-            [HTZProgressHUD showDefaultHUDWithStatus:responseObj[@"msg"]];
-//            [SVProgressHUD showWithStatus:@"message" maskType:SVProgressHUDMaskTypeBlack];
+            
             //需要存储用户信息
             [self dismissViewControllerAnimated:YES completion:nil];
         }else{
             [HTZProgressHUD showTextHUDWithStatus:responseObj[@"msg"]];
         }
     } failure:^(NSError *error) {
+        [HTZProgressHUD showErrorHUDWithStatus:@"登录失败!"];
         HTZLog(@"error------%@",error);
     }];
 }

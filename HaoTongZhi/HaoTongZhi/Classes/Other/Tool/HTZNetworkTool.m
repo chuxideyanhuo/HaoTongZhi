@@ -7,9 +7,24 @@
 //
 
 #import "HTZNetworkTool.h"
+@interface HTZNetworkTool()
+@property (nonatomic, strong) AFHTTPSessionManager *mgr;
+@end
 
 @implementation HTZNetworkTool
-HTZSingletonM(NetworkTool)
+//HTZSingletonM(NetworkTool)
+
+- (AFHTTPSessionManager *)mgr
+{
+    if (!_mgr) {
+        _mgr = [AFHTTPSessionManager manager];
+        _mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+        AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
+        response.removesKeysWithNullValues = YES;
+        _mgr.responseSerializer = response;
+    }
+    return _mgr;
+}
 
 - (void)getUrl:(NSString *)url params:(NSDictionary *)params success:(void (^)(id))success failure:(void (^)(NSError *))failure
 {
@@ -19,10 +34,13 @@ HTZSingletonM(NetworkTool)
     HTZLog(@"dictM:%@",dictM);
     
     //1.获得请求管理者
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+//    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+//    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+//    AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
+//    response.removesKeysWithNullValues = YES;
+//    mgr.responseSerializer = response;
     //2.发送GET请求
-    [mgr GET:url parameters:dictM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.mgr GET:url parameters:dictM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);
         }
@@ -41,13 +59,13 @@ HTZSingletonM(NetworkTool)
     HTZLog(@"dictM:%@",dictM);
     
     //1.获得请求管理者
-    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
-    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
-    AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
-    response.removesKeysWithNullValues = YES;
-    mgr.responseSerializer = response;
+//    AFHTTPSessionManager *mgr = [AFHTTPSessionManager manager];
+//    mgr.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", nil];
+//    AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
+//    response.removesKeysWithNullValues = YES;
+//    mgr.responseSerializer = response;
     //2.发送POST请求
-    [mgr POST:url parameters:dictM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.mgr POST:url parameters:dictM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (success) {
             success(responseObject);
         }
@@ -116,5 +134,9 @@ HTZSingletonM(NetworkTool)
     return resultString;
 }
 
+- (void)cancelAllOperations
+{
+    [self.mgr.operationQueue cancelAllOperations];
+}
 
 @end

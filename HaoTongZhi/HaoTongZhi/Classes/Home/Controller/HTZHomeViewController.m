@@ -24,10 +24,6 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [HTZNetworkTool getUrl:@"" params:@{} success:^(id responseObj) {
-        
-    } failure:^(NSError *error) {
-        
-    }];
+    
 }
 @end

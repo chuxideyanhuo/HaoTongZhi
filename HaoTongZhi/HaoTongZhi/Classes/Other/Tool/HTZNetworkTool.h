@@ -10,7 +10,7 @@
 #import "HTZSingleton.h"
 
 @interface HTZNetworkTool : NSObject
-HTZSingletonH(NetworkTool)
+//HTZSingletonH(NetworkTool)
 /**
  *  发送一个GET请求
  *
@@ -30,5 +30,10 @@ HTZSingletonH(NetworkTool)
  *  @param failure 请求失败后的回调（请将请求失败后想做的事情写到这个block中）
  */
 - (void)postUrl:(NSString *)url params:(NSDictionary *)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
+
+/**
+ *  取消所有请求
+ */
+- (void)cancelAllOperations;
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HTZOrderCell : UITableViewCell
+@class HTZOrderItem;
 
+@interface HTZOrderCell : UITableViewCell
+/** 类别模型 */
+@property (nonatomic, strong) HTZOrderItem *orderItem;
 @end

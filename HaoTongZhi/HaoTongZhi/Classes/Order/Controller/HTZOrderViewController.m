@@ -35,7 +35,7 @@ static NSString * const HTZOrderId = @"order";
 - (HTZNetworkTool *)networkTool
 {
     if (!_networkTool) {
-        _networkTool = [HTZNetworkTool sharedNetworkTool];
+        _networkTool = [[HTZNetworkTool alloc] init];
     }
     return _networkTool;
 }
@@ -43,7 +43,7 @@ static NSString * const HTZOrderId = @"order";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //初始化子控件
+    // 初始化子控件
     [self setupSubview];
     
     // 添加刷新控件
@@ -115,7 +115,7 @@ static NSString * const HTZOrderId = @"order";
     // 设置当前页码为1
     item.currentPage = 1;
     
-    // 请求参数
+    // 请求接口
     NSString *urlString = [NSString stringWithFormat:@"%@%@",HTZDomainString,HTZOrderListInterface];
     
     // 请求参数
@@ -165,35 +165,37 @@ static NSString * const HTZOrderId = @"order";
 {
     HTZOrderCategoryItem *item = HTZSelectedCategory;
     
-    // 发送请求给服务器, 加载右侧的数据
+    // 请求接口
+    NSString *urlString = [NSString stringWithFormat:@"%@%@",HTZDomainString,HTZOrderListInterface];
+    // 请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"category_id"] = @(item.id);
     params[@"page"] = @(++item.currentPage);
     self.params = params;
     
-    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self.networkTool postUrl:urlString params:params success:^(id responseObject) {
         // 字典数组 -> 模型数组
-        NSArray *users = [XMGRecommendUser objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        NSArray *orders = [HTZOrderItem mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
         // 添加到当前类别对应的用户数组中
-        [category.users addObjectsFromArray:users];
+        [item.orders addObjectsFromArray:orders];
         
         // 不是最后一次请求
         if (self.params != params) return;
         
         // 刷新右边的表格
-        [self.userTableView reloadData];
+        [self.orderTableView reloadData];
         
         // 让底部控件结束刷新
         [self checkFooterState];
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+    } failure:^(NSError *error) {
         if (self.params != params) return;
         
         // 提醒
-        [SVProgressHUD showErrorWithStatus:@"加载用户数据失败"];
+        [HTZProgressHUD showErrorHUDWithStatus:@"加载数据失败"];
         
         // 让底部控件结束刷新
-        [self.userTableView.footer endRefreshing];
+        [self.orderTableView.mj_footer endRefreshing];
     }];
 }
 
@@ -202,16 +204,16 @@ static NSString * const HTZOrderId = @"order";
  */
 - (void)checkFooterState
 {
-    XMGRecommendCategory *rc = XMGSelectedCategory;
+    HTZOrderCategoryItem *item = HTZSelectedCategory;
     
     // 每次刷新右边数据时, 都控制footer显示或者隐藏
-    self.userTableView.footer.hidden = (rc.users.count == 0);
+    self.orderTableView.mj_footer.hidden = (item.orders.count == 0);
     
     // 让底部控件结束刷新
-    if (rc.users.count == rc.total) { // 全部数据已经加载完毕
-        [self.userTableView.footer noticeNoMoreData];
+    if (item.orders.count == item.total) { // 全部数据已经加载完毕
+        [self.orderTableView.mj_footer endRefreshingWithNoMoreData];
     } else { // 还没有加载完毕
-        [self.userTableView.footer endRefreshing];
+        [self.orderTableView.mj_footer endRefreshing];
     }
 }
 
@@ -225,18 +227,18 @@ static NSString * const HTZOrderId = @"order";
     [self checkFooterState];
     
     // 右边的用户表格
-    return [XMGSelectedCategory users].count;
+    return [HTZSelectedCategory orders].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == self.categoryTableView) { // 左边的类别表格
-        XMGRecommendCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:XMGCategoryId];
-        cell.category = self.categories[indexPath.row];
+        HTZOrderCategoryCell *cell = [tableView dequeueReusableCellWithIdentifier:HTZCategoryId];
+        cell.categoryItem = self.categories[indexPath.row];
         return cell;
     } else { // 右边的用户表格
-        XMGRecommendUserCell *cell = [tableView dequeueReusableCellWithIdentifier:XMGUserId];
-        cell.user = [XMGSelectedCategory users][indexPath.row];
+        HTZOrderCell *cell = [tableView dequeueReusableCellWithIdentifier:HTZOrderId];
+        cell.orderItem = [HTZSelectedCategory orders][indexPath.row];
         return cell;
     }
 }
@@ -245,19 +247,19 @@ static NSString * const HTZOrderId = @"order";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 结束刷新
-    [self.userTableView.header endRefreshing];
-    [self.userTableView.footer endRefreshing];
+    [self.orderTableView.mj_header endRefreshing];
+    [self.orderTableView.mj_footer endRefreshing];
     
-    XMGRecommendCategory *c = self.categories[indexPath.row];
-    if (c.users.count) {
+    HTZOrderCategoryItem *item = self.categories[indexPath.row];
+    if (item.orders.count) {
         // 显示曾经的数据
-        [self.userTableView reloadData];
+        [self.orderTableView reloadData];
     } else {
         // 赶紧刷新表格,目的是: 马上显示当前category的用户数据, 不让用户看见上一个category的残留数据
-        [self.userTableView reloadData];
+        [self.orderTableView reloadData];
         
         // 进入下拉刷新状态
-        [self.userTableView.header beginRefreshing];
+        [self.orderTableView.mj_header beginRefreshing];
     }
 }
 
@@ -265,7 +267,7 @@ static NSString * const HTZOrderId = @"order";
 - (void)dealloc
 {
     // 停止所有操作
-    [self.manager.operationQueue cancelAllOperations];
+    [self.networkTool cancelAllOperations];
 }
 
 
