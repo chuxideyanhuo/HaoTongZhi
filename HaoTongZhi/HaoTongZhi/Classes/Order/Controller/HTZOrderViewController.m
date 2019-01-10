@@ -97,13 +97,14 @@ static NSString * const HTZOrderId = @"order";
         
         // 默认选中首行
         [self.categoryTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:NO scrollPosition:UITableViewScrollPositionTop];
-        
-        // 让用户表格进入下拉刷新状态
+
+        // 让订单表格进入下拉刷新状态
         [self.orderTableView.mj_header beginRefreshing];
         
     } failure:^(NSError *error) {
         // 显示失败信息
-        [HTZProgressHUD showErrorHUDWithStatus:@"加载信息失败!"];
+        [HTZProgressHUD showTextHUDWithStatus:@"加载分类信息失败!"];
+//        [HTZProgressHUD showErrorHUDWithStatus:@"加载分类信息失败!"];
     }];
 }
 

@@ -9,6 +9,8 @@
 #import "HTZInviteFriendsViewController.h"
 
 @interface HTZInviteFriendsViewController ()
+/** 二维码 */
+@property (weak, nonatomic) IBOutlet UIImageView *qrCodeImageView;
 
 @end
 

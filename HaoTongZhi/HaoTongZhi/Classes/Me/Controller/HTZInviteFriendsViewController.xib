@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HTZInviteFriendsViewController">
             <connections>
+                <outlet property="qrCodeImageView" destination="sbT-ch-5cI" id="qfx-ii-Djs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

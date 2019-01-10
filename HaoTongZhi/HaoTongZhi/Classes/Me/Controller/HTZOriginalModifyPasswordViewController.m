@@ -7,8 +7,15 @@
 //
 
 #import "HTZOriginalModifyPasswordViewController.h"
+#import "HTZLoginViewController.h"
 
 @interface HTZOriginalModifyPasswordViewController ()
+/** 原密码 */
+@property (weak, nonatomic) IBOutlet UITextField *originalPasswordTextField;
+/** 新密码 */
+@property (weak, nonatomic) IBOutlet UITextField *nPasswordTextField;
+/** 重复新密码 */
+@property (weak, nonatomic) IBOutlet UITextField *repeatNewPasswordTextField;
 
 @end
 
@@ -18,5 +25,15 @@
     [super viewDidLoad];
     self.title = @"修改密码";
     self.navigationController.navigationBar.translucent = NO;
+}
+
+- (IBAction)confirmSubmitButtonClick:(UIButton *)sender
+{
+    HTZLoginViewController *loginVC = [[HTZLoginViewController alloc] init];
+    [self presentViewController:loginVC animated:YES completion:^{
+        self.tabBarController.selectedIndex = 0;
+        [self.navigationController popToRootViewControllerAnimated:NO];
+        
+    }];
 }
 @end

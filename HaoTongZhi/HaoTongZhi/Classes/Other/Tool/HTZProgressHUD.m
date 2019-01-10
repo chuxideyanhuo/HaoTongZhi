@@ -14,14 +14,14 @@
 + (void)showDefaultHUD
 {
     [SVProgressHUD show];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
 }
 
 #pragma mark - 显示默认图文的HUD
 + (void)showDefaultHUDWithStatus:(NSString *)status
 {
     [SVProgressHUD showWithStatus:status];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
 }
 
 #pragma mark - 显示自定义图文的HUD
@@ -53,6 +53,7 @@
 + (void)showErrorHUDWithStatus:(NSString*)status
 {
     [SVProgressHUD showErrorWithStatus:status];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
 }
 
 + (void)showSuccessHUDWithStatus:(nullable NSString*)status

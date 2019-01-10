@@ -10,7 +10,24 @@
 #import "HTZModifyPersonalInformationViewController.h"
 
 @interface HTZPersonalInformationViewController ()
-
+/** 头像 */
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+/** 昵称 */
+@property (weak, nonatomic) IBOutlet UITextField *nicknameTextField;
+/** 姓名 */
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+/** 男 */
+@property (weak, nonatomic) IBOutlet UIButton *manButton;
+/** 女 */
+@property (weak, nonatomic) IBOutlet UIButton *womanButton;
+/** 手机 */
+@property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
+/** 单位 */
+@property (weak, nonatomic) IBOutlet UILabel *companyLabel;
+/** 科室 */
+@property (weak, nonatomic) IBOutlet UILabel *departmentLabel;
+/** 邮箱 */
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @end
 
 @implementation HTZPersonalInformationViewController
