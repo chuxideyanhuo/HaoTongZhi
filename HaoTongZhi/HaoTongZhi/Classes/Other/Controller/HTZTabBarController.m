@@ -63,5 +63,13 @@
     [self addChildViewController:nav];
 }
 
-
+//- (void)viewDidLayoutSubviews
+//{
+//    [super viewDidLayoutSubviews];
+//    HTZLog(@"tabbar---------%@",NSStringFromCGRect(self.tabBarController.tabBar.frame));
+//    NSInteger type = [HTZSystemTool deviceType];
+//    if (type == iPhoneX || type == Unknown) {
+//        self.tabBarController.tabBar.frame = CGRectMake(0, HTZSCREENH - HTZIPhoneXTabbarHeight, HTZSCREENW, HTZIPhoneXTabbarHeight);
+//    }
+//}
 @end

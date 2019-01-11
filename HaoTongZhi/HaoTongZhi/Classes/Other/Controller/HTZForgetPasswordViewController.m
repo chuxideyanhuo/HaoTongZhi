@@ -10,6 +10,12 @@
 #import "HTZModifyPasswordViewController.h"
 
 @interface HTZForgetPasswordViewController ()
+/** 手机号 */
+@property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
+/** 获取验证码 */
+@property (weak, nonatomic) IBOutlet UIButton *verificationCodeButton;
+/** 验证码 */
+@property (weak, nonatomic) IBOutlet UITextField *verificationCodeTextField;
 
 @end
 
@@ -21,6 +27,14 @@
 //    self.navigationController.navigationBar.translucent = NO;
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
+
+#pragma mark - 获取验证码
+- (IBAction)verificationCodeButtonClick:(UIButton *)sender
+{
+    
+}
+
+#pragma mark - 立即验证
 - (IBAction)verificationButtonClick:(UIButton *)sender
 {
     HTZModifyPasswordViewController *modifyPaaswordVC = [[HTZModifyPasswordViewController alloc] init];

@@ -49,3 +49,5 @@ NSString * const HTZCommentMixPlantInterface = @"/comment/login";
 
 /** 边缘距离 */
 CGFloat const HTZMargin = 10;
+/** iPhoneX Tabbar的高度 */
+CGFloat const HTZIPhoneXTabbarHeight = 83;

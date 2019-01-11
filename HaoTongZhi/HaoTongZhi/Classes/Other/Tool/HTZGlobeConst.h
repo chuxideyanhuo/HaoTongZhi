@@ -12,15 +12,16 @@
 #import "UIBarButtonItem+HTZExtension.h"
 #import "UIColor+HTZHex.h"
 #import "NSString+HTZExtension.h"
-#import <Masonry/Masonry.h>
-#import <SVProgressHUD/SVProgressHUD.h>
-#import <MJRefresh/MJRefresh.h>
-#import <MJExtension/MJExtension.h>
-#import <AFNetworking/AFNetworking.h>
+#import <Masonry.h>
+#import <SVProgressHUD.h>
+#import <MJRefresh.h>
+#import <MJExtension.h>
+#import <AFNetworking.h>
 #import "HTZNetworkTool.h"
 #import "HTZProgressHUD.h"
+#import "HTZSystemTool.h"
 
-
+/** 打印 */
 #ifdef DEBUG
 #define HTZLog(...) NSLog(__VA_ARGS__)
 #else
@@ -29,16 +30,17 @@
 
 #define HTZLogFunc HTZLog(@"%s", __func__)
 
-#define HTZRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
-
-//#define HTZGlobalBg HTZRGBColor(223, 223, 223)
-
+/** 颜色 */
 #define HTZMainColor [UIColor colorWithHexString:@"0180CD"]
 #define HTZGlobalBackgroundColor [UIColor colorWithHexString:@"F4F3F8"]
 #define HTZBlackFontColor [UIColor colorWithHexString:@"303030"]
 #define HTZActivityAreaBackgroundColor [UIColor colorWithHexString:@"FFFFFF"]
 #define HTZBadgeColor [UIColor colorWithHexString:@"E70014"]
+#define HTZRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
+/** 屏幕宽高 */
+#define HTZSCREENW  [UIScreen mainScreen].bounds.size.width
+#define HTZSCREENH [UIScreen mainScreen].bounds.size.height
 
 /** 域名 */
 UIKIT_EXTERN NSString * const HTZDomainString;
@@ -89,3 +91,6 @@ UIKIT_EXTERN NSString * const HTZCommentMixPlantInterface;
 
 /** 边缘距离 */
 UIKIT_EXTERN CGFloat const HTZMargin;
+
+/** iPhoneX Tabbar的高度 */
+UIKIT_EXTERN CGFloat const HTZIPhoneXTabbarHeight;

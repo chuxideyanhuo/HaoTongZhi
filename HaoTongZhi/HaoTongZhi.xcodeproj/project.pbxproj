@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D13956E21DA52E500C2E3A9 /* CALayer+BorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D13956D21DA52E500C2E3A9 /* CALayer+BorderColor.m */; };
+		0D20754721E83E9300A99694 /* HTZSystemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D20754621E83E9300A99694 /* HTZSystemTool.m */; };
+		0D20754D21E877BF00A99694 /* HTZPlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D20754B21E877BF00A99694 /* HTZPlaceOrderViewController.m */; };
+		0D20754E21E877BF00A99694 /* HTZPlaceOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D20754C21E877BF00A99694 /* HTZPlaceOrderViewController.xib */; };
 		0D2905A021E1C43600D83D60 /* HTZPersonalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29059E21E1C43600D83D60 /* HTZPersonalInformationViewController.m */; };
 		0D2905A121E1C43600D83D60 /* HTZPersonalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D29059F21E1C43600D83D60 /* HTZPersonalInformationViewController.xib */; };
 		0D2905A521E1C7F900D83D60 /* HTZOriginalModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2905A321E1C7F900D83D60 /* HTZOriginalModifyPasswordViewController.m */; };
@@ -76,6 +79,11 @@
 		0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoTongZhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D13956C21DA52E500C2E3A9 /* CALayer+BorderColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+BorderColor.h"; sourceTree = "<group>"; };
 		0D13956D21DA52E500C2E3A9 /* CALayer+BorderColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BorderColor.m"; sourceTree = "<group>"; };
+		0D20754521E83E9300A99694 /* HTZSystemTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZSystemTool.h; sourceTree = "<group>"; };
+		0D20754621E83E9300A99694 /* HTZSystemTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZSystemTool.m; sourceTree = "<group>"; };
+		0D20754A21E877BF00A99694 /* HTZPlaceOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZPlaceOrderViewController.h; sourceTree = "<group>"; };
+		0D20754B21E877BF00A99694 /* HTZPlaceOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZPlaceOrderViewController.m; sourceTree = "<group>"; };
+		0D20754C21E877BF00A99694 /* HTZPlaceOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZPlaceOrderViewController.xib; sourceTree = "<group>"; };
 		0D29059D21E1C43600D83D60 /* HTZPersonalInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZPersonalInformationViewController.h; sourceTree = "<group>"; };
 		0D29059E21E1C43600D83D60 /* HTZPersonalInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZPersonalInformationViewController.m; sourceTree = "<group>"; };
 		0D29059F21E1C43600D83D60 /* HTZPersonalInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZPersonalInformationViewController.xib; sourceTree = "<group>"; };
@@ -213,6 +221,8 @@
 				0D6D467921E345EE00D9C073 /* HTZProgressHUD.h */,
 				0D6D467A21E345EE00D9C073 /* HTZProgressHUD.m */,
 				0D38013821E6437F00D63A1D /* HTZSingleton.h */,
+				0D20754521E83E9300A99694 /* HTZSystemTool.h */,
+				0D20754621E83E9300A99694 /* HTZSystemTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -319,6 +329,9 @@
 			children = (
 				0DDB2FAA21D7D0B100339101 /* HTZHomeViewController.h */,
 				0DDB2FAB21D7D0B100339101 /* HTZHomeViewController.m */,
+				0D20754A21E877BF00A99694 /* HTZPlaceOrderViewController.h */,
+				0D20754B21E877BF00A99694 /* HTZPlaceOrderViewController.m */,
+				0D20754C21E877BF00A99694 /* HTZPlaceOrderViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -597,6 +610,7 @@
 				0D96920721E3C05300A71DE7 /* HTZOrderCategoryCell.xib in Resources */,
 				0D5C0B3B21E2632100BA0974 /* HTZOrderViewController.xib in Resources */,
 				0D33436221E7BAAD00332163 /* HTZModifyPasswordViewController.xib in Resources */,
+				0D20754E21E877BF00A99694 /* HTZPlaceOrderViewController.xib in Resources */,
 				0DF4B7D221CF6105006E6E80 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -664,6 +678,7 @@
 				0D2905A021E1C43600D83D60 /* HTZPersonalInformationViewController.m in Sources */,
 				0D33436D21E7BC0D00332163 /* HTZOrderDetailViewController.m in Sources */,
 				0D96920B21E3C0AC00A71DE7 /* HTZOrderCell.m in Sources */,
+				0D20754D21E877BF00A99694 /* HTZPlaceOrderViewController.m in Sources */,
 				0D2905AF21E1C8CD00D83D60 /* HTZAdviceFeedbackViewController.m in Sources */,
 				0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */,
 				0D33436121E7BAAC00332163 /* HTZForgetPasswordViewController.m in Sources */,
@@ -684,6 +699,7 @@
 				0DF0BAE521E06B63004A5573 /* HTZMeCell.m in Sources */,
 				0DDA16C521E50AC800C1F65F /* HTZOrderCategoryItem.m in Sources */,
 				0D33436621E7BAAD00332163 /* HTZPerfectInformationViewController.m in Sources */,
+				0D20754721E83E9300A99694 /* HTZSystemTool.m in Sources */,
 				0D96920621E3C05300A71DE7 /* HTZOrderCategoryCell.m in Sources */,
 				0D33436321E7BAAD00332163 /* HTZModifyPasswordViewController.m in Sources */,
 				0DDB2FAC21D7D0B100339101 /* HTZHomeViewController.m in Sources */,
