@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,6 +21,45 @@
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soy-dD-Luw">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FE8-mB-xuz" userLabel="背景">
+                            <rect key="frame" x="10" y="10" width="355" height="800"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择厂站:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Eh-AM-QBh">
+                                    <rect key="frame" x="10" y="10" width="62" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="CBa-g9-Uul"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="武昌站" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8h-DY-i00">
+                                    <rect key="frame" x="92" y="10" width="253" height="35"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="3Eh-AM-QBh" firstAttribute="leading" secondItem="FE8-mB-xuz" secondAttribute="leading" constant="10" id="Aoa-oD-r7G"/>
+                                <constraint firstAttribute="trailing" secondItem="F8h-DY-i00" secondAttribute="trailing" constant="10" id="F3c-14-KWA"/>
+                                <constraint firstAttribute="height" constant="800" id="IbW-Pw-DNe"/>
+                                <constraint firstItem="3Eh-AM-QBh" firstAttribute="top" secondItem="FE8-mB-xuz" secondAttribute="top" constant="10" id="P8I-Xk-lNr"/>
+                                <constraint firstItem="F8h-DY-i00" firstAttribute="bottom" secondItem="3Eh-AM-QBh" secondAttribute="bottom" id="QTu-Cb-uP7"/>
+                                <constraint firstItem="F8h-DY-i00" firstAttribute="top" secondItem="3Eh-AM-QBh" secondAttribute="top" id="cVa-xz-cbo"/>
+                                <constraint firstItem="F8h-DY-i00" firstAttribute="leading" secondItem="3Eh-AM-QBh" secondAttribute="trailing" constant="20" id="sIQ-X9-WgT"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="FE8-mB-xuz" firstAttribute="top" secondItem="soy-dD-Luw" secondAttribute="top" constant="10" id="61e-tB-4bj"/>
+                        <constraint firstAttribute="bottom" secondItem="FE8-mB-xuz" secondAttribute="bottom" constant="167" id="DVa-7S-bPI"/>
+                        <constraint firstItem="FE8-mB-xuz" firstAttribute="leading" secondItem="soy-dD-Luw" secondAttribute="leading" constant="10" id="Wh9-vW-yTh"/>
+                        <constraint firstAttribute="trailing" secondItem="FE8-mB-xuz" secondAttribute="trailing" constant="-10" id="nUr-bk-8BA"/>
+                    </constraints>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -28,6 +67,7 @@
                 <constraint firstAttribute="bottom" secondItem="soy-dD-Luw" secondAttribute="bottom" id="6Di-iI-g1k"/>
                 <constraint firstItem="soy-dD-Luw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Rre-II-IzU"/>
                 <constraint firstAttribute="trailing" secondItem="soy-dD-Luw" secondAttribute="trailing" id="ZmG-ka-qq6"/>
+                <constraint firstItem="FE8-mB-xuz" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-20" id="sqI-04-Tqy"/>
                 <constraint firstItem="soy-dD-Luw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xco-bB-FjY"/>
             </constraints>
         </view>

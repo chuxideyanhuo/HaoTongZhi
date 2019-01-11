@@ -7,6 +7,7 @@
 //
 
 #import "HTZHomeViewController.h"
+#import "HTZPlaceOrderViewController.h"
 
 @interface HTZHomeViewController ()
 
@@ -24,6 +25,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    
+    HTZPlaceOrderViewController *placeOrderVC = [[HTZPlaceOrderViewController alloc] init];
+    [self.navigationController pushViewController:placeOrderVC animated:YES];
 }
 @end
