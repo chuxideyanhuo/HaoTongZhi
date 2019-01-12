@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D13956E21DA52E500C2E3A9 /* CALayer+BorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D13956D21DA52E500C2E3A9 /* CALayer+BorderColor.m */; };
 		0D20754721E83E9300A99694 /* HTZSystemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D20754621E83E9300A99694 /* HTZSystemTool.m */; };
 		0D20754D21E877BF00A99694 /* HTZPlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D20754B21E877BF00A99694 /* HTZPlaceOrderViewController.m */; };
 		0D20754E21E877BF00A99694 /* HTZPlaceOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D20754C21E877BF00A99694 /* HTZPlaceOrderViewController.xib */; };
@@ -40,6 +39,7 @@
 		0D33436D21E7BC0D00332163 /* HTZOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D33436C21E7BC0D00332163 /* HTZOrderDetailViewController.m */; };
 		0D5C0B3921E2573500BA0974 /* HTZSettingData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D5C0B3821E2573400BA0974 /* HTZSettingData.plist */; };
 		0D5C0B3B21E2632100BA0974 /* HTZOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D5C0B3A21E2632100BA0974 /* HTZOrderViewController.xib */; };
+		0D5C40B721EA505F0053B6F2 /* HTZTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5C40B621EA505F0053B6F2 /* HTZTextField.m */; };
 		0D6D467B21E345EE00D9C073 /* HTZProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D6D467A21E345EE00D9C073 /* HTZProgressHUD.m */; };
 		0D96920621E3C05300A71DE7 /* HTZOrderCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D96920421E3C05300A71DE7 /* HTZOrderCategoryCell.m */; };
 		0D96920721E3C05300A71DE7 /* HTZOrderCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D96920521E3C05300A71DE7 /* HTZOrderCategoryCell.xib */; };
@@ -77,8 +77,6 @@
 
 /* Begin PBXFileReference section */
 		0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoTongZhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D13956C21DA52E500C2E3A9 /* CALayer+BorderColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+BorderColor.h"; sourceTree = "<group>"; };
-		0D13956D21DA52E500C2E3A9 /* CALayer+BorderColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BorderColor.m"; sourceTree = "<group>"; };
 		0D20754521E83E9300A99694 /* HTZSystemTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZSystemTool.h; sourceTree = "<group>"; };
 		0D20754621E83E9300A99694 /* HTZSystemTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZSystemTool.m; sourceTree = "<group>"; };
 		0D20754A21E877BF00A99694 /* HTZPlaceOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZPlaceOrderViewController.h; sourceTree = "<group>"; };
@@ -128,6 +126,8 @@
 		0D38013821E6437F00D63A1D /* HTZSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZSingleton.h; sourceTree = "<group>"; };
 		0D5C0B3821E2573400BA0974 /* HTZSettingData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HTZSettingData.plist; sourceTree = "<group>"; };
 		0D5C0B3A21E2632100BA0974 /* HTZOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZOrderViewController.xib; sourceTree = "<group>"; };
+		0D5C40B521EA505F0053B6F2 /* HTZTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZTextField.h; sourceTree = "<group>"; };
+		0D5C40B621EA505F0053B6F2 /* HTZTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZTextField.m; sourceTree = "<group>"; };
 		0D6D467921E345EE00D9C073 /* HTZProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZProgressHUD.h; sourceTree = "<group>"; };
 		0D6D467A21E345EE00D9C073 /* HTZProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZProgressHUD.m; sourceTree = "<group>"; };
 		0D96920321E3C05300A71DE7 /* HTZOrderCategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZOrderCategoryCell.h; sourceTree = "<group>"; };
@@ -413,8 +413,6 @@
 				0DDB2F9B21D7C74100339101 /* NSString+HTZExtension.m */,
 				0DDB2F9D21D7C82F00339101 /* UIView+HTZBezier.h */,
 				0DDB2F9E21D7C82F00339101 /* UIView+HTZBezier.m */,
-				0D13956C21DA52E500C2E3A9 /* CALayer+BorderColor.h */,
-				0D13956D21DA52E500C2E3A9 /* CALayer+BorderColor.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -453,6 +451,8 @@
 		0DF4B7F021CF854D006E6E80 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0D5C40B521EA505F0053B6F2 /* HTZTextField.h */,
+				0D5C40B621EA505F0053B6F2 /* HTZTextField.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -671,7 +671,6 @@
 				0D33436521E7BAAD00332163 /* HTZLoginViewController.m in Sources */,
 				0DDB2FA921D7CFCD00339101 /* HTZBaseViewController.m in Sources */,
 				0DDB2FB221D7D10F00339101 /* HTZPlatformViewController.m in Sources */,
-				0D13956E21DA52E500C2E3A9 /* CALayer+BorderColor.m in Sources */,
 				0DF4B7F921CF854D006E6E80 /* AppDelegate.m in Sources */,
 				0DDB2FAF21D7D0DF00339101 /* HTZOrderViewController.m in Sources */,
 				0D2AD25D21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.m in Sources */,
@@ -683,6 +682,7 @@
 				0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */,
 				0D33436121E7BAAC00332163 /* HTZForgetPasswordViewController.m in Sources */,
 				0DF4B80A21CF87CF006E6E80 /* HTZTabBarController.m in Sources */,
+				0D5C40B721EA505F0053B6F2 /* HTZTextField.m in Sources */,
 				0DDB2F9C21D7C74100339101 /* NSString+HTZExtension.m in Sources */,
 				0DDB2FA621D7CF7200339101 /* HTZNetworkTool.m in Sources */,
 				0DF0BAE921E06F1A004A5573 /* HTZMeItem.m in Sources */,

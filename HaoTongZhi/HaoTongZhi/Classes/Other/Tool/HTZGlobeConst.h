@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HTZNavigationController.h"
 #import "UIView+HTZFrame.h"
 #import "UIBarButtonItem+HTZExtension.h"
 #import "UIColor+HTZHex.h"

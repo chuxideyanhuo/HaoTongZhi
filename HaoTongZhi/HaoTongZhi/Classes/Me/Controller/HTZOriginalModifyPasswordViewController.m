@@ -29,8 +29,8 @@
 
 - (IBAction)confirmSubmitButtonClick:(UIButton *)sender
 {
-    HTZLoginViewController *loginVC = [[HTZLoginViewController alloc] init];
-    [self presentViewController:loginVC animated:YES completion:^{
+    HTZNavigationController *nav = [[HTZNavigationController alloc] initWithRootViewController:[HTZLoginViewController new]];
+    [self presentViewController:nav animated:YES completion:^{
         self.tabBarController.selectedIndex = 0;
         [self.navigationController popToRootViewControllerAnimated:NO];
         
