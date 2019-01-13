@@ -29,7 +29,20 @@
     self.layer.cornerRadius = 4.0;
     self.layer.masksToBounds = YES;
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.layer.borderWidth = 1;
+    self.layer.borderWidth = 0.6;
+    
+    CGFloat viewH = self.frame.size.height;
+    
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HTZMargin * 0.5, 0)];
+    leftView.backgroundColor = [UIColor redColor];
+    self.leftView = leftView;
+    self.leftViewMode = UITextFieldViewModeAlways;
+    
+//    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HTZMargin * 2, viewH)];
+//    rightView.backgroundColor = HTZMainColor;
+//    self.rightView = rightView;
+//    self.rightViewMode = UITextFieldViewModeAlways;
 }
+
 
 @end

@@ -10,4 +10,6 @@
 
 @interface UIBarButtonItem (HTZExtension)
 + (instancetype)itemWithImage:(NSString *)image highImage:(NSString *)highImage target:(id)target action:(SEL)action;
++ (instancetype)itemRightWithTitle:(NSString *)title titleColor:(UIColor *)titleColor highTitle:(NSString *)highTitle highTitleColor:(UIColor *)highTitleColor target:(id)target action:(SEL)action;
+
 @end
