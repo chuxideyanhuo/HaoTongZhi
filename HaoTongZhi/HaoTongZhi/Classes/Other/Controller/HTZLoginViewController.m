@@ -55,7 +55,7 @@
         HTZLog(@"responseObj------%@",responseObj);
         [HTZProgressHUD dismissHUD];
         if ([responseObj[@"code"] integerValue] == 0) {
-            
+            self.tabBarController.viewControllers re
             //需要存储用户信息
             [self dismissViewControllerAnimated:YES completion:nil];
         }else{
