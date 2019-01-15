@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.barTintColor = [UIColor whiteColor];
+//    self.navigationBar.barTintColor = [UIColor whiteColor];
 }
 
 /**
@@ -28,8 +28,8 @@
     if (self.childViewControllers.count > 0) { // 如果push进来的不是第一个控制器
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:@"返回" forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"navigationButtonReturnClick"] forState:UIControlStateHighlighted];
+        [button setImage:[UIImage imageNamed:@"navigation_back"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"navigation_back_click"] forState:UIControlStateHighlighted];
         button.titleLabel.font = [UIFont systemFontOfSize:14];
         button.size = CGSizeMake(70, 30);
         // 让按钮内部的所有内容左对齐

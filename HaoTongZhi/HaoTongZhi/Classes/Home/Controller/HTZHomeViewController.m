@@ -9,8 +9,8 @@
 #import "HTZHomeViewController.h"
 #import "HTZPlaceOrderViewController.h"
 
-@interface HTZHomeViewController ()
-
+@interface HTZHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation HTZHomeViewController
@@ -18,11 +18,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
-    bt.backgroundColor = [UIColor redColor];
-    [self.view addSubview:bt];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HTZSCREENW, 100)];
+    view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.barTintColor = HTZMainColor;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     HTZPlaceOrderViewController *placeOrderVC = [[HTZPlaceOrderViewController alloc] init];
