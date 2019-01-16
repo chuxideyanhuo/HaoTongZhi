@@ -26,10 +26,10 @@
 
 - (void)setupLayer
 {
-    self.layer.cornerRadius = 4.0;
+    self.layer.cornerRadius = HTZLayerCornerRadius;
     self.layer.masksToBounds = YES;
     self.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.layer.borderWidth = 0.6;
+    self.layer.borderWidth = HTZLayerBorderWidth;
     
     CGFloat viewH = self.frame.size.height;
     
@@ -38,10 +38,10 @@
     self.leftView = leftView;
     self.leftViewMode = UITextFieldViewModeAlways;
     
-//    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HTZMargin * 2, viewH)];
-//    rightView.backgroundColor = HTZMainColor;
-//    self.rightView = rightView;
-//    self.rightViewMode = UITextFieldViewModeAlways;
+    UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HTZMargin * 2, viewH)];
+    rightView.backgroundColor = HTZMainColor;
+    self.rightView = rightView;
+    self.rightViewMode = UITextFieldViewModeAlways;
 }
 
 

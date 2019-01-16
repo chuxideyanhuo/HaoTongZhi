@@ -20,6 +20,7 @@
 		0D2905B021E1C8CD00D83D60 /* HTZAdviceFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2905AE21E1C8CD00D83D60 /* HTZAdviceFeedbackViewController.xib */; };
 		0D2905B421E1C91200D83D60 /* HTZSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2905B221E1C91200D83D60 /* HTZSettingViewController.m */; };
 		0D2905B521E1C91200D83D60 /* HTZSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2905B321E1C91200D83D60 /* HTZSettingViewController.xib */; };
+		0D2A9F9E21EECBBF00FB2191 /* HTZSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2A9F9D21EECBBF00FB2191 /* HTZSelectView.m */; };
 		0D2AD25D21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2AD25B21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.m */; };
 		0D2AD25E21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D2AD25C21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.xib */; };
 		0D2AD26621E756C80086B4EE /* HTZAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2AD26421E756C80086B4EE /* HTZAboutUsViewController.m */; };
@@ -109,6 +110,8 @@
 		0D2905B121E1C91200D83D60 /* HTZSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZSettingViewController.h; sourceTree = "<group>"; };
 		0D2905B221E1C91200D83D60 /* HTZSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZSettingViewController.m; sourceTree = "<group>"; };
 		0D2905B321E1C91200D83D60 /* HTZSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZSettingViewController.xib; sourceTree = "<group>"; };
+		0D2A9F9C21EECBBF00FB2191 /* HTZSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZSelectView.h; sourceTree = "<group>"; };
+		0D2A9F9D21EECBBF00FB2191 /* HTZSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZSelectView.m; sourceTree = "<group>"; };
 		0D2AD25A21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZModifyPersonalInformationViewController.h; sourceTree = "<group>"; };
 		0D2AD25B21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZModifyPersonalInformationViewController.m; sourceTree = "<group>"; };
 		0D2AD25C21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZModifyPersonalInformationViewController.xib; sourceTree = "<group>"; };
@@ -501,6 +504,8 @@
 			children = (
 				0D5C40B521EA505F0053B6F2 /* HTZTextField.h */,
 				0D5C40B621EA505F0053B6F2 /* HTZTextField.m */,
+				0D2A9F9C21EECBBF00FB2191 /* HTZSelectView.h */,
+				0D2A9F9D21EECBBF00FB2191 /* HTZSelectView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -728,6 +733,7 @@
 				0DDB2FB221D7D10F00339101 /* HTZPlatformViewController.m in Sources */,
 				0DF4B7F921CF854D006E6E80 /* AppDelegate.m in Sources */,
 				0DDB2FAF21D7D0DF00339101 /* HTZOrderViewController.m in Sources */,
+				0D2A9F9E21EECBBF00FB2191 /* HTZSelectView.m in Sources */,
 				0D2AD25D21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.m in Sources */,
 				0D2905A021E1C43600D83D60 /* HTZPersonalInformationViewController.m in Sources */,
 				0D33436D21E7BC0D00332163 /* HTZOrderDetailViewController.m in Sources */,
