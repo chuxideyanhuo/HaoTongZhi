@@ -24,6 +24,7 @@
         _contentTextField.textColor = HTZBlackFontColor;
         _contentTextField.borderStyle = UITextBorderStyleNone;
         _contentTextField.backgroundColor = HTZGlobalBackgroundColor;
+        _contentTextField.text = @"点我选择";
         
         UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HTZMargin * 0.5, 0)];
         leftView.backgroundColor = [UIColor redColor];
