@@ -40,8 +40,14 @@
 #define HTZRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
 /** 屏幕宽高 */
-#define HTZSCREENW  [UIScreen mainScreen].bounds.size.width
+#define HTZSCREENW [UIScreen mainScreen].bounds.size.width
 #define HTZSCREENH [UIScreen mainScreen].bounds.size.height
+
+/** 偏好设置对象 */
+#define HTZUserDefaults [NSUserDefaults standardUserDefaults]
+
+/** 通知对象 */
+#define HTZNotificationCenter [NSNotificationCenter defaultCenter]
 
 /** 域名 */
 UIKIT_EXTERN NSString * const HTZDomainString;
@@ -90,6 +96,7 @@ UIKIT_EXTERN NSString * const HTZCommentCustomerInterface;
 /** 搅拌厂评价接口 */
 UIKIT_EXTERN NSString * const HTZCommentMixPlantInterface;
 
+/***************************************数据常量******************************************/
 /** 边缘距离 */
 UIKIT_EXTERN CGFloat const HTZMargin;
 /** iPhoneX Tabbar的高度 */
@@ -98,3 +105,12 @@ UIKIT_EXTERN CGFloat const HTZIPhoneXTabbarHeight;
 UIKIT_EXTERN CGFloat const HTZLayerBorderWidth;
 /** Layer圆角 */
 UIKIT_EXTERN CGFloat const HTZLayerCornerRadius;
+
+/***************************************通知******************************************/
+/** 修改TabBar子控制器 */
+UIKIT_EXTERN NSString * const HTZModifyTabBarChildController;
+
+/** 自动登录key */
+UIKIT_EXTERN NSString * const HTZAutomaticLoginKey;
+
+

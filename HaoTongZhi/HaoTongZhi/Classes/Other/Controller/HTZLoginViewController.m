@@ -13,6 +13,7 @@
 @interface HTZLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *automaticLoginButton;
 
 @end
 
@@ -22,6 +23,11 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
+    
+    NSInteger automaticLogin = [HTZUserDefaults integerForKey:HTZAutomaticLoginKey];
+    if (automaticLogin) {
+        self.automaticLoginButton.selected = YES;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -39,7 +45,8 @@
 #pragma mark - 显示密码
 - (IBAction)showPassword:(UIButton *)sender
 {
-    HTZLogFunc;
+    sender.selected = !sender.selected;
+    self.passwordTextField.secureTextEntry = NO;
 }
 
 #pragma mark - 登录
@@ -55,6 +62,7 @@
         HTZLog(@"responseObj------%@",responseObj);
         [HTZProgressHUD dismissHUD];
         if ([responseObj[@"code"] integerValue] == 0) {
+            [HTZNotificationCenter postNotificationName:HTZModifyTabBarChildController object:nil];
             //需要存储用户信息
             [self dismissViewControllerAnimated:YES completion:nil];
         }else{
@@ -83,7 +91,13 @@
 #pragma mark - 自动登录
 - (IBAction)autoLoginButtonClick:(UIButton *)sender
 {
-    HTZLogFunc;
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        [HTZUserDefaults setInteger:1 forKey:HTZAutomaticLoginKey];
+    }else{
+        [HTZUserDefaults setInteger:0 forKey:HTZAutomaticLoginKey];
+    }
+    [HTZUserDefaults synchronize];
 }
 
 

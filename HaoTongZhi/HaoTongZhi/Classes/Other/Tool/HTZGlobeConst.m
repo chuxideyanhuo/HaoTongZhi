@@ -55,3 +55,9 @@ CGFloat const HTZIPhoneXTabbarHeight = 83;
 CGFloat const HTZLayerBorderWidth = 0.6;
 /** Layer圆角 */
 CGFloat const HTZLayerCornerRadius = 4.0;
+
+/** Layer圆角 */
+NSString * const HTZModifyTabBarChildController = @"ModifyTabBarChildController";
+
+/** 自动登录key */
+NSString * const HTZAutomaticLoginKey = @"AutomaticLoginKey";

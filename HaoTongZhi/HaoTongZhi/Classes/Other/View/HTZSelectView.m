@@ -23,15 +23,18 @@
         _contentTextField.font = [UIFont systemFontOfSize:14];
         _contentTextField.textColor = HTZBlackFontColor;
         _contentTextField.borderStyle = UITextBorderStyleNone;
+        _contentTextField.backgroundColor = HTZGlobalBackgroundColor;
         
         UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HTZMargin * 0.5, 0)];
         leftView.backgroundColor = [UIColor redColor];
         _contentTextField.leftView = leftView;
         _contentTextField.leftViewMode = UITextFieldViewModeAlways;
         
-        UIImage *image = [UIImage imageNamed:@"order_select_triangle"];
-        UIImageView *rightView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 9, HTZMargin * 2, 18)];
-        rightView.image = [UIImage imageNamed:@"order_select_triangle"];
+        CGFloat viewH = self.frame.size.height;
+        UIView *rightView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, HTZMargin * 1.5, viewH)];
+        UIImageView *imgview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 9, HTZMargin * 0.8, 18)];
+        imgview.image = [UIImage imageNamed:@"order_select_triangle"];
+        [rightView addSubview:imgview];
         self.contentTextField.rightView = rightView;
         self.contentTextField.rightViewMode = UITextFieldViewModeAlways;
     }
@@ -51,8 +54,8 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setupLayer];
         [self setupSubviews];
+        [self setupLayer];
     }
     return self;
 }
@@ -60,8 +63,8 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setupLayer];
     [self setupSubviews];
+    [self setupLayer];
 }
 
 - (void)setupSubviews
@@ -107,6 +110,12 @@
 //    rightView.backgroundColor = HTZMainColor;
 //    self.contentTextField.rightView = rightView;
 //    self.contentTextField.rightViewMode = UITextFieldViewModeAlways;
+}
+
+- (void)setContentString:(NSString *)contentString
+{
+    _contentString = contentString;
+    self.contentTextField.text = contentString;
 }
 
 - (void)selectButtonClick:(UIButton *)sender

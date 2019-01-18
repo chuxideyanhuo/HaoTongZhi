@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HTZSelectView : UIView
-
+@property (nonatomic, copy) NSString *contentString;
 @end
