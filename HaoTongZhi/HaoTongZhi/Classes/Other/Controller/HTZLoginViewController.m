@@ -45,8 +45,8 @@
 #pragma mark - 显示密码
 - (IBAction)showPassword:(UIButton *)sender
 {
+    self.passwordTextField.secureTextEntry = sender.selected;
     sender.selected = !sender.selected;
-    self.passwordTextField.secureTextEntry = NO;
 }
 
 #pragma mark - 登录

@@ -21,7 +21,7 @@
     self.navigationItem.title = @"我的模版";
     
     // 设置导航栏右边的按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"tabBar_home_icon" highImage:@"tabBar_home_click_icon" target:self action:@selector(createTemplateClick)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"home_template_plus_sign" highImage:@"home_template_plus_sign" target:self action:@selector(createTemplateClick)];
 }
 
 - (void)createTemplateClick

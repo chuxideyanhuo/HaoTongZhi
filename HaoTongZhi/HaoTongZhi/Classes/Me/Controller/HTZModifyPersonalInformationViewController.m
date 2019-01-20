@@ -48,4 +48,16 @@
 {
     [self.view endEditing:YES];
 }
+
+- (IBAction)manButtonClick:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    self.womanButton.selected = NO;
+}
+
+- (IBAction)womanButtonClick:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    self.manButton.selected = NO;
+}
 @end

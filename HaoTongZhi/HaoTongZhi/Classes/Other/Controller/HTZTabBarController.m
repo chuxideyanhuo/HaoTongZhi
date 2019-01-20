@@ -86,8 +86,8 @@
 
 - (void)modifyChildController
 {
-    [self.controllers removeObjectAtIndex:2];
-    self.viewControllers = self.controllers;
+//    [self.controllers removeObjectAtIndex:2];
+//    self.viewControllers = self.controllers;
 }
 
 /**

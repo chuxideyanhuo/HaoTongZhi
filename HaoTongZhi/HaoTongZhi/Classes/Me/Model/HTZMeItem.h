@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface HTZMeItem : NSObject
+/** 图片 */
+@property (nonatomic, copy) NSString *imageName;
 /** 标题 */
 @property (nonatomic, copy) NSString *title;
 /** 类型 */

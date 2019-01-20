@@ -3,30 +3,40 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>imageName</key>
+		<string>me_personal_information</string>
 		<key>title</key>
 		<string>我的资料</string>
 		<key>type</key>
 		<string>0</string>
 	</dict>
 	<dict>
+		<key>imageName</key>
+		<string>me_modify_password</string>
 		<key>title</key>
 		<string>修改密码</string>
 		<key>type</key>
 		<string>1</string>
 	</dict>
 	<dict>
+		<key>imageName</key>
+		<string>me_invite_friend</string>
 		<key>title</key>
 		<string>邀请好友</string>
 		<key>type</key>
 		<string>2</string>
 	</dict>
 	<dict>
+		<key>imageName</key>
+		<string>me_advice_feedback</string>
 		<key>title</key>
 		<string>意见反馈</string>
 		<key>type</key>
 		<string>3</string>
 	</dict>
 	<dict>
+		<key>imageName</key>
+		<string>me_setting</string>
 		<key>title</key>
 		<string>设       置</string>
 		<key>type</key>

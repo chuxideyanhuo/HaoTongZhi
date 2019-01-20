@@ -7,8 +7,8 @@
 //
 
 #import "HTZSettingViewController.h"
-#import "HTZMeCell.h"
-#import "HTZMeItem.h"
+#import "HTZSettingCell.h"
+#import "HTZSettingItem.h"
 #import "HTZLoginViewController.h"
 
 static NSString * const HTZSettingId = @"setting";
@@ -20,6 +20,7 @@ typedef enum : NSUInteger {
 
 @interface HTZSettingViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIButton *exitLoginButton;
 @property (nonatomic, strong) NSMutableArray *options;
 
 @end
@@ -44,6 +45,10 @@ typedef enum : NSUInteger {
     
     //初始化子控件
     [self setupSubview];
+    
+    self.exitLoginButton.layer.cornerRadius = HTZLayerCornerRadius;
+    self.exitLoginButton.layer.borderWidth = HTZLayerBorderWidth;
+    self.exitLoginButton.layer.borderColor = HTZMainColor.CGColor;
 }
 
 #pragma mark - 初始化数据
@@ -51,14 +56,14 @@ typedef enum : NSUInteger {
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"HTZSettingData" ofType:@"plist"];
     NSArray *array = [NSArray arrayWithContentsOfFile:path];
-    self.options = [HTZMeItem mj_objectArrayWithKeyValuesArray:array];
+    self.options = [HTZSettingItem mj_objectArrayWithKeyValuesArray:array];
 }
 
 #pragma mark - 初始化子控件
 - (void)setupSubview
 {
     // 注册
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTZMeCell class]) bundle:nil] forCellReuseIdentifier:HTZSettingId];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTZSettingCell class]) bundle:nil] forCellReuseIdentifier:HTZSettingId];
     
     // 设置代理
     self.tableView.delegate = self;
@@ -78,7 +83,7 @@ typedef enum : NSUInteger {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HTZMeCell *cell = [tableView dequeueReusableCellWithIdentifier:HTZSettingId];
+    HTZSettingCell *cell = [tableView dequeueReusableCellWithIdentifier:HTZSettingId];
     cell.item = self.options[indexPath.row];
     return cell;
 }
@@ -86,7 +91,7 @@ typedef enum : NSUInteger {
 #pragma mark - <UITableViewDelegate>
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    HTZMeItem *item = self.options[indexPath.row];
+    HTZSettingItem *item = self.options[indexPath.row];
     
     switch ([item.type integerValue]) {
         case HTZSettingOptionTypeClearCache:

@@ -121,12 +121,8 @@
 
 - (void)selectButtonClick:(UIButton *)sender
 {
-    
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
     HTZLogFunc;
 }
+
 
 @end

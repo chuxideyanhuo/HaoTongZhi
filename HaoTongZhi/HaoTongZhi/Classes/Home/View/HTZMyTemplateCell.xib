@@ -29,8 +29,8 @@
                             <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部位:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-jT-Q4s">
-                        <rect key="frame" x="10" y="10" width="253" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部       位:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-jT-Q4s">
+                        <rect key="frame" x="10" y="10" width="63" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="YaT-rc-iqt"/>
                         </constraints>
@@ -38,14 +38,21 @@
                         <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="方量:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPB-Q5-V3e">
-                        <rect key="frame" x="10" y="40" width="253" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0z-Zw-NEK">
+                        <rect key="frame" x="153" y="44" width="42" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="方        量:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPB-Q5-V3e">
+                        <rect key="frame" x="10" y="40" width="63" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="计划时间:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXo-eH-PQI">
-                        <rect key="frame" x="10" y="70" width="253" height="30"/>
+                        <rect key="frame" x="10" y="70" width="63" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -70,7 +77,6 @@
                     <constraint firstItem="FXo-eH-PQI" firstAttribute="top" secondItem="jPB-Q5-V3e" secondAttribute="bottom" id="V9u-yK-NxQ"/>
                     <constraint firstItem="FXo-eH-PQI" firstAttribute="leading" secondItem="jPB-Q5-V3e" secondAttribute="leading" id="Wpb-G5-MdH"/>
                     <constraint firstItem="jPB-Q5-V3e" firstAttribute="height" secondItem="ctR-jT-Q4s" secondAttribute="height" id="Yi1-Dj-aqq"/>
-                    <constraint firstItem="ctR-jT-Q4s" firstAttribute="trailing" secondItem="vrc-tU-2D0" secondAttribute="leading" constant="-10" id="iNg-i8-7Ov"/>
                     <constraint firstItem="mAG-tj-BGv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="k3f-Wz-sx0"/>
                     <constraint firstAttribute="bottom" secondItem="mAG-tj-BGv" secondAttribute="bottom" id="nV4-br-3A9"/>
                     <constraint firstAttribute="trailing" secondItem="vrc-tU-2D0" secondAttribute="trailing" constant="10" id="p6R-iu-G8z"/>

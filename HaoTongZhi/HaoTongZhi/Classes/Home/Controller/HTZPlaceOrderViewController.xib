@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,12 +11,23 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HTZPlaceOrderViewController">
             <connections>
+                <outlet property="antifreezeLevelView" destination="gWe-1Z-R7x" id="uWJ-JU-bei"/>
                 <outlet property="cancelButton" destination="Teb-XR-qN2" id="vSS-Uw-Lqb"/>
+                <outlet property="capacityTextField" destination="cIf-9b-uWs" id="dof-Gn-7MH"/>
+                <outlet property="cementGradeView" destination="bzY-Ne-ubH" id="r5G-DZ-16T"/>
+                <outlet property="cementMortarCountTextField" destination="idu-x4-0Xh" id="Abj-A1-CoV"/>
+                <outlet property="constructionSiteTextField" destination="Uv0-zx-Tfj" id="l5E-QW-bvp"/>
                 <outlet property="contractNoView" destination="IQF-og-jrW" id="2pw-e2-HqD"/>
+                <outlet property="flexuralLevelView" destination="45W-hY-Y9q" id="sB4-Ev-aNq"/>
+                <outlet property="haulDistanceTextField" destination="rRy-VZ-TcJ" id="11r-ta-Wbb"/>
+                <outlet property="imperviousLevelView" destination="bLB-bF-pXk" id="Xi8-9Y-KXe"/>
                 <outlet property="projectNameTextField" destination="Ybb-NF-pVg" id="SRH-zK-V9H"/>
+                <outlet property="pumperTypeView" destination="zhJ-xw-WI8" id="JDz-bO-qbG"/>
+                <outlet property="slumpView" destination="P66-fb-07z" id="yH8-iD-K80"/>
                 <outlet property="specialDemandView" destination="JOG-r3-BBh" id="jH0-kq-IXb"/>
                 <outlet property="stationView" destination="Ydu-2o-1bV" id="LUz-1w-mxi"/>
                 <outlet property="submitButton" destination="2yI-9g-S20" id="SJZ-gY-0AI"/>
+                <outlet property="transportDemandView" destination="bcJ-CT-Dzc" id="AHc-D3-ohq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -221,23 +232,18 @@
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="submitButtonClick:" destination="-1" eventType="touchUpInside" id="FCc-kU-CZY"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Teb-XR-qN2">
                                     <rect key="frame" x="20" y="793" width="315" height="40"/>
                                     <state key="normal" title="取消">
                                         <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="3"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
-                                            <color key="value" red="0.0039215686269999999" green="0.50196078430000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                            <integer key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="cancelButtonClick:" destination="-1" eventType="touchUpInside" id="KMb-WN-6E0"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

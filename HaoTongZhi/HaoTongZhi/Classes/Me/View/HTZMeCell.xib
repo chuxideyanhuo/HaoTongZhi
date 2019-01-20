@@ -18,18 +18,25 @@
                 <rect key="frame" x="0.0" y="0.0" width="406" height="129.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8l-tv-pgM" userLabel="图片">
+                        <rect key="frame" x="10" y="52" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="J7g-Nt-6bq"/>
+                            <constraint firstAttribute="width" constant="24" id="QcV-xr-e8y"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lp1-Ck-4Xa">
-                        <rect key="frame" x="10" y="0.0" width="31" height="128.5"/>
+                        <rect key="frame" x="44" y="0.0" width="31" height="129.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="I9X-7U-y1S" userLabel="箭头">
-                        <rect key="frame" x="380" y="57" width="16" height="16"/>
+                        <rect key="frame" x="389" y="59" width="7" height="12"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="16" id="kFY-AU-M37"/>
-                            <constraint firstAttribute="height" constant="16" id="sW2-10-IJB"/>
+                            <constraint firstAttribute="width" constant="7" id="kFY-AU-M37"/>
+                            <constraint firstAttribute="height" constant="12" id="sW2-10-IJB"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIw-fk-Fil" userLabel="线">
@@ -41,23 +48,26 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="lp1-Ck-4Xa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="2LL-yZ-1pT"/>
                     <constraint firstItem="I9X-7U-y1S" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7aF-wy-Mvn"/>
                     <constraint firstItem="lp1-Ck-4Xa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8cj-W9-OP8"/>
-                    <constraint firstAttribute="bottom" secondItem="lp1-Ck-4Xa" secondAttribute="bottom" constant="1" id="8ow-s9-e7k"/>
+                    <constraint firstAttribute="bottom" secondItem="lp1-Ck-4Xa" secondAttribute="bottom" id="8ow-s9-e7k"/>
                     <constraint firstAttribute="trailing" secondItem="YIw-fk-Fil" secondAttribute="trailing" constant="10" id="9JM-cg-Get"/>
                     <constraint firstItem="YIw-fk-Fil" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Idk-wH-xOP"/>
+                    <constraint firstItem="l8l-tv-pgM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Mf3-l5-EBm"/>
                     <constraint firstAttribute="bottom" secondItem="YIw-fk-Fil" secondAttribute="top" id="Qm0-py-RtB"/>
+                    <constraint firstItem="l8l-tv-pgM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Upe-sT-na4"/>
+                    <constraint firstItem="lp1-Ck-4Xa" firstAttribute="leading" secondItem="l8l-tv-pgM" secondAttribute="trailing" constant="10" id="eXQ-ah-99d"/>
                     <constraint firstAttribute="trailing" secondItem="I9X-7U-y1S" secondAttribute="trailing" constant="10" id="sAR-fL-hFf"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imgView" destination="l8l-tv-pgM" id="ACE-sG-iDS"/>
                 <outlet property="optionLabel" destination="lp1-Ck-4Xa" id="Ge1-3a-KwT"/>
             </connections>
             <point key="canvasLocation" x="62" y="-31"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="me_right_arrow" width="16" height="16"/>
+        <image name="me_right_arrow" width="7" height="12"/>
     </resources>
 </document>

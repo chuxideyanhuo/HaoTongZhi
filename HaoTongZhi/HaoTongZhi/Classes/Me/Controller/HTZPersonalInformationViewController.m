@@ -39,7 +39,7 @@
     self.navigationController.navigationBar.translucent = NO;
     
     // 设置导航栏右边的按钮
-    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"tabBar_home_icon" highImage:@"tabBar_home_click_icon" target:self action:@selector(modifyPersonalInformationClick)];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"me_editor_personal_information" highImage:@"me_editor_personal_information" target:self action:@selector(modifyPersonalInformationClick)];
 }
 
 - (void)modifyPersonalInformationClick
@@ -47,4 +47,17 @@
     HTZModifyPersonalInformationViewController *modifyVC = [[HTZModifyPersonalInformationViewController alloc] init];
     [self.navigationController pushViewController:modifyVC animated:YES];
 }
+
+- (IBAction)manButtonClick:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    self.womanButton.selected = NO;
+}
+
+- (IBAction)womanButtonClick:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    self.manButton.selected = NO;
+}
+
 @end

@@ -10,6 +10,7 @@
 #import "HTZMeItem.h"
 
 @interface HTZMeCell()
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UILabel *optionLabel;
 
 @end
@@ -24,6 +25,7 @@
 - (void)setItem:(HTZMeItem *)item
 {
     _item = item;
+    self.imgView.image = [UIImage imageNamed:item.imageName];
     self.optionLabel.text = item.title;
 }
 
