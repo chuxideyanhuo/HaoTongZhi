@@ -1,15 +1,14 @@
 //
-//  HTZMyTemplateCell.m
+//  HTZMyDraftCell.m
 //  HaoTongZhi
 //
-//  Created by liuzhiyong on 2019/1/13.
+//  Created by liuzhiyong on 2019/1/21.
 //  Copyright © 2019年 com.cscec.xbjs. All rights reserved.
 //
 
-#import "HTZMyTemplateCell.h"
-#import "HTZMyTemplateItem.h"
+#import "HTZMyDraftCell.h"
 
-@interface HTZMyTemplateCell()
+@interface HTZMyDraftCell ()
 /** 部位 */
 @property (weak, nonatomic) IBOutlet UILabel *regionContentLabel;
 /** 方量 */
@@ -19,20 +18,19 @@
 
 @end
 
-@implementation HTZMyTemplateCell
+@implementation HTZMyDraftCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
-- (void)setItem:(HTZMyTemplateItem *)item
+- (void)setItem:(HTZMyDraftItem *)item
 {
     _item = item;
 //    self.regionContentLabel.text = ;
 //    self.capacityContentLabel.text = ;
 //    self.dateContentLabel.text = ;
 }
-
 
 @end

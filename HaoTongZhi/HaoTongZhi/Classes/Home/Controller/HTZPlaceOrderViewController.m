@@ -22,7 +22,7 @@
 /** 日期date */
 /** 运距haulDistance */
 @property (weak, nonatomic) IBOutlet HTZTextField *haulDistanceTextField;
-/** 施工部位constructionSite */
+/** 施工部位construction region */
 @property (weak, nonatomic) IBOutlet HTZTextField *constructionSiteTextField;
 /** 方量capacity */
 @property (weak, nonatomic) IBOutlet HTZTextField *capacityTextField;

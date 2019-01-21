@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HTZProductionPlanCell : UITableViewCell
+@class HTZProductionPlanItem;
 
+@interface HTZProductionPlanCell : UITableViewCell
+/** 模型 */
+@property (nonatomic, strong) HTZProductionPlanItem *item;
 @end

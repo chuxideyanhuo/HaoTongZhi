@@ -8,6 +8,22 @@
 
 #import "HTZProductionPlanCell.h"
 
+@interface HTZProductionPlanCell ()
+/** 工程名称 */
+@property (weak, nonatomic) IBOutlet UILabel *projectNameLabel;
+/** 部位 */
+@property (weak, nonatomic) IBOutlet UILabel *regiontLabel;
+/** 标号 */
+@property (weak, nonatomic) IBOutlet UILabel *cementGradeLabel;
+/** 方式 */
+@property (weak, nonatomic) IBOutlet UILabel *wayLabel;
+/** 方量 */
+@property (weak, nonatomic) IBOutlet UILabel *capacityLabel;
+/** 日期 */
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+
+@end
+
 @implementation HTZProductionPlanCell
 
 - (void)awakeFromNib {
@@ -15,10 +31,15 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setItem:(HTZProductionPlanItem *)item
+{
+    _item = item;
+//    self.projectNameLabel.text = ;
+//    self.regiontLabel.text = ;
+//    self.cementGradeLabel.text = ;
+//    self.wayLabel.text = ;
+//    self.capacityLabel.text = ;
+//    self.dateLabel.text = ;
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "HTZHomeViewController.h"
 #import "HTZPlaceOrderViewController.h"
+#import "HTZMyDraftViewController.h"
+#import "HTZMyTemplateViewController.h"
 #import "HTZProductionPlanViewController.h"
 
 @interface HTZHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -49,8 +51,12 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    HTZProductionPlanViewController *productionPlanVC = [[HTZProductionPlanViewController alloc] init];
-    [self.navigationController pushViewController:productionPlanVC animated:YES];
+    HTZMyDraftViewController *myDraftVC = [[HTZMyDraftViewController alloc] init];
+    [self.navigationController pushViewController:myDraftVC animated:YES];
+    
+//    HTZProductionPlanViewController *productionPlanVC = [[HTZProductionPlanViewController alloc] init];
+//    [self.navigationController pushViewController:productionPlanVC animated:YES];
+    
 //    HTZPlaceOrderViewController *placeOrderVC = [[HTZPlaceOrderViewController alloc] init];
 //    [self.navigationController pushViewController:placeOrderVC animated:YES];
 }

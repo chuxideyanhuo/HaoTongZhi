@@ -11,6 +11,10 @@
 		0D20754721E83E9300A99694 /* HTZSystemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D20754621E83E9300A99694 /* HTZSystemTool.m */; };
 		0D20754D21E877BF00A99694 /* HTZPlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D20754B21E877BF00A99694 /* HTZPlaceOrderViewController.m */; };
 		0D20754E21E877BF00A99694 /* HTZPlaceOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D20754C21E877BF00A99694 /* HTZPlaceOrderViewController.xib */; };
+		0D22931E21F5771B00917B3B /* HTZMyTemplateItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D22931D21F5771B00917B3B /* HTZMyTemplateItem.m */; };
+		0D22932121F57A7200917B3B /* HTZMyDraftItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D22932021F57A7200917B3B /* HTZMyDraftItem.m */; };
+		0D22932521F57AA600917B3B /* HTZMyDraftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D22932321F57AA600917B3B /* HTZMyDraftCell.m */; };
+		0D22932621F57AA600917B3B /* HTZMyDraftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D22932421F57AA600917B3B /* HTZMyDraftCell.xib */; };
 		0D2905A021E1C43600D83D60 /* HTZPersonalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29059E21E1C43600D83D60 /* HTZPersonalInformationViewController.m */; };
 		0D2905A121E1C43600D83D60 /* HTZPersonalInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D29059F21E1C43600D83D60 /* HTZPersonalInformationViewController.xib */; };
 		0D2905A521E1C7F900D83D60 /* HTZOriginalModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2905A321E1C7F900D83D60 /* HTZOriginalModifyPasswordViewController.m */; };
@@ -109,6 +113,13 @@
 		0D20754A21E877BF00A99694 /* HTZPlaceOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZPlaceOrderViewController.h; sourceTree = "<group>"; };
 		0D20754B21E877BF00A99694 /* HTZPlaceOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZPlaceOrderViewController.m; sourceTree = "<group>"; };
 		0D20754C21E877BF00A99694 /* HTZPlaceOrderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZPlaceOrderViewController.xib; sourceTree = "<group>"; };
+		0D22931C21F5771B00917B3B /* HTZMyTemplateItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZMyTemplateItem.h; sourceTree = "<group>"; };
+		0D22931D21F5771B00917B3B /* HTZMyTemplateItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZMyTemplateItem.m; sourceTree = "<group>"; };
+		0D22931F21F57A7200917B3B /* HTZMyDraftItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZMyDraftItem.h; sourceTree = "<group>"; };
+		0D22932021F57A7200917B3B /* HTZMyDraftItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZMyDraftItem.m; sourceTree = "<group>"; };
+		0D22932221F57AA600917B3B /* HTZMyDraftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZMyDraftCell.h; sourceTree = "<group>"; };
+		0D22932321F57AA600917B3B /* HTZMyDraftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZMyDraftCell.m; sourceTree = "<group>"; };
+		0D22932421F57AA600917B3B /* HTZMyDraftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZMyDraftCell.xib; sourceTree = "<group>"; };
 		0D29059D21E1C43600D83D60 /* HTZPersonalInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZPersonalInformationViewController.h; sourceTree = "<group>"; };
 		0D29059E21E1C43600D83D60 /* HTZPersonalInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZPersonalInformationViewController.m; sourceTree = "<group>"; };
 		0D29059F21E1C43600D83D60 /* HTZPersonalInformationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZPersonalInformationViewController.xib; sourceTree = "<group>"; };
@@ -278,8 +289,12 @@
 		0D1FDB3E21F49DCB00658F74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0D1FDB3F21F49DCB00658F74 /* HTZProductionPlanItem.m */,
+				0D22931F21F57A7200917B3B /* HTZMyDraftItem.h */,
+				0D22932021F57A7200917B3B /* HTZMyDraftItem.m */,
+				0D22931C21F5771B00917B3B /* HTZMyTemplateItem.h */,
+				0D22931D21F5771B00917B3B /* HTZMyTemplateItem.m */,
 				0D1FDB4021F49DCB00658F74 /* HTZProductionPlanItem.h */,
+				0D1FDB3F21F49DCB00658F74 /* HTZProductionPlanItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -436,6 +451,9 @@
 		0DF4B7E621CF854D006E6E80 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0D22932221F57AA600917B3B /* HTZMyDraftCell.h */,
+				0D22932321F57AA600917B3B /* HTZMyDraftCell.m */,
+				0D22932421F57AA600917B3B /* HTZMyDraftCell.xib */,
 				0DDFF31A21EB84310034D972 /* HTZMyTemplateCell.h */,
 				0DDFF31B21EB84310034D972 /* HTZMyTemplateCell.m */,
 				0DDFF31C21EB84310034D972 /* HTZMyTemplateCell.xib */,
@@ -691,6 +709,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D22932621F57AA600917B3B /* HTZMyDraftCell.xib in Resources */,
 				0DDFF32821EB8ECC0034D972 /* HTZMessageCenterViewController.xib in Resources */,
 				0DF0BAE621E06B63004A5573 /* HTZMeCell.xib in Resources */,
 				0DE33C9321E10FFB00B54302 /* HTZMeTableViewHeader.xib in Resources */,
@@ -782,6 +801,7 @@
 				0D1FDB4121F49DCB00658F74 /* HTZProductionPlanItem.m in Sources */,
 				0D2905A521E1C7F900D83D60 /* HTZOriginalModifyPasswordViewController.m in Sources */,
 				0DDB2FB521D7D14300339101 /* HTZMeViewController.m in Sources */,
+				0D22931E21F5771B00917B3B /* HTZMyTemplateItem.m in Sources */,
 				0DDB2F9921D7C62400339101 /* UIColor+HTZHex.m in Sources */,
 				0D33436521E7BAAD00332163 /* HTZLoginViewController.m in Sources */,
 				0D6774ED21F36C8200D9B728 /* HTZProductionPlanCell.m in Sources */,
@@ -794,6 +814,7 @@
 				0D2AD25D21E740ED0086B4EE /* HTZModifyPersonalInformationViewController.m in Sources */,
 				0D2905A021E1C43600D83D60 /* HTZPersonalInformationViewController.m in Sources */,
 				0D33436D21E7BC0D00332163 /* HTZOrderDetailViewController.m in Sources */,
+				0D22932121F57A7200917B3B /* HTZMyDraftItem.m in Sources */,
 				0D96920B21E3C0AC00A71DE7 /* HTZOrderCell.m in Sources */,
 				0D20754D21E877BF00A99694 /* HTZPlaceOrderViewController.m in Sources */,
 				0DDFF32C21EB90A20034D972 /* HTZMessageDetailViewController.m in Sources */,
@@ -815,6 +836,7 @@
 				0D2AD26621E756C80086B4EE /* HTZAboutUsViewController.m in Sources */,
 				0D33435F21E7BAAC00332163 /* HTZRegisterSuccessViewController.m in Sources */,
 				0D33436821E7BAAD00332163 /* HTZRegisterViewController.m in Sources */,
+				0D22932521F57AA600917B3B /* HTZMyDraftCell.m in Sources */,
 				0DDA16C821E50ADE00C1F65F /* HTZOrderItem.m in Sources */,
 				0DDFF32721EB8ECC0034D972 /* HTZMessageCenterViewController.m in Sources */,
 				0DDB2F9F21D7C82F00339101 /* UIView+HTZBezier.m in Sources */,

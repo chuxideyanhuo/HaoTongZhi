@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class HTZMyTemplateItem;
 @interface HTZMyTemplateCell : UITableViewCell
-
+/** 模型 */
+@property (nonatomic, strong) HTZMyTemplateItem *item;
 @end
