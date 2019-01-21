@@ -10,37 +10,40 @@
 #import "HTZMyTemplateViewController.h"
 #import "HTZSelectView.h"
 #import "HTZTextField.h"
+#import "HTZLabel.h"
 #import "HTZPlaceOrderPreviewViewController.h"
 
-@interface HTZPlaceOrderViewController ()
+@interface HTZPlaceOrderViewController ()<UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 /** 厂站 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *stationView;
 /** 合同编号 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *contractNoView;
 /** 工程名称 */
 @property (weak, nonatomic) IBOutlet HTZTextField *projectNameTextField;
-/** 日期date */
-/** 运距haulDistance */
+/** 日期 */
+@property (weak, nonatomic) IBOutlet HTZLabel *dateLabel;
+/** 运距 */
 @property (weak, nonatomic) IBOutlet HTZTextField *haulDistanceTextField;
-/** 施工部位construction region */
+/** 施工部位 */
 @property (weak, nonatomic) IBOutlet HTZTextField *constructionSiteTextField;
-/** 方量capacity */
+/** 方量 */
 @property (weak, nonatomic) IBOutlet HTZTextField *capacityTextField;
-/** 标号cementGrade */
+/** 标号 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *cementGradeView;
-/** 泵送要求transportDemand */
+/** 泵送要求 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *transportDemandView;
-/** 泵车类型pumperType */
+/** 泵车类型 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *pumperTypeView;
-/** 泵浆数量cementMortarCount */
+/** 泵浆数量 */
 @property (weak, nonatomic) IBOutlet HTZTextField *cementMortarCountTextField;
-/** 坍落度slump */
+/** 坍落度 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *slumpView;
-/** 抗滲等级imperviousLevel */
+/** 抗滲等级 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *imperviousLevelView;
-/** 抗冻等级antifreezeLevel */
+/** 抗冻等级 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *antifreezeLevelView;
-/** 抗折等级flexuralLevel */
+/** 抗折等级 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *flexuralLevelView;
 /** 特殊要求 */
 @property (weak, nonatomic) IBOutlet HTZSelectView *specialDemandView;
@@ -55,13 +58,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //初始化子控件
+    [self setupSubview];
+    
+    //初始化数据
+    [self setupData];
+}
+
+#pragma mark - 初始化数据
+- (void)setupData
+{
+    
+}
+
+#pragma mark - 初始化子控件
+- (void)setupSubview
+{
     // 设置导航栏标题
     self.navigationItem.title = @"下单";
     
     // 设置导航栏右边的按钮
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemRightWithTitle:@"选择模版下单" titleColor:[UIColor redColor] highTitle:@"选择模版下单" highTitleColor:HTZMainColor target:self action:@selector(selectTemplateOrder)];
     
-    //
+    // scrollView添加手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewClick)];
+    [self.scrollView addGestureRecognizer:tap];
+    self.scrollView.delegate = self;
+    
+    // 日期控件
+    self.dateLabel.layer.cornerRadius = HTZLayerCornerRadius;
+    self.dateLabel.layer.borderWidth = HTZLayerBorderWidth;
+    self.dateLabel.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
+    // 取消按钮
     self.cancelButton.layer.cornerRadius = HTZLayerCornerRadius;
     self.cancelButton.layer.borderWidth = HTZLayerBorderWidth;
     self.cancelButton.layer.borderColor = HTZMainColor.CGColor;
@@ -73,9 +103,14 @@
     [self.navigationController pushViewController:templateVC animated:YES];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+- (void)scrollViewClick
 {
     [self.view endEditing:YES];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self scrollViewClick];
 }
 
 - (IBAction)submitButtonClick:(UIButton *)sender

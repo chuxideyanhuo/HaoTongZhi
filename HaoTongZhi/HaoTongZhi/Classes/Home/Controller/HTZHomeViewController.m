@@ -51,13 +51,13 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    HTZMyDraftViewController *myDraftVC = [[HTZMyDraftViewController alloc] init];
-    [self.navigationController pushViewController:myDraftVC animated:YES];
+//    HTZMyDraftViewController *myDraftVC = [[HTZMyDraftViewController alloc] init];
+//    [self.navigationController pushViewController:myDraftVC animated:YES];
     
 //    HTZProductionPlanViewController *productionPlanVC = [[HTZProductionPlanViewController alloc] init];
 //    [self.navigationController pushViewController:productionPlanVC animated:YES];
     
-//    HTZPlaceOrderViewController *placeOrderVC = [[HTZPlaceOrderViewController alloc] init];
-//    [self.navigationController pushViewController:placeOrderVC animated:YES];
+    HTZPlaceOrderViewController *placeOrderVC = [[HTZPlaceOrderViewController alloc] init];
+    [self.navigationController pushViewController:placeOrderVC animated:YES];
 }
 @end
