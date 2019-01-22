@@ -86,7 +86,14 @@
 
 - (void)modifyChildController
 {
-//    [self.controllers removeObjectAtIndex:2];
+//    [self.controllers removeAllObjects];
+//    for (NSInteger i = 2; i < self.names.count; i++) {
+//        Class class = NSClassFromString(self.names[i]);
+//        NSString *title = self.titles[i];
+//        NSString *normalImageString = self.normalImages[i];
+//        NSString *selectImageString = self.selectImages[i];
+//        [self setupChildVc:[[class alloc] init] title:title image:normalImageString selectedImage:selectImageString];
+//    }
 //    self.viewControllers = self.controllers;
 }
 

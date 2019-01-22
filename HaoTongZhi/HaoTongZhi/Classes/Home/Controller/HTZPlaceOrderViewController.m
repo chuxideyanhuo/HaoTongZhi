@@ -10,7 +10,7 @@
 #import "HTZMyTemplateViewController.h"
 #import "HTZSelectView.h"
 #import "HTZTextField.h"
-#import "HTZLabel.h"
+#import "HTZLeftIntervalLabel.h"
 #import "HTZPlaceOrderPreviewViewController.h"
 
 @interface HTZPlaceOrderViewController ()<UIScrollViewDelegate>
@@ -22,7 +22,7 @@
 /** 工程名称 */
 @property (weak, nonatomic) IBOutlet HTZTextField *projectNameTextField;
 /** 日期 */
-@property (weak, nonatomic) IBOutlet HTZLabel *dateLabel;
+@property (weak, nonatomic) IBOutlet HTZLeftIntervalLabel *dateLabel;
 /** 运距 */
 @property (weak, nonatomic) IBOutlet HTZTextField *haulDistanceTextField;
 /** 施工部位 */

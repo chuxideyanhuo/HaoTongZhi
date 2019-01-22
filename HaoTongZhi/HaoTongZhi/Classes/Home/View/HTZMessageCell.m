@@ -8,6 +8,19 @@
 
 #import "HTZMessageCell.h"
 
+@interface HTZMessageCell ()
+/** 选中 */
+@property (weak, nonatomic) IBOutlet UIButton *selectButton;
+/** 图标 */
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+/** 标题 */
+@property (weak, nonatomic) IBOutlet UILabel *titleL;
+/** 内容 */
+@property (weak, nonatomic) IBOutlet UILabel *contentL;
+/** 时间 */
+@property (weak, nonatomic) IBOutlet UILabel *timeL;
+@end
+
 @implementation HTZMessageCell
 
 - (void)awakeFromNib {
@@ -15,10 +28,22 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)setItem:(HTZMessageItem *)item
+{
+    _item = item;
+//    self.titleL.text = ;
+//    self.contentL.text = ;
+//    self.timeL.text = ;
+}
 
-    // Configure the view for the selected state
+- (IBAction)selectButtonClick:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+}
+
+- (IBAction)deleteButtonClick:(UIButton *)sender
+{
+    !self.deleteBlock ? : self.deleteBlock(self.item);
 }
 
 @end

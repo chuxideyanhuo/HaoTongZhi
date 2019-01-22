@@ -11,6 +11,7 @@
 #import "HTZMyDraftViewController.h"
 #import "HTZMyTemplateViewController.h"
 #import "HTZProductionPlanViewController.h"
+#import "HTZMessageCenterViewController.h"
 
 @interface HTZHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -51,13 +52,16 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    HTZMessageCenterViewController *messageCenterVC = [[HTZMessageCenterViewController alloc] init];
+    [self.navigationController pushViewController:messageCenterVC animated:YES];
+    
 //    HTZMyDraftViewController *myDraftVC = [[HTZMyDraftViewController alloc] init];
 //    [self.navigationController pushViewController:myDraftVC animated:YES];
     
 //    HTZProductionPlanViewController *productionPlanVC = [[HTZProductionPlanViewController alloc] init];
 //    [self.navigationController pushViewController:productionPlanVC animated:YES];
     
-    HTZPlaceOrderViewController *placeOrderVC = [[HTZPlaceOrderViewController alloc] init];
-    [self.navigationController pushViewController:placeOrderVC animated:YES];
+//    HTZPlaceOrderViewController *placeOrderVC = [[HTZPlaceOrderViewController alloc] init];
+//    [self.navigationController pushViewController:placeOrderVC animated:YES];
 }
 @end

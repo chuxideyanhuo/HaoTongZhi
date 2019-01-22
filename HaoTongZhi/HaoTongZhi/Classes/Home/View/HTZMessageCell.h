@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HTZMessageCell : UITableViewCell
+@class HTZMessageItem;
 
+typedef void (^DeleteMessageBlock)(HTZMessageItem *item);
+
+@interface HTZMessageCell : UITableViewCell
+/** 模型 */
+@property (nonatomic, strong) HTZMessageItem *item;
+/** 删除消息block */
+@property (nonatomic, strong) DeleteMessageBlock deleteBlock;
 @end

@@ -8,6 +8,8 @@
 
 #import "HTZBaseViewController.h"
 
+@class HTZMessageItem;
 @interface HTZMessageDetailViewController : HTZBaseViewController
-
+/** 模型 */
+@property (nonatomic, strong) HTZMessageItem *item;
 @end
