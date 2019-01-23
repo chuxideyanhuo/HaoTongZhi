@@ -20,8 +20,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlJ-3q-Ghh" customClass="HTZMessageBar">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="sGw-wY-TEV"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ts6-cU-Zho">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="rLU-Tx-Owg"/>
@@ -32,8 +38,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="ts6-cU-Zho" secondAttribute="bottom" id="EgG-6e-pUy"/>
+                <constraint firstAttribute="trailing" secondItem="nlJ-3q-Ghh" secondAttribute="trailing" id="Pzd-DO-fvX"/>
+                <constraint firstItem="ts6-cU-Zho" firstAttribute="top" secondItem="nlJ-3q-Ghh" secondAttribute="bottom" id="TYq-Ua-rFD"/>
+                <constraint firstItem="nlJ-3q-Ghh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Y34-DC-OKw"/>
                 <constraint firstItem="ts6-cU-Zho" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="frI-HO-Bdv"/>
-                <constraint firstItem="ts6-cU-Zho" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="gtc-9x-uuQ"/>
+                <constraint firstItem="nlJ-3q-Ghh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iTw-np-Vug"/>
                 <constraint firstAttribute="trailing" secondItem="ts6-cU-Zho" secondAttribute="trailing" id="y9F-H6-YFh"/>
             </constraints>
         </view>

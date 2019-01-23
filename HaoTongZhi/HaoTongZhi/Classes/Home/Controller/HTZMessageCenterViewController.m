@@ -44,6 +44,7 @@ static CGFloat const HTZSectionHeaderHeight = 100;
 {
     // 设置导航栏标题
     self.navigationItem.title = @"消息中心";
+    self.navigationController.navigationBar.translucent = NO;
     
     // 注册
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTZMessageCell class]) bundle:nil] forCellReuseIdentifier:HTZMessageCenterId];
@@ -82,18 +83,17 @@ static CGFloat const HTZSectionHeaderHeight = 100;
     return HTZCellHeight;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return HTZSectionHeaderHeight;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor lightGrayColor];
-    return view;
-}
-
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return HTZSectionHeaderHeight;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    UIView *view = [[UIView alloc] init];
+//    view.backgroundColor = [UIColor lightGrayColor];
+//    return view;
+//}
 
 ////区头跟随移动
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView

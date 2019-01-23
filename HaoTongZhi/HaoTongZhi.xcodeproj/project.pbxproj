@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0DC0BF21F83CB100B67D35 /* HTZMessageBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DC0BE21F83CB100B67D35 /* HTZMessageBar.m */; };
+		0D0DC0CB21F8629900B67D35 /* HTZMessageCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DC0C921F8629900B67D35 /* HTZMessageCategoryCell.m */; };
+		0D0DC0CC21F8629A00B67D35 /* HTZMessageCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D0DC0CA21F8629900B67D35 /* HTZMessageCategoryCell.xib */; };
 		0D14F55021F71E08003D51D9 /* HTZLeftIntervalLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D14F54F21F71E08003D51D9 /* HTZLeftIntervalLabel.m */; };
 		0D1FDB4121F49DCB00658F74 /* HTZProductionPlanItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D1FDB3F21F49DCB00658F74 /* HTZProductionPlanItem.m */; };
 		0D20754721E83E9300A99694 /* HTZSystemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D20754621E83E9300A99694 /* HTZSystemTool.m */; };
@@ -112,6 +115,11 @@
 
 /* Begin PBXFileReference section */
 		0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoTongZhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0DC0BD21F83CB100B67D35 /* HTZMessageBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZMessageBar.h; sourceTree = "<group>"; };
+		0D0DC0BE21F83CB100B67D35 /* HTZMessageBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZMessageBar.m; sourceTree = "<group>"; };
+		0D0DC0C821F8629900B67D35 /* HTZMessageCategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZMessageCategoryCell.h; sourceTree = "<group>"; };
+		0D0DC0C921F8629900B67D35 /* HTZMessageCategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZMessageCategoryCell.m; sourceTree = "<group>"; };
+		0D0DC0CA21F8629900B67D35 /* HTZMessageCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZMessageCategoryCell.xib; sourceTree = "<group>"; };
 		0D14F54E21F71E08003D51D9 /* HTZLeftIntervalLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZLeftIntervalLabel.h; sourceTree = "<group>"; };
 		0D14F54F21F71E08003D51D9 /* HTZLeftIntervalLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZLeftIntervalLabel.m; sourceTree = "<group>"; };
 		0D1FDB3F21F49DCB00658F74 /* HTZProductionPlanItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTZProductionPlanItem.m; sourceTree = "<group>"; };
@@ -483,6 +491,11 @@
 				0DCF2FB921F62DD40016E9AB /* HTZMessageCell.h */,
 				0DCF2FBA21F62DD40016E9AB /* HTZMessageCell.m */,
 				0DCF2FBB21F62DD40016E9AB /* HTZMessageCell.xib */,
+				0D0DC0BD21F83CB100B67D35 /* HTZMessageBar.h */,
+				0D0DC0BE21F83CB100B67D35 /* HTZMessageBar.m */,
+				0D0DC0C821F8629900B67D35 /* HTZMessageCategoryCell.h */,
+				0D0DC0C921F8629900B67D35 /* HTZMessageCategoryCell.m */,
+				0D0DC0CA21F8629900B67D35 /* HTZMessageCategoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -770,6 +783,7 @@
 				0D33436221E7BAAD00332163 /* HTZModifyPasswordViewController.xib in Resources */,
 				0D69AC0C21F7348F00D70F64 /* HTZMessageCategoryData.plist in Resources */,
 				0DDFF31421EB7BB30034D972 /* HTZMyTemplateViewController.xib in Resources */,
+				0D0DC0CC21F8629A00B67D35 /* HTZMessageCategoryCell.xib in Resources */,
 				0D20754E21E877BF00A99694 /* HTZPlaceOrderViewController.xib in Resources */,
 				0DF4B7D221CF6105006E6E80 /* Assets.xcassets in Resources */,
 				0DCF2FBD21F62DD40016E9AB /* HTZMessageCell.xib in Resources */,
@@ -855,6 +869,7 @@
 				0DF4B80A21CF87CF006E6E80 /* HTZTabBarController.m in Sources */,
 				0D5C40B721EA505F0053B6F2 /* HTZTextField.m in Sources */,
 				0DDB2F9C21D7C74100339101 /* NSString+HTZExtension.m in Sources */,
+				0D0DC0CB21F8629900B67D35 /* HTZMessageCategoryCell.m in Sources */,
 				0DDFF31D21EB84310034D972 /* HTZMyTemplateCell.m in Sources */,
 				0DDB2FA621D7CF7200339101 /* HTZNetworkTool.m in Sources */,
 				0D6774F221F379A100D9B728 /* HTZSettingCell.m in Sources */,
@@ -879,6 +894,7 @@
 				0D43B30721F244A800690E28 /* HTZProductionPlanViewController.m in Sources */,
 				0DDFF32221EB8A1E0034D972 /* HTZMyDraftViewController.m in Sources */,
 				0DDA16C521E50AC800C1F65F /* HTZOrderCategoryItem.m in Sources */,
+				0D0DC0BF21F83CB100B67D35 /* HTZMessageBar.m in Sources */,
 				0D33436621E7BAAD00332163 /* HTZPerfectInformationViewController.m in Sources */,
 				0D20754721E83E9300A99694 /* HTZSystemTool.m in Sources */,
 				0D14F55021F71E08003D51D9 /* HTZLeftIntervalLabel.m in Sources */,
