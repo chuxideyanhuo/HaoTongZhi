@@ -18,6 +18,8 @@ static CGFloat const HTZCellHeight = 110;
 static CGFloat const HTZSectionHeaderHeight = 100;
 
 @interface HTZHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong) UIScrollView *bgScrollView;
+
 @property (nonatomic, strong) UITableView *tableView;
 @end
 
@@ -25,8 +27,33 @@ static CGFloat const HTZSectionHeaderHeight = 100;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupSubviews];
+}
+
+- (void)setupSubviews
+{
+    [self.view addSubview:self.bgScrollView];
     
+//    [self.bgScrollView addSubview:self.tableView];
     [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:HTZHomeId];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self.bgScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.mas_top).offset(0);
+        make.left.mas_equalTo(self.view.mas_left).offset(0);
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(0);
+        make.right.mas_equalTo(self.view.mas_right).offset(0);
+    }];
+    
+//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(self.view.mas_top).offset(0);
+//        make.left.mas_equalTo(self.view.mas_left).offset(0);
+//        make.bottom.mas_equalTo(self.view.mas_bottom).offset(0);
+//        make.right.mas_equalTo(self.view.mas_right).offset(0);
+//    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -42,9 +69,14 @@ static CGFloat const HTZSectionHeaderHeight = 100;
 }
 
 #pragma mark - <UITableViewDataSource>
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -52,8 +84,8 @@ static CGFloat const HTZSectionHeaderHeight = 100;
 //    HTZProductionPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:HTZProductionPlanId];
 //    //    cell.item = self.options[indexPath.row];
 //    return cell;
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#(nonnull NSString *)#>];
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HTZHomeId];
+    return cell;
 }
 
 #pragma mark - <UITableViewDelegate>
@@ -83,13 +115,22 @@ static CGFloat const HTZSectionHeaderHeight = 100;
 }
 
 #pragma mark - 懒加载
+- (UIScrollView *)bgScrollView
+{
+    if (!_bgScrollView) {
+        _bgScrollView = [[UIScrollView alloc] init];
+        _bgScrollView.backgroundColor = [UIColor blueColor];
+    }
+    return _bgScrollView;
+}
+
 - (UITableView *)tableView
 {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.showsVerticalScrollIndicator = NO;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _tableView.backgroundColor = [UIColor redColor];
         _tableView.delegate   = self;
         _tableView.dataSource = self;
     }
