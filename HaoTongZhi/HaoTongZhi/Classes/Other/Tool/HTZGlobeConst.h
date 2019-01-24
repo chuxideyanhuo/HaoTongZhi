@@ -113,4 +113,29 @@ UIKIT_EXTERN NSString * const HTZModifyTabBarChildController;
 /** 自动登录key */
 UIKIT_EXTERN NSString * const HTZAutomaticLoginKey;
 
+/** 角色key */
+UIKIT_EXTERN NSString * const kHTZRole;
 
+/** 客户角色key */
+UIKIT_EXTERN NSString * const kHTZCustomerRole;
+/** 搅拌厂角色key */
+UIKIT_EXTERN NSString * const kHTZPlantRole;
+/** 物流公司角色key */
+UIKIT_EXTERN NSString * const kHTZExpressRole;
+/** 司机角色key */
+UIKIT_EXTERN NSString * const kHTZDriverRole;
+
+/***************************************枚举******************************************/
+/**
+ * 用户角色枚举
+ * HTZUserRoleTypeCustomer 客户
+ * HTZUserRoleTypePlant 搅拌厂
+ * HTZUserRoleTypeExpress 物流公司
+ * HTZUserRoleTypeDriver 司机
+ */
+typedef enum : NSUInteger {
+    HTZUserRoleTypeCustomer,
+    HTZUserRoleTypePlant,
+    HTZUserRoleTypeExpress,
+    HTZUserRoleTypeDriver,
+} HTZUserRoleType;

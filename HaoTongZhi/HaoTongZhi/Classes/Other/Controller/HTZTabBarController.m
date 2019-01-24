@@ -39,10 +39,31 @@
     [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
     [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
     
+    [self setupData:kHTZCustomerRole];
+    
     [self addChildController];
     // 注册监听者
-    [HTZNotificationCenter addObserver:self selector:@selector(modifyChildController) name:HTZModifyTabBarChildController object:nil];
+    [HTZNotificationCenter addObserver:self selector:@selector(modifyChildController:) name:HTZModifyTabBarChildController object:nil];
+    
 }
+
+#pragma mark - 初始化数据
+- (void)setupData:(NSString *)roleString
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"HTZTabBarData" ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSDictionary *customerDict = dict[roleString];
+    self.names = customerDict[@"names"];
+    self.titles = customerDict[@"titles"];
+    self.normalImages = customerDict[@"normalImages"];
+    self.selectImages = customerDict[@"selectImages"];
+//    HTZLog(@"customerDict:%@",dict[kHTZCustomerRole]);
+//    HTZLog(@"names:%@",self.names);
+//    HTZLog(@"titles:%@",self.titles);
+//    HTZLog(@"normalImages:%@",self.normalImages);
+//    HTZLog(@"selectImages:%@",self.selectImages);
+}
+
 
 /**
  * 添加子控制器
@@ -56,14 +77,6 @@
         NSString *selectImageString = self.selectImages[i];
         [self setupChildVc:[[class alloc] init] title:title image:normalImageString selectedImage:selectImageString];
     }
-    
-//    [self setupChildVc:[[HTZHomeViewController alloc] init] title:@"首页" image:@"tabBar_home_icon" selectedImage:@"tabBar_home_click_icon"];
-//
-//    [self setupChildVc:[[HTZOrderViewController alloc] init] title:@"订单管理" image:@"tabBar_order_icon" selectedImage:@"tabBar_order_click_icon"];
-//
-//    [self setupChildVc:[[HTZPlatformViewController alloc] init] title:@"工作台" image:@"tabBar_platform_icon" selectedImage:@"tabBar_platform_click_icon"];
-//
-//    [self setupChildVc:[[HTZMeViewController alloc] init] title:@"我的" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
 }
 
 /**
@@ -84,17 +97,27 @@
     [self.controllers addObject:nav];
 }
 
-- (void)modifyChildController
+/**
+ * 监听通知回调
+ */
+- (void)modifyChildController:(NSNotification *)note
 {
-//    [self.controllers removeAllObjects];
-//    for (NSInteger i = 2; i < self.names.count; i++) {
-//        Class class = NSClassFromString(self.names[i]);
-//        NSString *title = self.titles[i];
-//        NSString *normalImageString = self.normalImages[i];
-//        NSString *selectImageString = self.selectImages[i];
-//        [self setupChildVc:[[class alloc] init] title:title image:normalImageString selectedImage:selectImageString];
-//    }
-//    self.viewControllers = self.controllers;
+    NSString *roleString = note.userInfo[kHTZRole];
+    [self resetTabBarContents:roleString];
+}
+
+/**
+ * 重置TabBar内容
+ */
+- (void)resetTabBarContents:(NSString *)roleString
+{
+    if (![roleString isEqualToString:kHTZCustomerRole] && ![roleString isEqualToString:kHTZPlantRole] && ![roleString isEqualToString:kHTZExpressRole] && ![roleString isEqualToString:kHTZDriverRole]) {
+        return;
+    }
+    [self.controllers removeAllObjects];
+    [self setupData:roleString];
+    [self addChildController];
+    self.viewControllers = self.controllers;
 }
 
 /**
@@ -108,37 +131,37 @@
 /**
  * 懒加载
  */
-- (NSArray *)names
-{
-    if (!_names) {
-        _names = @[@"HTZHomeViewController",@"HTZOrderViewController",@"HTZPlatformViewController",@"HTZMeViewController"];
-    }
-    return _names;
-}
-
-- (NSArray *)titles
-{
-    if (!_titles) {
-        _titles = @[@"首页",@"订单管理",@"工作台",@"我的"];
-    }
-    return _titles;
-}
-
-- (NSArray *)normalImages
-{
-    if (!_normalImages) {
-        _normalImages = @[@"tabBar_home_icon",@"tabBar_order_icon",@"tabBar_platform_icon",@"tabBar_me_icon"];
-    }
-    return _normalImages;
-}
-
-- (NSArray *)selectImages
-{
-    if (!_selectImages) {
-        _selectImages = @[@"tabBar_home_click_icon",@"tabBar_order_click_icon",@"tabBar_platform_click_icon",@"tabBar_me_click_icon"];
-    }
-    return _selectImages;
-}
+//- (NSArray *)names
+//{
+//    if (!_names) {
+//        _names = @[@"HTZHomeViewController",@"HTZOrderViewController",@"HTZPlatformViewController",@"HTZMeViewController"];
+//    }
+//    return _names;
+//}
+//
+//- (NSArray *)titles
+//{
+//    if (!_titles) {
+//        _titles = @[@"首页",@"订单管理",@"工作台",@"我的"];
+//    }
+//    return _titles;
+//}
+//
+//- (NSArray *)normalImages
+//{
+//    if (!_normalImages) {
+//        _normalImages = @[@"tabBar_home_icon",@"tabBar_order_icon",@"tabBar_platform_icon",@"tabBar_me_icon"];
+//    }
+//    return _normalImages;
+//}
+//
+//- (NSArray *)selectImages
+//{
+//    if (!_selectImages) {
+//        _selectImages = @[@"tabBar_home_click_icon",@"tabBar_order_click_icon",@"tabBar_platform_click_icon",@"tabBar_me_click_icon"];
+//    }
+//    return _selectImages;
+//}
 
 - (NSMutableArray *)controllers
 {

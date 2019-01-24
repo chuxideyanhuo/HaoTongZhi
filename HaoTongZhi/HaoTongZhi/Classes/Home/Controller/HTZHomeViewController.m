@@ -13,6 +13,10 @@
 #import "HTZProductionPlanViewController.h"
 #import "HTZMessageCenterViewController.h"
 
+static NSString * const HTZHomeId = @"home";
+static CGFloat const HTZCellHeight = 110;
+static CGFloat const HTZSectionHeaderHeight = 100;
+
 @interface HTZHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @end
@@ -22,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:HTZHomeId];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -47,6 +52,7 @@
 //    HTZProductionPlanCell *cell = [tableView dequeueReusableCellWithIdentifier:HTZProductionPlanId];
 //    //    cell.item = self.options[indexPath.row];
 //    return cell;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#(nonnull NSString *)#>];
     return nil;
 }
 
@@ -59,22 +65,22 @@
 //    [self.navigationController pushViewController:messageDetailVC animated:YES];
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return HTZCellHeight;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-//{
-//    return HTZSectionHeaderHeight;
-//}
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    UIView *view = [[UIView alloc] init];
-//    view.backgroundColor = [UIColor lightGrayColor];
-//    return view;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return HTZCellHeight;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return HTZSectionHeaderHeight;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor lightGrayColor];
+    return view;
+}
 
 #pragma mark - 懒加载
 - (UITableView *)tableView

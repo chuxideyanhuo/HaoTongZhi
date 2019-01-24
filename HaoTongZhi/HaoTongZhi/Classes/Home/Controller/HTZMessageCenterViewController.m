@@ -13,7 +13,7 @@
 
 static NSString * const HTZMessageCenterId = @"messageCenter";
 static CGFloat const HTZCellHeight = 110;
-static CGFloat const HTZSectionHeaderHeight = 100;
+//static CGFloat const HTZSectionHeaderHeight = 100;
 
 @interface HTZMessageCenterViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -63,6 +63,9 @@ static CGFloat const HTZSectionHeaderHeight = 100;
 {
     HTZMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:HTZMessageCenterId];
 //    cell.item = self.messages[indexPath.row];
+    cell.selectBlock = ^(HTZMessageItem *item) {
+        
+    };
     cell.deleteBlock = ^(HTZMessageItem *item) {
         
     };

@@ -61,3 +61,15 @@ NSString * const HTZModifyTabBarChildController = @"ModifyTabBarChildController"
 
 /** 自动登录key */
 NSString * const HTZAutomaticLoginKey = @"AutomaticLoginKey";
+
+/** 角色key */
+NSString * const kHTZRole = @"role";
+/** 客户角色key */
+NSString * const kHTZCustomerRole = @"CUSTOMER";
+/** 搅拌厂角色key */
+NSString * const kHTZPlantRole = @"PLANT";
+/** 物流公司角色key */
+NSString * const kHTZExpressRole = @"EXPRESS";
+/** 司机角色key */
+NSString * const kHTZDriverRole = @"DRIVER";
+

@@ -110,6 +110,7 @@
 		0DF4B80D21CF8BF3006E6E80 /* HTZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80C21CF8BF3006E6E80 /* HTZNavigationController.m */; };
 		0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80F21CF9166006E6E80 /* UIView+HTZFrame.m */; };
 		0DF4B81321CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B81221CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m */; };
+		0DF6218721F9A08F00B27171 /* HTZTabBarData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6218621F9A08F00B27171 /* HTZTabBarData.plist */; };
 		CA6A6106655A472D76F901B0 /* libPods-HaoTongZhi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */; };
 /* End PBXBuildFile section */
 
@@ -285,6 +286,7 @@
 		0DF4B80F21CF9166006E6E80 /* UIView+HTZFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+HTZFrame.m"; sourceTree = "<group>"; };
 		0DF4B81121CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+HTZExtension.h"; sourceTree = "<group>"; };
 		0DF4B81221CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+HTZExtension.m"; sourceTree = "<group>"; };
+		0DF6218621F9A08F00B27171 /* HTZTabBarData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HTZTabBarData.plist; sourceTree = "<group>"; };
 		7CB97FF59BB070DE6DAA605F /* Pods-HaoTongZhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoTongZhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaoTongZhi/Pods-HaoTongZhi.debug.xcconfig"; sourceTree = "<group>"; };
 		B4C1D7704FEEB71E8E91C1A7 /* Pods-HaoTongZhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoTongZhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaoTongZhi/Pods-HaoTongZhi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -544,6 +546,7 @@
 				0DF4B7EC21CF854D006E6E80 /* AppDelegate.h */,
 				0DF4B7F121CF854D006E6E80 /* AppDelegate.m */,
 				0DF4B80721CF86C8006E6E80 /* HTZPrefixHeader.pch */,
+				0DF6218621F9A08F00B27171 /* HTZTabBarData.plist */,
 				0DF0BAEA21E07065004A5573 /* HTZMeData.plist */,
 				0D5C0B3821E2573400BA0974 /* HTZSettingData.plist */,
 				0D69AC0B21F7348F00D70F64 /* HTZMessageCategoryData.plist */,
@@ -749,6 +752,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D22932621F57AA600917B3B /* HTZMyDraftCell.xib in Resources */,
+				0DF6218721F9A08F00B27171 /* HTZTabBarData.plist in Resources */,
 				0DDFF32821EB8ECC0034D972 /* HTZMessageCenterViewController.xib in Resources */,
 				0DF0BAE621E06B63004A5573 /* HTZMeCell.xib in Resources */,
 				0DE33C9321E10FFB00B54302 /* HTZMeTableViewHeader.xib in Resources */,

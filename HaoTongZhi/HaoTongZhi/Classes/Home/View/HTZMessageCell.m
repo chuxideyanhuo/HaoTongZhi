@@ -39,6 +39,7 @@
 - (IBAction)selectButtonClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
+    !self.selectBlock ? : self.selectBlock(self.item);
 }
 
 - (IBAction)deleteButtonClick:(UIButton *)sender
