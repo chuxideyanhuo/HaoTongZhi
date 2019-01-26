@@ -15,9 +15,9 @@
 
 static NSString * const HTZHomeId = @"home";
 static CGFloat const HTZCellHeight = 110;
-static CGFloat const HTZSectionHeaderHeight = 100;
+static CGFloat const HTZSectionHeaderHeight = 30;
 
-@interface HTZHomeViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface HTZHomeViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UIScrollView *bgScrollView;
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -32,9 +32,21 @@ static CGFloat const HTZSectionHeaderHeight = 100;
 
 - (void)setupSubviews
 {
+    self.bgScrollView.contentSize = CGSizeMake(HTZSCREENW, HTZSCREENH + 500);
     [self.view addSubview:self.bgScrollView];
     
-//    [self.bgScrollView addSubview:self.tableView];
+    UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    redView.backgroundColor = [UIColor redColor];
+    [self.bgScrollView addSubview:redView];
+    // 设置inset
+    if (@available(iOS 11.0, *)) {
+        self.bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }else{
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    self.bgScrollView.contentInset = UIEdgeInsetsMake(88, 0, 0, 0);
+    
+    [self.bgScrollView addSubview:self.tableView];
     [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:HTZHomeId];
 }
 
@@ -48,24 +60,24 @@ static CGFloat const HTZSectionHeaderHeight = 100;
         make.right.mas_equalTo(self.view.mas_right).offset(0);
     }];
     
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.mas_equalTo(self.view.mas_top).offset(0);
-//        make.left.mas_equalTo(self.view.mas_left).offset(0);
-//        make.bottom.mas_equalTo(self.view.mas_bottom).offset(0);
-//        make.right.mas_equalTo(self.view.mas_right).offset(0);
-//    }];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view.mas_top).offset(0);
+        make.left.mas_equalTo(self.view.mas_left).offset(0);
+        make.bottom.mas_equalTo(self.view.mas_bottom).offset(0);
+        make.right.mas_equalTo(self.view.mas_right).offset(0);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.barTintColor = HTZMainColor;
+//    self.navigationController.navigationBar.barTintColor = HTZMainColor;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+//    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
 }
 
 #pragma mark - <UITableViewDataSource>
@@ -114,12 +126,19 @@ static CGFloat const HTZSectionHeaderHeight = 100;
     return view;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    HTZLog(@"%@-----%@",[scrollView class],NSStringFromCGPoint(scrollView.contentOffset));
+}
+
 #pragma mark - 懒加载
 - (UIScrollView *)bgScrollView
 {
     if (!_bgScrollView) {
         _bgScrollView = [[UIScrollView alloc] init];
-        _bgScrollView.backgroundColor = [UIColor blueColor];
+        _bgScrollView.backgroundColor = [UIColor orangeColor];
+        _bgScrollView.scrollsToTop = YES;
+        _bgScrollView.delegate = self;
     }
     return _bgScrollView;
 }
@@ -129,8 +148,9 @@ static CGFloat const HTZSectionHeaderHeight = 100;
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.showsVerticalScrollIndicator = NO;
+        _tableView.alwaysBounceVertical = YES;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        _tableView.backgroundColor = [UIColor redColor];
+        _tableView.backgroundColor = [UIColor clearColor];
         _tableView.delegate   = self;
         _tableView.dataSource = self;
     }
