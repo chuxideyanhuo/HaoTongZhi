@@ -11,6 +11,8 @@
 @interface HTZHomeOptionBarItem : NSObject
 /** 名字 */
 @property (nonatomic, copy) NSString *name;
+/** 类型 */
+@property (nonatomic, copy) NSString *type;
 /** 图片名 */
 @property (nonatomic, copy) NSString *imageName;
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D0610632200B6900020CC85 /* HTZHomeData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D0610622200B6900020CC85 /* HTZHomeData.plist */; };
 		0D0DC0BF21F83CB100B67D35 /* HTZMessageBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DC0BE21F83CB100B67D35 /* HTZMessageBar.m */; };
 		0D0DC0CB21F8629900B67D35 /* HTZMessageCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DC0C921F8629900B67D35 /* HTZMessageCategoryCell.m */; };
 		0D0DC0CC21F8629A00B67D35 /* HTZMessageCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D0DC0CA21F8629900B67D35 /* HTZMessageCategoryCell.xib */; };
@@ -122,6 +123,7 @@
 
 /* Begin PBXFileReference section */
 		0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaoTongZhi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0610622200B6900020CC85 /* HTZHomeData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HTZHomeData.plist; sourceTree = "<group>"; };
 		0D0DC0BD21F83CB100B67D35 /* HTZMessageBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZMessageBar.h; sourceTree = "<group>"; };
 		0D0DC0BE21F83CB100B67D35 /* HTZMessageBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZMessageBar.m; sourceTree = "<group>"; };
 		0D0DC0C821F8629900B67D35 /* HTZMessageCategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZMessageCategoryCell.h; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				0DF0BAEA21E07065004A5573 /* HTZMeData.plist */,
 				0D5C0B3821E2573400BA0974 /* HTZSettingData.plist */,
 				0D69AC0B21F7348F00D70F64 /* HTZMessageCategoryData.plist */,
+				0D0610622200B6900020CC85 /* HTZHomeData.plist */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 				0DF0BAE121E0644C004A5573 /* HTZMeViewController.xib in Resources */,
 				0D33436021E7BAAC00332163 /* HTZRegisterViewController.xib in Resources */,
 				0D96920721E3C05300A71DE7 /* HTZOrderCategoryCell.xib in Resources */,
+				0D0610632200B6900020CC85 /* HTZHomeData.plist in Resources */,
 				0D5C0B3B21E2632100BA0974 /* HTZOrderViewController.xib in Resources */,
 				0D43B30D21F2476D00690E28 /* HTZWaybillManagementViewController.xib in Resources */,
 				0D33436221E7BAAD00332163 /* HTZModifyPasswordViewController.xib in Resources */,

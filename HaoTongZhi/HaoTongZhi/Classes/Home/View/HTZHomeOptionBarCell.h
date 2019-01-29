@@ -9,12 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @class HTZHomeOptionBarItem;
-typedef void (^SelectedOptionBlock)(HTZHomeOptionBarItem *item);
-
 @interface HTZHomeOptionBarCell : UICollectionViewCell
 /** 模型 */
 @property (nonatomic, strong) HTZHomeOptionBarItem *item;
 
-/** 选中消息类别Bolck */
-@property (nonatomic, copy) SelectedOptionBlock selectedOptionBlock;
 @end

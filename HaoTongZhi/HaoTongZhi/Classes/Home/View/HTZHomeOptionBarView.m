@@ -71,7 +71,7 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HTZHomeOptionBarItem *selectedItem = self.items[indexPath.item];
-    !self.selectedCategoryBlock ? : self.selectedCategoryBlock(selectedItem);
+    !self.selectedOptionBlock ? : self.selectedOptionBlock(selectedItem);
 }
 
 #pragma mark - 懒加载

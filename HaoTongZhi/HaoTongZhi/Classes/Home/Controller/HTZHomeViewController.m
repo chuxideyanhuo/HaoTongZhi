@@ -87,6 +87,12 @@ typedef enum : NSInteger {
     //注册TableViewCell
     [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:HTZHomeId];
     self.tableView.sectionFooterHeight = 0.01;
+    
+    self.optionBarView.selectedOptionBlock = ^(HTZHomeOptionBarItem *item) {
+        //跳转相应的控制器
+        HTZLog(@"跳转相应的控制器");
+    };
+    
 }
 
 - (void)viewDidLayoutSubviews
@@ -247,19 +253,19 @@ typedef enum : NSInteger {
     return _bgScrollView;
 }
 
-- (UIView *)optionBarView
+- (HTZHomeOptionBarView *)optionBarView
 {
     if (!_optionBarView) {
-        _optionBarView = [[UIView alloc] init];
+        _optionBarView = [[HTZHomeOptionBarView alloc] init];
         _optionBarView.backgroundColor = [UIColor redColor];
     }
     return _optionBarView;
 }
 
-- (UIView *)bannerView
+- (HTZHomeBannerView *)bannerView
 {
     if (!_bannerView) {
-        _bannerView = [[UIView alloc] init];
+        _bannerView = [[HTZHomeBannerView alloc] init];
         _bannerView.backgroundColor = [UIColor whiteColor];
     }
     return _bannerView;
