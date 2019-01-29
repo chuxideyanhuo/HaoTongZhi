@@ -112,6 +112,11 @@
 		0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B80F21CF9166006E6E80 /* UIView+HTZFrame.m */; };
 		0DF4B81321CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4B81221CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m */; };
 		0DF6218721F9A08F00B27171 /* HTZTabBarData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DF6218621F9A08F00B27171 /* HTZTabBarData.plist */; };
+		0DFE97252200625E000764F8 /* HTZHomeOptionBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE97242200625E000764F8 /* HTZHomeOptionBarView.m */; };
+		0DFE97282200629B000764F8 /* HTZHomeBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE97272200629B000764F8 /* HTZHomeBannerView.m */; };
+		0DFE972C22006FF0000764F8 /* HTZHomeOptionBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE972A22006FF0000764F8 /* HTZHomeOptionBarCell.m */; };
+		0DFE972D22006FF0000764F8 /* HTZHomeOptionBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DFE972B22006FF0000764F8 /* HTZHomeOptionBarCell.xib */; };
+		0DFE9730220070C0000764F8 /* HTZHomeOptionBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFE972F220070C0000764F8 /* HTZHomeOptionBarItem.m */; };
 		CA6A6106655A472D76F901B0 /* libPods-HaoTongZhi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0823FCE57FDF0E59B8B66823 /* libPods-HaoTongZhi.a */; };
 /* End PBXBuildFile section */
 
@@ -290,6 +295,15 @@
 		0DF4B81121CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+HTZExtension.h"; sourceTree = "<group>"; };
 		0DF4B81221CF9DFA006E6E80 /* UIBarButtonItem+HTZExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+HTZExtension.m"; sourceTree = "<group>"; };
 		0DF6218621F9A08F00B27171 /* HTZTabBarData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HTZTabBarData.plist; sourceTree = "<group>"; };
+		0DFE97232200625E000764F8 /* HTZHomeOptionBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZHomeOptionBarView.h; sourceTree = "<group>"; };
+		0DFE97242200625E000764F8 /* HTZHomeOptionBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZHomeOptionBarView.m; sourceTree = "<group>"; };
+		0DFE97262200629B000764F8 /* HTZHomeBannerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZHomeBannerView.h; sourceTree = "<group>"; };
+		0DFE97272200629B000764F8 /* HTZHomeBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZHomeBannerView.m; sourceTree = "<group>"; };
+		0DFE972922006FF0000764F8 /* HTZHomeOptionBarCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZHomeOptionBarCell.h; sourceTree = "<group>"; };
+		0DFE972A22006FF0000764F8 /* HTZHomeOptionBarCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZHomeOptionBarCell.m; sourceTree = "<group>"; };
+		0DFE972B22006FF0000764F8 /* HTZHomeOptionBarCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTZHomeOptionBarCell.xib; sourceTree = "<group>"; };
+		0DFE972E220070C0000764F8 /* HTZHomeOptionBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTZHomeOptionBarItem.h; sourceTree = "<group>"; };
+		0DFE972F220070C0000764F8 /* HTZHomeOptionBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTZHomeOptionBarItem.m; sourceTree = "<group>"; };
 		7CB97FF59BB070DE6DAA605F /* Pods-HaoTongZhi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoTongZhi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaoTongZhi/Pods-HaoTongZhi.debug.xcconfig"; sourceTree = "<group>"; };
 		B4C1D7704FEEB71E8E91C1A7 /* Pods-HaoTongZhi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaoTongZhi.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaoTongZhi/Pods-HaoTongZhi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -318,6 +332,8 @@
 		0D1FDB3E21F49DCB00658F74 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0DFE972E220070C0000764F8 /* HTZHomeOptionBarItem.h */,
+				0DFE972F220070C0000764F8 /* HTZHomeOptionBarItem.m */,
 				0D22931F21F57A7200917B3B /* HTZMyDraftItem.h */,
 				0D22932021F57A7200917B3B /* HTZMyDraftItem.m */,
 				0D22931C21F5771B00917B3B /* HTZMyTemplateItem.h */,
@@ -486,6 +502,13 @@
 			children = (
 				0D13261821FC411E00B0AD4E /* HTZHomeTableView.h */,
 				0D13261921FC411E00B0AD4E /* HTZHomeTableView.m */,
+				0DFE97232200625E000764F8 /* HTZHomeOptionBarView.h */,
+				0DFE97242200625E000764F8 /* HTZHomeOptionBarView.m */,
+				0DFE972922006FF0000764F8 /* HTZHomeOptionBarCell.h */,
+				0DFE972A22006FF0000764F8 /* HTZHomeOptionBarCell.m */,
+				0DFE972B22006FF0000764F8 /* HTZHomeOptionBarCell.xib */,
+				0DFE97262200629B000764F8 /* HTZHomeBannerView.h */,
+				0DFE97272200629B000764F8 /* HTZHomeBannerView.m */,
 				0D22932221F57AA600917B3B /* HTZMyDraftCell.h */,
 				0D22932321F57AA600917B3B /* HTZMyDraftCell.m */,
 				0D22932421F57AA600917B3B /* HTZMyDraftCell.xib */,
@@ -776,6 +799,7 @@
 				0D33436721E7BAAD00332163 /* HTZRegisterSuccessViewController.xib in Resources */,
 				0D96920C21E3C0AC00A71DE7 /* HTZOrderCell.xib in Resources */,
 				0D6774EE21F36C8200D9B728 /* HTZProductionPlanCell.xib in Resources */,
+				0DFE972D22006FF0000764F8 /* HTZHomeOptionBarCell.xib in Resources */,
 				0D33436421E7BAAD00332163 /* HTZPerfectInformationViewController.xib in Resources */,
 				0D2AD26721E756C80086B4EE /* HTZAboutUsViewController.xib in Resources */,
 				0D2905B021E1C8CD00D83D60 /* HTZAdviceFeedbackViewController.xib in Resources */,
@@ -874,12 +898,15 @@
 				0D2905AF21E1C8CD00D83D60 /* HTZAdviceFeedbackViewController.m in Sources */,
 				0D6774F621F389D000D9B728 /* HTZSettingItem.m in Sources */,
 				0DF4B81021CF9166006E6E80 /* UIView+HTZFrame.m in Sources */,
+				0DFE97252200625E000764F8 /* HTZHomeOptionBarView.m in Sources */,
+				0DFE9730220070C0000764F8 /* HTZHomeOptionBarItem.m in Sources */,
 				0D33436121E7BAAC00332163 /* HTZForgetPasswordViewController.m in Sources */,
 				0DF4B80A21CF87CF006E6E80 /* HTZTabBarController.m in Sources */,
 				0D5C40B721EA505F0053B6F2 /* HTZTextField.m in Sources */,
 				0DDB2F9C21D7C74100339101 /* NSString+HTZExtension.m in Sources */,
 				0D0DC0CB21F8629900B67D35 /* HTZMessageCategoryCell.m in Sources */,
 				0DDFF31D21EB84310034D972 /* HTZMyTemplateCell.m in Sources */,
+				0DFE972C22006FF0000764F8 /* HTZHomeOptionBarCell.m in Sources */,
 				0DDB2FA621D7CF7200339101 /* HTZNetworkTool.m in Sources */,
 				0D6774F221F379A100D9B728 /* HTZSettingCell.m in Sources */,
 				0DF0BAE921E06F1A004A5573 /* HTZMeItem.m in Sources */,
@@ -895,6 +922,7 @@
 				0DDFF32721EB8ECC0034D972 /* HTZMessageCenterViewController.m in Sources */,
 				0DDB2F9F21D7C82F00339101 /* UIView+HTZBezier.m in Sources */,
 				0DCF2FBC21F62DD40016E9AB /* HTZMessageCell.m in Sources */,
+				0DFE97282200629B000764F8 /* HTZHomeBannerView.m in Sources */,
 				0D43B30C21F2476D00690E28 /* HTZWaybillManagementViewController.m in Sources */,
 				0D2905B421E1C91200D83D60 /* HTZSettingViewController.m in Sources */,
 				0DF4B7F821CF854D006E6E80 /* main.m in Sources */,

@@ -12,15 +12,39 @@
 #import "HTZMyTemplateViewController.h"
 #import "HTZProductionPlanViewController.h"
 #import "HTZMessageCenterViewController.h"
+#import "HTZHomeOptionBarView.h"
+#import "HTZHomeBannerView.h"
+#import "HTZHomeTableView.h"
 
 static NSString * const HTZHomeId = @"home";
-static CGFloat const HTZCellHeight = 110;
+static CGFloat const HTZOptionBarHeight = 100;
+static CGFloat const HTZBannerHeight = 160;
+static CGFloat const HTZCellHeight = 60;
 static CGFloat const HTZSectionHeaderHeight = 30;
+static NSInteger const HTZTableViewSections = 2;
+
+/** ScrollView偏移类型 */
+typedef enum : NSInteger {
+    HTZHomeScrollViewOffsetTypeMin,
+    HTZHomeScrollViewOffsetTypeCenter,
+    HTZHomeScrollViewOffsetTypeMax,
+} HTZHomeScrollViewOffsetType;
 
 @interface HTZHomeViewController ()<UIScrollViewDelegate,UITableViewDataSource,UITableViewDelegate>
+/** 背景ScrollView */
 @property (nonatomic, strong) UIScrollView *bgScrollView;
+/** 选项条 */
+@property (nonatomic, strong) HTZHomeOptionBarView *optionBarView;
+/** 轮播图 */
+@property (nonatomic, strong) HTZHomeBannerView *bannerView;
+/** 内容tableView */
+@property (nonatomic, strong) HTZHomeTableView *tableView;
+/** ScrollView偏移类型 */
+@property (nonatomic, assign) HTZHomeScrollViewOffsetType sOffsetType;
+/** TableView偏移类型 */
+@property (nonatomic, assign) HTZHomeScrollViewOffsetType tOffsetType;
 
-@property (nonatomic, strong) UITableView *tableView;
+
 @end
 
 @implementation HTZHomeViewController
@@ -32,22 +56,37 @@ static CGFloat const HTZSectionHeaderHeight = 30;
 
 - (void)setupSubviews
 {
-    self.bgScrollView.contentSize = CGSizeMake(HTZSCREENW, HTZSCREENH + 500);
+//    UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+//    redView.backgroundColor = [UIColor redColor];
+//    [self.bgScrollView addSubview:redView];
+//    // 设置inset
+//    if (@available(iOS 11.0, *)) {
+//        self.bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//
+//        NSInteger type = [HTZSystemTool deviceType];
+//        if (type == iPhoneX) {
+//            self.bgScrollView.contentInset = UIEdgeInsetsMake(HTZIPhoneXNavigationBarHeight, 0, 0, 0);
+//        }else{
+//            self.bgScrollView.contentInset = UIEdgeInsetsMake(HTZNotIPhoneNavigationBarHeight, 0, 0, 0);
+//        }
+//    }else{
+//        self.automaticallyAdjustsScrollViewInsets = NO;
+//        self.bgScrollView.contentInset = UIEdgeInsetsMake(HTZNotIPhoneNavigationBarHeight, 0, 0, 0);
+//    }
+    self.navigationController.navigationBar.translucent = NO;
+    
+    //添加控件
     [self.view addSubview:self.bgScrollView];
-    
-    UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-    redView.backgroundColor = [UIColor redColor];
-    [self.bgScrollView addSubview:redView];
-    // 设置inset
-    if (@available(iOS 11.0, *)) {
-        self.bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }else{
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    self.bgScrollView.contentInset = UIEdgeInsetsMake(88, 0, 0, 0);
-    
+    [self.bgScrollView addSubview:self.optionBarView];
+    [self.bgScrollView addSubview:self.bannerView];
     [self.bgScrollView addSubview:self.tableView];
+    
+    //设置contentSize
+    self.bgScrollView.contentSize = CGSizeMake(HTZSCREENW, HTZSCREENH + HTZOptionBarHeight + HTZBannerHeight);
+    
+    //注册TableViewCell
     [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:HTZHomeId];
+    self.tableView.sectionFooterHeight = 0.01;
 }
 
 - (void)viewDidLayoutSubviews
@@ -60,11 +99,28 @@ static CGFloat const HTZSectionHeaderHeight = 30;
         make.right.mas_equalTo(self.view.mas_right).offset(0);
     }];
     
+    [self.optionBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.bgScrollView.mas_top).offset(0);
+        make.left.mas_equalTo(self.bgScrollView.mas_left).offset(0);
+        make.width.mas_equalTo(HTZSCREENW);
+        make.height.mas_equalTo(HTZOptionBarHeight);
+    }];
+
+    [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.bgScrollView.mas_top).offset(HTZOptionBarHeight);
+        make.left.mas_equalTo(self.bgScrollView.mas_left).offset(0);
+        make.width.mas_equalTo(HTZSCREENW);
+        make.height.mas_equalTo(HTZBannerHeight);
+    }];
+    
+    CGFloat nH = self.navigationController.navigationBar.y + self.navigationController.navigationBar.height;
+    CGFloat tH = self.tabBarController.tabBar.height;
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view.mas_top).offset(0);
+        make.top.mas_equalTo(self.bannerView.mas_bottom).offset(0);
         make.left.mas_equalTo(self.view.mas_left).offset(0);
-        make.bottom.mas_equalTo(self.view.mas_bottom).offset(0);
         make.right.mas_equalTo(self.view.mas_right).offset(0);
+        make.height.mas_equalTo(HTZSCREENH - nH - tH);
+//        make.height.mas_equalTo(HTZSCREENH);
     }];
 }
 
@@ -83,12 +139,12 @@ static CGFloat const HTZSectionHeaderHeight = 30;
 #pragma mark - <UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return HTZTableViewSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,6 +153,7 @@ static CGFloat const HTZSectionHeaderHeight = 30;
 //    //    cell.item = self.options[indexPath.row];
 //    return cell;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HTZHomeId];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
     return cell;
 }
 
@@ -128,7 +185,54 @@ static CGFloat const HTZSectionHeaderHeight = 30;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    HTZLog(@"%@-----%@",[scrollView class],NSStringFromCGPoint(scrollView.contentOffset));
+    if (scrollView == self.bgScrollView) {
+//        HTZLog(@"0-----%@",NSStringFromCGPoint(scrollView.contentOffset));
+//        HTZLog(@"%lf, %lf, %@, %lf, %lf", scrollView.contentOffset.y, HTZOptionBarHeight + HTZBannerHeight, NSStringFromCGSize(scrollView.contentSize), HTZSCREENH, scrollView.height);
+        
+        if (scrollView.contentOffset.y >= (HTZOptionBarHeight + HTZBannerHeight)) {
+            self.sOffsetType = HTZHomeScrollViewOffsetTypeMax;
+        } else if (scrollView.contentOffset.y <= 0) {
+            self.sOffsetType = HTZHomeScrollViewOffsetTypeMin;
+        } else {
+            self.sOffsetType = HTZHomeScrollViewOffsetTypeCenter;
+        }
+        
+        if (scrollView.contentOffset.y >= HTZOptionBarHeight) {
+            CGFloat nH = self.navigationController.navigationBar.y + self.navigationController.navigationBar.height;
+            [self.view addSubview:self.optionBarView];
+            [self.optionBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(self.view.mas_top).offset(nH);
+                make.left.mas_equalTo(self.view.mas_left).offset(0);
+                make.width.mas_equalTo(HTZSCREENW);
+                make.height.mas_equalTo(HTZOptionBarHeight);
+            }];
+        }else{
+            [self.bgScrollView addSubview:self.optionBarView];
+            [self.optionBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(self.bgScrollView.mas_top).offset(0);
+                make.left.mas_equalTo(self.bgScrollView.mas_left).offset(0);
+                make.width.mas_equalTo(HTZSCREENW);
+                make.height.mas_equalTo(HTZOptionBarHeight);
+            }];
+        }
+        
+        
+        if (self.tOffsetType == HTZHomeScrollViewOffsetTypeCenter) {
+            scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, HTZOptionBarHeight + HTZBannerHeight);
+        }
+    }else if (scrollView == self.tableView) {
+//        HTZLog(@"1-----%@",NSStringFromCGPoint(scrollView.contentOffset));
+//        HTZLog(@"%lf, %lf, %@, %lf, %lf", scrollView.contentOffset.y, HTZOptionBarHeight + HTZBannerHeight, NSStringFromCGSize(scrollView.contentSize), HTZSCREENH, scrollView.height);
+        if (scrollView.contentOffset.y <= 0) {
+            self.tOffsetType = HTZHomeScrollViewOffsetTypeMin;
+        } else {
+            self.tOffsetType = HTZHomeScrollViewOffsetTypeCenter;
+        }
+        
+        if (self.sOffsetType == HTZHomeScrollViewOffsetTypeMin || self.sOffsetType == HTZHomeScrollViewOffsetTypeCenter) {
+            scrollView.contentOffset = CGPointZero;
+        }
+    }
 }
 
 #pragma mark - 懒加载
@@ -136,17 +240,35 @@ static CGFloat const HTZSectionHeaderHeight = 30;
 {
     if (!_bgScrollView) {
         _bgScrollView = [[UIScrollView alloc] init];
-        _bgScrollView.backgroundColor = [UIColor orangeColor];
+        _bgScrollView.backgroundColor = [UIColor clearColor];
         _bgScrollView.scrollsToTop = YES;
         _bgScrollView.delegate = self;
     }
     return _bgScrollView;
 }
 
+- (UIView *)optionBarView
+{
+    if (!_optionBarView) {
+        _optionBarView = [[UIView alloc] init];
+        _optionBarView.backgroundColor = [UIColor redColor];
+    }
+    return _optionBarView;
+}
+
+- (UIView *)bannerView
+{
+    if (!_bannerView) {
+        _bannerView = [[UIView alloc] init];
+        _bannerView.backgroundColor = [UIColor whiteColor];
+    }
+    return _bannerView;
+}
+
 - (UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView = [[HTZHomeTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.alwaysBounceVertical = YES;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;

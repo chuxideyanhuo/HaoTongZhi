@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tabBar.barTintColor = [UIColor whiteColor];
+//    self.tabBar.barTintColor = [UIColor whiteColor];
     // 通过appearance统一设置所有UITabBarItem的文字属性,后面带有UI_APPEARANCE_SELECTOR的方法, 都可以通过appearance对象来统一设置
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:12];
@@ -57,11 +57,6 @@
     self.titles = customerDict[@"titles"];
     self.normalImages = customerDict[@"normalImages"];
     self.selectImages = customerDict[@"selectImages"];
-//    HTZLog(@"customerDict:%@",dict[kHTZCustomerRole]);
-//    HTZLog(@"names:%@",self.names);
-//    HTZLog(@"titles:%@",self.titles);
-//    HTZLog(@"normalImages:%@",self.normalImages);
-//    HTZLog(@"selectImages:%@",self.selectImages);
 }
 
 

@@ -101,6 +101,10 @@ UIKIT_EXTERN NSString * const HTZCommentMixPlantInterface;
 UIKIT_EXTERN CGFloat const HTZMargin;
 /** iPhoneX Tabbar的高度 */
 UIKIT_EXTERN CGFloat const HTZIPhoneXTabbarHeight;
+/** iPhoneX NavigationBar的高度 */
+UIKIT_EXTERN CGFloat const HTZIPhoneXNavigationBarHeight;
+/** 非iPhoneX NavigationBar的高度 */
+UIKIT_EXTERN CGFloat const HTZNotIPhoneNavigationBarHeight;
 /** Layer边宽宽度 */
 UIKIT_EXTERN CGFloat const HTZLayerBorderWidth;
 /** Layer圆角 */
