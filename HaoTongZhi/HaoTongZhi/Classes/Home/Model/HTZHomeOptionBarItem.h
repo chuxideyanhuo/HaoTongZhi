@@ -15,4 +15,6 @@
 @property (nonatomic, copy) NSString *type;
 /** 图片名 */
 @property (nonatomic, copy) NSString *imageName;
+/** 消息数 */
+@property (nonatomic, copy) NSString *badge;
 @end

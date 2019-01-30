@@ -92,7 +92,6 @@ typedef enum : NSInteger {
         //跳转相应的控制器
         HTZLog(@"跳转相应的控制器");
     };
-    
 }
 
 - (void)viewDidLayoutSubviews
@@ -257,7 +256,7 @@ typedef enum : NSInteger {
 {
     if (!_optionBarView) {
         _optionBarView = [[HTZHomeOptionBarView alloc] init];
-        _optionBarView.backgroundColor = [UIColor redColor];
+        _optionBarView.backgroundColor = HTZMainColor;
     }
     return _optionBarView;
 }

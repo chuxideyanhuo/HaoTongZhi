@@ -8,113 +8,126 @@
 		<array>
 			<dict>
 				<key>name</key>
-				<string></string>
+				<string>点我下单</string>
 				<key>type</key>
-				<string></string>
+				<string>HTZPlaceOrderViewController</string>
 				<key>imageName</key>
-				<string></string>
+				<string>home_click_orders</string>
 			</dict>
 			<dict>
 				<key>name</key>
-				<string></string>
+				<string>收货管理</string>
 				<key>type</key>
 				<string></string>
 				<key>imageName</key>
-				<string></string>
+				<string>home_receiving_management</string>
 			</dict>
 			<dict>
 				<key>name</key>
-				<string></string>
+				<string>异常订单</string>
 				<key>type</key>
 				<string></string>
 				<key>imageName</key>
-				<string></string>
+				<string>home_abnormal_order</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>消息中心</string>
+				<key>type</key>
+				<string>HTZMessageCenterViewController</string>
+				<key>imageName</key>
+				<string>home_message_center</string>
 			</dict>
 		</array>
 	</dict>
 	<key>PLANT</key>
 	<dict>
-		<key>names</key>
+		<key>option</key>
 		<array>
-			<string>HTZHomeViewController</string>
-			<string>HTZOrderViewController</string>
-			<string>HTZPlatformViewController</string>
-			<string>HTZMeViewController</string>
-		</array>
-		<key>titles</key>
-		<array>
-			<string>首页</string>
-			<string>订单管理</string>
-			<string>工作台</string>
-			<string>我的</string>
-		</array>
-		<key>normalImages</key>
-		<array>
-			<string>tabBar_home_icon</string>
-			<string>tabBar_order_icon</string>
-			<string>tabBar_platform_icon</string>
-			<string>tabBar_me_icon</string>
-		</array>
-		<key>selectImages</key>
-		<array>
-			<string>tabBar_home_click_icon</string>
-			<string>tabBar_order_click_icon</string>
-			<string>tabBar_platform_click_icon</string>
-			<string>tabBar_me_click_icon</string>
+			<dict>
+				<key>name</key>
+				<string>选择工程</string>
+				<key>type</key>
+				<string></string>
+				<key>imageName</key>
+				<string>home_select_project</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>生产计划</string>
+				<key>type</key>
+				<string></string>
+				<key>imageName</key>
+				<string>home_production_plan</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>异常订单</string>
+				<key>type</key>
+				<string></string>
+				<key>imageName</key>
+				<string>home_abnormal_order</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>消息中心</string>
+				<key>type</key>
+				<string>HTZMessageCenterViewController</string>
+				<key>imageName</key>
+				<string>home_message_center</string>
+			</dict>
 		</array>
 	</dict>
 	<key>EXPRESS</key>
 	<dict>
-		<key>names</key>
+		<key>option</key>
 		<array>
-			<string>HTZHomeViewController</string>
-			<string>HTZPlatformViewController</string>
-			<string>HTZMeViewController</string>
-		</array>
-		<key>titles</key>
-		<array>
-			<string>首页</string>
-			<string>工作台</string>
-			<string>我的</string>
-		</array>
-		<key>normalImages</key>
-		<array>
-			<string>tabBar_home_icon</string>
-			<string>tabBar_platform_icon</string>
-			<string>tabBar_me_icon</string>
-		</array>
-		<key>selectImages</key>
-		<array>
-			<string>tabBar_home_click_icon</string>
-			<string>tabBar_platform_click_icon</string>
-			<string>tabBar_me_click_icon</string>
+			<dict>
+				<key>name</key>
+				<string>运单管理</string>
+				<key>type</key>
+				<string></string>
+				<key>imageName</key>
+				<string>home_waybill_management</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>消息中心</string>
+				<key>type</key>
+				<string>HTZMessageCenterViewController</string>
+				<key>imageName</key>
+				<string>home_message_center</string>
+			</dict>
 		</array>
 	</dict>
 	<key>DRIVER</key>
 	<dict>
-		<key>names</key>
+		<key>option</key>
 		<array>
-			<string>HTZHomeViewController</string>
-			<string>HTZOrderViewController</string>
-			<string>HTZMeViewController</string>
-		</array>
-		<key>titles</key>
-		<array>
-			<string>首页</string>
-			<string>我的运单</string>
-			<string>我的</string>
-		</array>
-		<key>normalImages</key>
-		<array>
-			<string>tabBar_home_icon</string>
-			<string>tabBar_order_icon</string>
-			<string>tabBar_me_icon</string>
-		</array>
-		<key>selectImages</key>
-		<array>
-			<string>tabBar_home_click_icon</string>
-			<string>tabBar_order_click_icon</string>
-			<string>tabBar_me_click_icon</string>
+			<dict>
+				<key>name</key>
+				<string>扫一扫</string>
+				<key>type</key>
+				<string></string>
+				<key>imageName</key>
+				<string>home_scan</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>签到上班</string>
+				<key>type</key>
+				<string></string>
+				<key>imageName</key>
+				<string>home_sign_work</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>消息中心</string>
+				<key>type</key>
+				<string>HTZMessageCenterViewController</string>
+				<key>imageName</key>
+				<string>home_message_center</string>
+			</dict>
 		</array>
 	</dict>
 </dict>

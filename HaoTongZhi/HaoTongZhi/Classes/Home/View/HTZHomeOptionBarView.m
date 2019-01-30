@@ -15,6 +15,9 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
 @interface HTZHomeOptionBarView ()<UICollectionViewDataSource,UICollectionViewDelegate>
 /** collectionView */
 @property (nonatomic, strong) UICollectionView *collectionView;
+/** 模型数组 */
+@property (nonatomic, strong) NSArray *items;
+
 @end
 
 @implementation HTZHomeOptionBarView
@@ -37,8 +40,8 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
 - (void)setupSubviews
 {
     self.backgroundColor = [UIColor whiteColor];
-    [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionTop];
     [self addSubview:self.collectionView];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HTZHomeOptionBarCell class]) bundle:nil] forCellWithReuseIdentifier:HTZHomeOptionBarId];
 }
 
 #pragma mark - 布局
@@ -82,7 +85,7 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         
         CGFloat itemW = (HTZSCREENW - 2 * HTZMargin) / self.items.count * 1.0;
-        CGFloat itemH = 35;
+        CGFloat itemH = 60;
         layout.itemSize = CGSizeMake(itemW, itemH);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.sectionInset = UIEdgeInsetsMake(0, HTZMargin, 0, HTZMargin);
@@ -106,5 +109,14 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
     return _collectionView;
 }
 
-
+- (NSArray *)items
+{
+    if (!_items) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"HTZHomeData" ofType:@"plist"];
+        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+        NSDictionary *roleDict = dict[kHTZCustomerRole];
+        _items = [HTZHomeOptionBarItem mj_objectArrayWithKeyValuesArray:roleDict[@"option"]];
+    }
+    return _items;
+}
 @end
