@@ -62,7 +62,7 @@
         HTZLog(@"responseObj------%@",responseObj);
         [HTZProgressHUD dismissHUD];
         if ([responseObj[@"code"] integerValue] == 0) {
-            NSDictionary *dict = @{kHTZRole:kHTZDriverRole};
+            NSDictionary *dict = @{kHTZRole:kHTZCustomerRole};
             [HTZNotificationCenter postNotificationName:HTZModifyTabBarChildController object:nil userInfo:dict];
             //需要存储用户信息
             [self dismissViewControllerAnimated:YES completion:nil];

@@ -41,7 +41,8 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
 {
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.collectionView];
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HTZHomeOptionBarCell class]) bundle:nil] forCellWithReuseIdentifier:HTZHomeOptionBarId];
+//    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HTZHomeOptionBarCell class]) bundle:nil] forCellWithReuseIdentifier:HTZHomeOptionBarId];
+    
 }
 
 #pragma mark - 布局
@@ -49,10 +50,10 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
 {
     [super layoutSubviews];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.mas_top).offset(HTZMargin);
+        make.top.mas_equalTo(self.mas_top).offset(0);
         make.left.mas_equalTo(self.mas_left).offset(0);
+        make.bottom.mas_equalTo(self.mas_bottom).offset(0);
         make.right.mas_equalTo(self.mas_right).offset(0);
-        make.height.mas_equalTo(40);
     }];
 }
 
@@ -84,20 +85,18 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
         // 流水布局:调整cell尺寸
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         
-        CGFloat itemW = (HTZSCREENW - 2 * HTZMargin) / self.items.count * 1.0;
-        CGFloat itemH = 60;
+        CGFloat itemW = HTZSCREENW / self.items.count * 1.0;
+        CGFloat itemH = 90;
         layout.itemSize = CGSizeMake(itemW, itemH);
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.sectionInset = UIEdgeInsetsMake(0, HTZMargin, 0, HTZMargin);
+        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         // 设置最小行间距
         layout.minimumLineSpacing = 0;
         
-        // 创建UICollectionView:黑色
+        // 创建UICollectionView
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.showsHorizontalScrollIndicator = NO;
-        _collectionView.layer.borderWidth = HTZLayerBorderWidth;
-        _collectionView.layer.borderColor = HTZGlobalBackgroundColor.CGColor;
         
         // 设置数据源
         _collectionView.dataSource = self;

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,18 +18,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="158" height="148"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXP-p4-rhy">
-                        <rect key="frame" x="25" y="20" width="108" height="108"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXP-p4-rhy" customClass="HTZHomeVerticalButton">
+                        <rect key="frame" x="49" y="44" width="60" height="60"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="oXP-p4-rhy" secondAttribute="height" multiplier="1:1" id="7O8-xa-Qar"/>
+                            <constraint firstAttribute="width" constant="60" id="3ze-px-fdu"/>
+                            <constraint firstAttribute="height" constant="60" id="AWT-ea-RfO"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="Button">
-                            <color key="titleColor" red="0.18823529410000001" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvC-jj-gv3">
-                        <rect key="frame" x="113" y="20" width="20" height="20"/>
+                        <rect key="frame" x="89" y="44" width="20" height="20"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="5Jp-Ei-5Bk"/>
@@ -43,16 +43,15 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="oXP-p4-rhy" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="8Vy-F1-ovQ"/>
                 <constraint firstItem="OvC-jj-gv3" firstAttribute="top" secondItem="oXP-p4-rhy" secondAttribute="top" id="96b-bT-jqP"/>
                 <constraint firstItem="OvC-jj-gv3" firstAttribute="trailing" secondItem="oXP-p4-rhy" secondAttribute="trailing" id="crB-OS-pyp"/>
-                <constraint firstAttribute="bottom" secondItem="oXP-p4-rhy" secondAttribute="bottom" constant="20" id="eFf-xU-jHP"/>
-                <constraint firstItem="oXP-p4-rhy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="p0i-QA-8uU"/>
-                <constraint firstItem="oXP-p4-rhy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="rwJ-DG-uBa"/>
+                <constraint firstItem="oXP-p4-rhy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="vsZ-tI-JzQ"/>
             </constraints>
             <size key="customSize" width="158" height="148"/>
             <connections>
                 <outlet property="badgeLabel" destination="OvC-jj-gv3" id="saX-iT-rSW"/>
-                <outlet property="optionButton" destination="oXP-p4-rhy" id="V8p-qJ-NuA"/>
+                <outlet property="optionButton" destination="oXP-p4-rhy" id="DHU-1K-fBh"/>
             </connections>
             <point key="canvasLocation" x="125" y="109"/>
         </collectionViewCell>

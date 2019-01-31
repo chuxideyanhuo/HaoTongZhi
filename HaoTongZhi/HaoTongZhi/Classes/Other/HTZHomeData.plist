@@ -18,7 +18,7 @@
 				<key>name</key>
 				<string>收货管理</string>
 				<key>type</key>
-				<string></string>
+				<string>HTZOrderViewController</string>
 				<key>imageName</key>
 				<string>home_receiving_management</string>
 			</dict>
@@ -26,7 +26,7 @@
 				<key>name</key>
 				<string>异常订单</string>
 				<key>type</key>
-				<string></string>
+				<string>HTZOrderViewController</string>
 				<key>imageName</key>
 				<string>home_abnormal_order</string>
 			</dict>
@@ -64,7 +64,7 @@
 				<key>name</key>
 				<string>异常订单</string>
 				<key>type</key>
-				<string></string>
+				<string>HTZOrderViewController</string>
 				<key>imageName</key>
 				<string>home_abnormal_order</string>
 			</dict>
@@ -86,7 +86,7 @@
 				<key>name</key>
 				<string>运单管理</string>
 				<key>type</key>
-				<string></string>
+				<string>HTZOrderViewController</string>
 				<key>imageName</key>
 				<string>home_waybill_management</string>
 			</dict>

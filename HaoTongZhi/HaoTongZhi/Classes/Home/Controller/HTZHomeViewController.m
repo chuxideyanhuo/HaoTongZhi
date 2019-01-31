@@ -7,6 +7,7 @@
 //
 
 #import "HTZHomeViewController.h"
+#import "UIImage+HTZExtension.h"
 #import "HTZPlaceOrderViewController.h"
 #import "HTZMyDraftViewController.h"
 #import "HTZMyTemplateViewController.h"
@@ -15,9 +16,10 @@
 #import "HTZHomeOptionBarView.h"
 #import "HTZHomeBannerView.h"
 #import "HTZHomeTableView.h"
+#import "HTZHomeOptionBarItem.h"
 
 static NSString * const HTZHomeId = @"home";
-static CGFloat const HTZOptionBarHeight = 100;
+static CGFloat const HTZOptionBarHeight = 90;
 static CGFloat const HTZBannerHeight = 160;
 static CGFloat const HTZCellHeight = 60;
 static CGFloat const HTZSectionHeaderHeight = 30;
@@ -88,9 +90,18 @@ typedef enum : NSInteger {
     [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:HTZHomeId];
     self.tableView.sectionFooterHeight = 0.01;
     
+    __weak typeof(self)weakSelf = self;
     self.optionBarView.selectedOptionBlock = ^(HTZHomeOptionBarItem *item) {
         //跳转相应的控制器
-        HTZLog(@"跳转相应的控制器");
+        if ([item.type isEqualToString:@"HTZPlaceOrderViewController"]) {
+            [weakSelf.navigationController pushViewController:[NSClassFromString(item.type) new] animated:YES];
+        }else if ([item.type isEqualToString:@"HTZOrderViewController"]) {
+            weakSelf.tabBarController.selectedIndex = 1;
+        }else if ([item.type isEqualToString:@"HTZOrderViewController"]) {
+            weakSelf.tabBarController.selectedIndex = 1;
+        }else if ([item.type isEqualToString:@"HTZMessageCenterViewController"]) {
+            [weakSelf.navigationController pushViewController:[NSClassFromString(item.type) new] animated:YES];
+        }
     };
 }
 
@@ -133,12 +144,16 @@ typedef enum : NSInteger {
 {
     [super viewWillAppear:animated];
 //    self.navigationController.navigationBar.barTintColor = HTZMainColor;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:HTZMainColor] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
 //    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
 }
 
 #pragma mark - <UITableViewDataSource>
@@ -149,7 +164,13 @@ typedef enum : NSInteger {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    NSInteger rows;
+    if (section == 0) {
+        rows = 1;
+    }else{
+        rows = 10;
+    }
+    return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
