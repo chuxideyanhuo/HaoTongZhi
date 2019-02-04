@@ -19,14 +19,14 @@ static NSString * const HTZMyDraftId = @"myDraft";
 @end
 
 @implementation HTZMyDraftViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //初始化子控件
+    // 初始化子控件
     [self setupSubview];
     
-    //初始化数据
+    // 初始化数据
     [self setupData];
 }
 

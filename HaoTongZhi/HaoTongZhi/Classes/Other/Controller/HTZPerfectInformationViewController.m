@@ -14,13 +14,14 @@
 @end
 
 @implementation HTZPerfectInformationViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"完善资料";
     
 }
 
+#pragma mark - 提交按钮点击
 - (IBAction)submitButtonClick:(UIButton *)sender
 {
     HTZRegisterSuccessViewController *registerSuccessVC = [[HTZRegisterSuccessViewController alloc] init];

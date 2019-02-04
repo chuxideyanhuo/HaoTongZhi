@@ -1,18 +1,18 @@
 //
-//  HTZHomeOptionBarView.m
+//  HTZHomeOptionBarReplacementView.m
 //  HaoTongZhi
 //
-//  Created by liuzhiyong on 2019/1/29.
+//  Created by liuzhiyong on 2019/2/2.
 //  Copyright © 2019年 com.cscec.xbjs. All rights reserved.
 //
 
-#import "HTZHomeOptionBarView.h"
-#import "HTZHomeOptionBarCell.h"
+#import "HTZHomeOptionBarReplacementView.h"
+#import "HTZHomeOptionBarReplacementCell.h"
 #import "HTZHomeOptionBarItem.h"
 
-static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
+static NSString * const HTZHomeOptionBarReplacementId = @"homeOptionBarReplacement";
 
-@interface HTZHomeOptionBarView ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface HTZHomeOptionBarReplacementView ()<UICollectionViewDataSource,UICollectionViewDelegate>
 /** collectionView */
 @property (nonatomic, strong) UICollectionView *collectionView;
 /** 模型数组 */
@@ -20,7 +20,8 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
 
 @end
 
-@implementation HTZHomeOptionBarView
+@implementation HTZHomeOptionBarReplacementView
+
 #pragma mark - view生命周期
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -41,8 +42,6 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
 {
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.collectionView];
-//    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HTZHomeOptionBarCell class]) bundle:nil] forCellWithReuseIdentifier:HTZHomeOptionBarId];
-    
 }
 
 #pragma mark - 布局子控件
@@ -65,7 +64,7 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    HTZHomeOptionBarCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HTZHomeOptionBarId forIndexPath:indexPath];
+    HTZHomeOptionBarReplacementCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HTZHomeOptionBarReplacementId forIndexPath:indexPath];
     cell.item = self.items[indexPath.item];
     
     return cell;
@@ -103,7 +102,7 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
         _collectionView.delegate = self;
         
         // 注册cell
-        [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HTZHomeOptionBarCell class]) bundle:nil] forCellWithReuseIdentifier:HTZHomeOptionBarId];
+        [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([HTZHomeOptionBarReplacementCell class]) bundle:nil] forCellWithReuseIdentifier:HTZHomeOptionBarReplacementId];
     }
     return _collectionView;
 }
@@ -118,4 +117,5 @@ static NSString * const HTZHomeOptionBarId = @"homeOptionBar";
     }
     return _items;
 }
+
 @end

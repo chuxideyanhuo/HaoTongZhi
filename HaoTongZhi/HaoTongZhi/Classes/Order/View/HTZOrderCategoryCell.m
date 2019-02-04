@@ -15,19 +15,21 @@
 @end
 
 @implementation HTZOrderCategoryCell
-
+#pragma mark - view生命周期
 - (void)awakeFromNib
 {
     [super awakeFromNib];
     self.backgroundColor = HTZGlobalBackgroundColor;
 }
 
+#pragma mark - 重写item的set方法
 - (void)setCategoryItem:(HTZOrderCategoryItem *)categoryItem
 {
     _categoryItem = categoryItem;
     self.categoryNameLabel.text = categoryItem.name;
 }
 
+#pragma mark - cell选中调用
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];

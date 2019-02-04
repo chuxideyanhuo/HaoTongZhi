@@ -18,7 +18,7 @@
 @end
 
 @implementation HTZLoginViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -62,7 +62,11 @@
         HTZLog(@"responseObj------%@",responseObj);
         [HTZProgressHUD dismissHUD];
         if ([responseObj[@"code"] integerValue] == 0) {
-            NSDictionary *dict = @{kHTZRole:kHTZCustomerRole};
+            NSDictionary *dataDict = responseObj[@"data"];
+            NSString *role = dataDict[kHTZRole] ? : @"";
+            [HTZUserDefaults setObject:role forKey:kHTZRole];
+            [HTZUserDefaults synchronize];
+            NSDictionary *dict = @{kHTZRole:role};
             [HTZNotificationCenter postNotificationName:HTZModifyTabBarChildController object:nil userInfo:dict];
             //需要存储用户信息
             [self dismissViewControllerAnimated:YES completion:nil];

@@ -12,6 +12,7 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    // 设置左边内边距
     UIEdgeInsets insets = {0, 5, 0, 0};
     [super drawTextInRect:UIEdgeInsetsInsetRect(rect, insets)];
 }

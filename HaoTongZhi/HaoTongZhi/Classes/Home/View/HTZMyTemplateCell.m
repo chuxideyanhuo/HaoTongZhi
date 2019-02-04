@@ -20,12 +20,13 @@
 @end
 
 @implementation HTZMyTemplateCell
-
+#pragma mark - view生命周期
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
+#pragma mark - 重写item的set方法
 - (void)setItem:(HTZMyTemplateItem *)item
 {
     _item = item;

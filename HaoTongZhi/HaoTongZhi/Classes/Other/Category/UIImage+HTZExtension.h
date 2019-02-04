@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (HTZExtension)
-/** 根据颜色获取图片 */
+/**
+ * 根据颜色获取图片
+ */
 + (UIImage *)imageWithColor:(UIColor *)color;
 @end

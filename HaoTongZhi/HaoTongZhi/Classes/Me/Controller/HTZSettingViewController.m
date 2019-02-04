@@ -26,16 +26,7 @@ typedef enum : NSUInteger {
 @end
 
 @implementation HTZSettingViewController
-
-- (NSMutableArray *)options
-{
-    if (!_options) {
-        _options = [NSMutableArray array];
-    }
-    return _options;
-}
-
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"设置";
@@ -136,5 +127,15 @@ typedef enum : NSUInteger {
         [self.navigationController popToRootViewControllerAnimated:NO];
     }];
 }
+
+#pragma mark - 懒加载
+- (NSMutableArray *)options
+{
+    if (!_options) {
+        _options = [NSMutableArray array];
+    }
+    return _options;
+}
+
 
 @end

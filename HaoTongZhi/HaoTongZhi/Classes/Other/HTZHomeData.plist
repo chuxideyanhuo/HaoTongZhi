@@ -39,6 +39,25 @@
 				<string>home_message_center</string>
 			</dict>
 		</array>
+		<key>section</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>草稿箱</string>
+				<key>showMore</key>
+				<string>0</string>
+				<key>type</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>订单跟踪</string>
+				<key>showMore</key>
+				<string>1</string>
+				<key>type</key>
+				<string>HTZOrderViewController</string>
+			</dict>
+		</array>
 	</dict>
 	<key>PLANT</key>
 	<dict>
@@ -77,6 +96,17 @@
 				<string>home_message_center</string>
 			</dict>
 		</array>
+		<key>section</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>订单跟踪</string>
+				<key>showMore</key>
+				<string>1</string>
+				<key>type</key>
+				<string>HTZOrderViewController</string>
+			</dict>
+		</array>
 	</dict>
 	<key>EXPRESS</key>
 	<dict>
@@ -97,6 +127,25 @@
 				<string>HTZMessageCenterViewController</string>
 				<key>imageName</key>
 				<string>home_message_center</string>
+			</dict>
+		</array>
+		<key>section</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>车辆信息</string>
+				<key>showMore</key>
+				<string>0</string>
+				<key>type</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>运单跟踪</string>
+				<key>showMore</key>
+				<string>1</string>
+				<key>type</key>
+				<string>HTZOrderViewController</string>
 			</dict>
 		</array>
 	</dict>
@@ -127,6 +176,25 @@
 				<string>HTZMessageCenterViewController</string>
 				<key>imageName</key>
 				<string>home_message_center</string>
+			</dict>
+		</array>
+		<key>section</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>接单信息</string>
+				<key>showMore</key>
+				<string>0</string>
+				<key>type</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>配送中的运单</string>
+				<key>showMore</key>
+				<string>0</string>
+				<key>type</key>
+				<string></string>
 			</dict>
 		</array>
 	</dict>

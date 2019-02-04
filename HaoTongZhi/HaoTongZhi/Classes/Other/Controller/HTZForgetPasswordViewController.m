@@ -20,7 +20,7 @@
 @end
 
 @implementation HTZForgetPasswordViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"找回密码";

@@ -16,12 +16,13 @@
 @end
 
 @implementation HTZMeCell
-
+#pragma mark - view生命周期
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
+#pragma mark - 重写item的set方法
 - (void)setItem:(HTZMeItem *)item
 {
     _item = item;
@@ -29,6 +30,7 @@
     self.optionLabel.text = item.title;
 }
 
+#pragma mark - 重写frame的set方法
 - (void)setFrame:(CGRect)frame
 {
     frame.origin.x = HTZMargin;

@@ -20,13 +20,14 @@
 @end
 
 @implementation HTZOriginalModifyPasswordViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"修改密码";
     self.navigationController.navigationBar.translucent = NO;
 }
 
+#pragma mark - 确认提交按钮点击
 - (IBAction)confirmSubmitButtonClick:(UIButton *)sender
 {
     HTZNavigationController *nav = [[HTZNavigationController alloc] initWithRootViewController:[HTZLoginViewController new]];

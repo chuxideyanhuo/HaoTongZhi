@@ -9,9 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (HTZFrame)
+/** size */
 @property (nonatomic, assign) CGSize size;
+/** 宽度 */
 @property (nonatomic, assign) CGFloat width;
+/** 高度 */
 @property (nonatomic, assign) CGFloat height;
+/** 坐标x */
 @property (nonatomic, assign) CGFloat x;
+/** 坐标y */
 @property (nonatomic, assign) CGFloat y;
 @end

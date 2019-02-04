@@ -26,22 +26,14 @@ typedef enum : NSUInteger {
 @end
 
 @implementation HTZMeViewController
-
-- (NSMutableArray *)options
-{
-    if (!_options) {
-        _options = [NSMutableArray array];
-    }
-    return _options;
-}
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //初始化数据
+    // 初始化数据
     [self setupData];
     
-    //初始化子控件
+    // 初始化子控件
     [self setupSubview];
 }
 
@@ -86,7 +78,7 @@ typedef enum : NSUInteger {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     HTZMeItem *item = self.options[indexPath.row];
-    
+    // 根据类型跳转到指定控制器
     switch ([item.type integerValue]) {
         case HTZMeOptionTypeMyInformation:
             [self jumpViewControllerWithClass:@"HTZPersonalInformationViewController"];
@@ -106,12 +98,6 @@ typedef enum : NSUInteger {
     }
 }
 
-- (void)jumpViewControllerWithClass:(NSString *)class
-{
-    UIViewController *vc = [[NSClassFromString(class) alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return 100;
@@ -124,5 +110,20 @@ typedef enum : NSUInteger {
     return header;
 }
 
+#pragma mark - 跳转到指定控制器
+- (void)jumpViewControllerWithClass:(NSString *)class
+{
+    UIViewController *vc = [[NSClassFromString(class) alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - 懒加载
+- (NSMutableArray *)options
+{
+    if (!_options) {
+        _options = [NSMutableArray array];
+    }
+    return _options;
+}
 
 @end

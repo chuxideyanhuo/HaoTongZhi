@@ -23,11 +23,13 @@
 
 @implementation HTZMessageCell
 
+#pragma mark - view生命周期
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
+#pragma mark - 重写item的set方法
 - (void)setItem:(HTZMessageItem *)item
 {
     _item = item;
@@ -36,12 +38,14 @@
 //    self.timeL.text = ;
 }
 
+#pragma mark - 选择按钮点击
 - (IBAction)selectButtonClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
     !self.selectBlock ? : self.selectBlock(self.item);
 }
 
+#pragma mark - 删除按钮点击
 - (IBAction)deleteButtonClick:(UIButton *)sender
 {
     !self.deleteBlock ? : self.deleteBlock(self.item);

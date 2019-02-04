@@ -13,7 +13,7 @@
 @end
 
 @implementation HTZPlatformViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
 }

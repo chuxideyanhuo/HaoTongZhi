@@ -13,12 +13,13 @@
 @end
 
 @implementation HTZModifyPasswordViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"修改密码";
 }
 
+#pragma mark - 提交按钮点击
 - (IBAction)submitButtonClick:(UIButton *)sender
 {
     [self.navigationController popToRootViewControllerAnimated:YES];

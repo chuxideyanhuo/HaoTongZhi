@@ -25,12 +25,13 @@
 @end
 
 @implementation HTZProductionPlanCell
-
+#pragma mark - view生命周期
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
+#pragma mark - 重写item的set方法
 - (void)setItem:(HTZProductionPlanItem *)item
 {
     _item = item;

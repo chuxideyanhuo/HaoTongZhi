@@ -18,13 +18,14 @@
 @end
 
 @implementation HTZHomeOptionBarCell
-
+#pragma mark - view生命周期
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.badgeLabel.layer.cornerRadius = HTZMargin;
     self.badgeLabel.layer.masksToBounds = YES;
 }
 
+#pragma mark - 重写item的set方法
 - (void)setItem:(HTZHomeOptionBarItem *)item
 {
     _item = item;

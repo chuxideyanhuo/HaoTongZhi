@@ -16,7 +16,7 @@
 @end
 
 @implementation HTZMessageCategoryCell
-
+#pragma mark - view生命周期
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -24,6 +24,7 @@
     self.nameLabel.highlightedTextColor = HTZMainColor;
 }
 
+#pragma mark - 重写item的set方法
 - (void)setItem:(HTZMessageCategoryItem *)item
 {
     _item = item;

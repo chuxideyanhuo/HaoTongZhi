@@ -13,7 +13,7 @@
 @end
 
 @implementation HTZRegisterSuccessViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"注册成功";

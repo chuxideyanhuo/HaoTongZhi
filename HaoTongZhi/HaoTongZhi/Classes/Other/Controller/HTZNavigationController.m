@@ -14,15 +14,13 @@
 @end
 
 @implementation HTZNavigationController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.navigationBar.barTintColor = [UIColor whiteColor];
 }
 
-/**
- * 可以在这个方法中拦截所有push进来的控制器
- */
+#pragma mark - 可以在这个方法中拦截所有push进来的控制器
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (self.childViewControllers.count > 0) { // 如果push进来的不是第一个控制器
@@ -49,6 +47,7 @@
     [super pushViewController:viewController animated:animated];
 }
 
+#pragma mark - 返回
 - (void)back
 {
     [self popViewControllerAnimated:YES];

@@ -31,7 +31,7 @@ static NSString * const HTZMessageCategoryId = @"messageCategory";
 
 
 @implementation HTZMessageBar
-
+#pragma mark - view生命周期
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {

@@ -19,7 +19,7 @@ static NSString * const HTZMyTemplateId = @"myTemplate";
 @end
 
 @implementation HTZMyTemplateViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -53,6 +53,7 @@ static NSString * const HTZMyTemplateId = @"myTemplate";
     self.tableView.backgroundColor = HTZGlobalBackgroundColor;
 }
 
+#pragma mark - 创建模版点击
 - (void)createTemplateClick
 {
     HTZCreateTemplateViewController *createTemplateVC = [[HTZCreateTemplateViewController alloc] init];

@@ -9,7 +9,9 @@
 #import "UIImage+HTZExtension.h"
 
 @implementation UIImage (HTZExtension)
-
+/**
+ * 根据颜色获取图片
+ */
 + (UIImage *)imageWithColor:(UIColor *)color
 {
     // 描述矩形

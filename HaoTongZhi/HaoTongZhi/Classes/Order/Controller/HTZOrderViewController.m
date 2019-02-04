@@ -30,16 +30,7 @@ static NSString * const HTZOrderId = @"order";
 @end
 
 @implementation HTZOrderViewController
-
-#pragma mark - 懒加载
-- (HTZNetworkTool *)networkTool
-{
-    if (!_networkTool) {
-        _networkTool = [[HTZNetworkTool alloc] init];
-    }
-    return _networkTool;
-}
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -51,6 +42,13 @@ static NSString * const HTZOrderId = @"order";
     
     // 加载左侧的类别数据
     [self loadCategories];
+}
+
+#pragma mark - 控制器的销毁
+- (void)dealloc
+{
+    // 停止所有操作
+    [self.networkTool cancelAllOperations];
 }
 
 #pragma mark - 初始化子控件
@@ -162,6 +160,7 @@ static NSString * const HTZOrderId = @"order";
     
 }
 
+#pragma mark - 加载更多用户数据
 - (void)loadMoreUsers
 {
     HTZOrderCategoryItem *item = HTZSelectedCategory;
@@ -200,9 +199,7 @@ static NSString * const HTZOrderId = @"order";
     }];
 }
 
-/**
- * 时刻监测footer的状态
- */
+#pragma mark - 时刻监测footer的状态
 - (void)checkFooterState
 {
     HTZOrderCategoryItem *item = HTZSelectedCategory;
@@ -264,12 +261,12 @@ static NSString * const HTZOrderId = @"order";
     }
 }
 
-#pragma mark - 控制器的销毁
-- (void)dealloc
+#pragma mark - 懒加载
+- (HTZNetworkTool *)networkTool
 {
-    // 停止所有操作
-    [self.networkTool cancelAllOperations];
+    if (!_networkTool) {
+        _networkTool = [[HTZNetworkTool alloc] init];
+    }
+    return _networkTool;
 }
-
-
 @end

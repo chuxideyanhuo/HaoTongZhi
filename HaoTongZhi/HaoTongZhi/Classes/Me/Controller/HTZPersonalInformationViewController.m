@@ -31,7 +31,7 @@
 @end
 
 @implementation HTZPersonalInformationViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 设置导航栏标题
@@ -42,18 +42,21 @@
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithImage:@"me_editor_personal_information" highImage:@"me_editor_personal_information" target:self action:@selector(modifyPersonalInformationClick)];
 }
 
+#pragma mark - 修改个人资料
 - (void)modifyPersonalInformationClick
 {
     HTZModifyPersonalInformationViewController *modifyVC = [[HTZModifyPersonalInformationViewController alloc] init];
     [self.navigationController pushViewController:modifyVC animated:YES];
 }
 
+#pragma mark - 选中男
 - (IBAction)manButtonClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
     self.womanButton.selected = NO;
 }
 
+#pragma mark - 选中女
 - (IBAction)womanButtonClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;

@@ -16,13 +16,14 @@
 @end
 
 @implementation HTZAdviceFeedbackViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"意见反馈";
     self.navigationController.navigationBar.translucent = NO;
 }
 
+#pragma mark - 确认提交按钮点击
 - (IBAction)confirmSubmitButtonClick:(UIButton *)sender
 {
     [HTZProgressHUD showTextHUDWithStatus:@"提交成功"];

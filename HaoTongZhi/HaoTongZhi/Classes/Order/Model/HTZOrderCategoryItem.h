@@ -16,7 +16,7 @@
 /** 名字 */
 @property (nonatomic, copy) NSString *name;
 
-/** 这个类别对应的用户数据 */
+/** 这个类别对应的订单数据 */
 @property (nonatomic, strong) NSMutableArray *orders;
 /** 总数 */
 @property (nonatomic, assign) NSInteger total;

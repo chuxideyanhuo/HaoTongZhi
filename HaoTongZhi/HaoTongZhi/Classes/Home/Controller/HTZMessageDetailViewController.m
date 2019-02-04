@@ -17,13 +17,14 @@
 @end
 
 @implementation HTZMessageDetailViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 设置导航栏标题
     self.navigationItem.title = @"消息详情";
 }
 
+#pragma mark - 重写item的set方法
 - (void)setItem:(HTZMessageItem *)item
 {
     _item = item;

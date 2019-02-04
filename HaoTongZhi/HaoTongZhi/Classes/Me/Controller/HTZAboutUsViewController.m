@@ -15,7 +15,7 @@
 @end
 
 @implementation HTZAboutUsViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 设置导航栏标题

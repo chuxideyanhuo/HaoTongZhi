@@ -10,12 +10,21 @@
 
 @implementation UIColor (HTZHex)
 
-//默认alpha值为1
+/**
+ * 从十六进制字符串获取颜色，
+ * color:支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+ * 默认alpha为1
+ */
 + (UIColor *)colorWithHexString:(NSString *)color
 {
     return [self colorWithHexString:color alpha:1.0f];
 }
 
+/**
+ * 从十六进制字符串获取颜色，
+ * color:支持@“#123456”、 @“0X123456”、 @“123456”三种格式
+ * alpha:透明度
+ */
 + (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha
 {
     //删除字符串中的空格

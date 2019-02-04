@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (HTZBezier)
+/**
+ * 设置圆角
+ */
 - (void)setupRoundingCorners:(UIRectCorner)corners cornerRadii:(CGSize)cornerRadii;
 @end

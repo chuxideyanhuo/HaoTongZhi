@@ -9,7 +9,7 @@
 #import "HTZTextField.h"
 
 @implementation HTZTextField
-
+#pragma mark - view生命周期
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
@@ -24,6 +24,7 @@
     [self setupLayer];
 }
 
+#pragma mark - 初始化layer
 - (void)setupLayer
 {
     self.layer.cornerRadius = HTZLayerCornerRadius;

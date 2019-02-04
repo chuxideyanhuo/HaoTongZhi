@@ -14,7 +14,7 @@
 @end
 
 @implementation HTZRegisterViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"注册";
@@ -27,6 +27,7 @@
 //    self.view.layer.masksToBounds
 }
 
+#pragma mark - 提交按钮点击
 - (IBAction)submitButtonClick:(UIButton *)sender
 {
     HTZPerfectInformationViewController *perfectInfoVC = [[HTZPerfectInformationViewController alloc] init];

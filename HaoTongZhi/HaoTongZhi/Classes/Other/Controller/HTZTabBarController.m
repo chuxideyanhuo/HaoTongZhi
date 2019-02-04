@@ -22,7 +22,7 @@
 @end
 
 @implementation HTZTabBarController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.tabBar.barTintColor = [UIColor whiteColor];
@@ -60,9 +60,7 @@
 }
 
 
-/**
- * 添加子控制器
- */
+#pragma mark - 添加子控制器
 - (void)addChildController
 {
     for (NSInteger i = 0; i < self.names.count; i++) {
@@ -74,9 +72,7 @@
     }
 }
 
-/**
- * 初始化子控制器
- */
+#pragma mark - 初始化子控制器
 - (void)setupChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
     // 设置文字和图片
@@ -92,18 +88,14 @@
     [self.controllers addObject:nav];
 }
 
-/**
- * 监听通知回调
- */
+#pragma mark - 监听通知回调
 - (void)modifyChildController:(NSNotification *)note
 {
     NSString *roleString = note.userInfo[kHTZRole];
     [self resetTabBarContents:roleString];
 }
 
-/**
- * 重置TabBar内容
- */
+#pragma mark - 重置TabBar内容
 - (void)resetTabBarContents:(NSString *)roleString
 {
     if (![roleString isEqualToString:kHTZCustomerRole] && ![roleString isEqualToString:kHTZPlantRole] && ![roleString isEqualToString:kHTZExpressRole] && ![roleString isEqualToString:kHTZDriverRole]) {
@@ -115,17 +107,13 @@
     self.viewControllers = self.controllers;
 }
 
-/**
- * 移除监听者
- */
+#pragma mark - 移除监听者
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:HTZModifyTabBarChildController object:nil];
 }
 
-/**
- * 懒加载
- */
+#pragma mark - 懒加载
 //- (NSArray *)names
 //{
 //    if (!_names) {

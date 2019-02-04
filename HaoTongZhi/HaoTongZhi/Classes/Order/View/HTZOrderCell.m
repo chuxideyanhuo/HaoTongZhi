@@ -9,12 +9,13 @@
 #import "HTZOrderCell.h"
 
 @implementation HTZOrderCell
-
+#pragma mark - view生命周期
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
 }
 
+#pragma mark - cell选中调用
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

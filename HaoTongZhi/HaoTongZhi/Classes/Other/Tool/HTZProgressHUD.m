@@ -50,12 +50,14 @@
     [SVProgressHUD dismissWithDelay:delay];
 }
 
+#pragma mark - 显示错误的HUD
 + (void)showErrorHUDWithStatus:(NSString*)status
 {
     [SVProgressHUD showErrorWithStatus:status];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
 }
 
+#pragma mark - 显示成功的HUD
 + (void)showSuccessHUDWithStatus:(nullable NSString*)status
 {
     [SVProgressHUD showSuccessWithStatus:status];

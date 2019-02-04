@@ -15,7 +15,7 @@
 @end
 
 @implementation HTZInviteFriendsViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"邀请好友";

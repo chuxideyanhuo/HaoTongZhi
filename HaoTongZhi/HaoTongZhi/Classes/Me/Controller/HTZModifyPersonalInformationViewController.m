@@ -30,7 +30,7 @@
 @end
 
 @implementation HTZModifyPersonalInformationViewController
-
+#pragma mark - 控制器生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 设置导航栏标题
@@ -39,22 +39,27 @@
     
 }
 
+#pragma mark - 确认修改按钮点击
 - (IBAction)confirmModifyButtonClick:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - view点击
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+    // 取消第一响应者
     [self.view endEditing:YES];
 }
 
+#pragma mark - 选中男
 - (IBAction)manButtonClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
     self.womanButton.selected = NO;
 }
 
+#pragma mark - 选中女
 - (IBAction)womanButtonClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;

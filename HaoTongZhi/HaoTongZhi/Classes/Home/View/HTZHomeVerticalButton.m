@@ -10,15 +10,11 @@
 
 @implementation HTZHomeVerticalButton
 
-- (void)setup
-{
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
-}
-
+#pragma mark - view生命周期
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setup];
+        [self setupSubviews];
     }
     return self;
 }
@@ -26,7 +22,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setup];
+    [self setupSubviews];
 }
 
 - (void)layoutSubviews
@@ -44,6 +40,12 @@
     self.titleLabel.y = self.imageView.height + HTZMargin * 0.5;
     self.titleLabel.width = self.width;
     self.titleLabel.height = self.height - self.titleLabel.y;
+}
+
+#pragma mark - 初始化子控件
+- (void)setupSubviews
+{
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 @end

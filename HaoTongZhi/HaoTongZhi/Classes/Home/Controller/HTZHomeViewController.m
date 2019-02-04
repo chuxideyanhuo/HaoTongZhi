@@ -14,15 +14,19 @@
 #import "HTZProductionPlanViewController.h"
 #import "HTZMessageCenterViewController.h"
 #import "HTZHomeOptionBarView.h"
+#import "HTZHomeOptionBarReplacementView.h"
 #import "HTZHomeBannerView.h"
 #import "HTZHomeTableView.h"
 #import "HTZHomeOptionBarItem.h"
+#import "HTZHomeTableViewHeader.h"
+#import "HTZHomeTableViewHeaderItem.h"
 
 static NSString * const HTZHomeId = @"home";
 static CGFloat const HTZOptionBarHeight = 90;
 static CGFloat const HTZBannerHeight = 160;
-static CGFloat const HTZCellHeight = 60;
-static CGFloat const HTZSectionHeaderHeight = 30;
+static CGFloat const HTZFirstSectionHeight = 90;
+static CGFloat const HTZSecondSectionHeight = 130;
+static CGFloat const HTZSectionHeaderHeight = 60;
 static NSInteger const HTZTableViewSections = 2;
 
 /** ScrollView偏移类型 */
@@ -45,69 +49,23 @@ typedef enum : NSInteger {
 @property (nonatomic, assign) HTZHomeScrollViewOffsetType sOffsetType;
 /** TableView偏移类型 */
 @property (nonatomic, assign) HTZHomeScrollViewOffsetType tOffsetType;
-
-
+/** 选项条替代者 */
+@property (nonatomic, strong) HTZHomeOptionBarReplacementView *optionBarReplacementView;
+/** tableView组头模型数组 */
+@property (nonatomic, strong) NSArray *sectionHeaderItems;
 @end
 
 @implementation HTZHomeViewController
-
+#pragma mark - 控制器的生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupSubviews];
 }
 
-- (void)setupSubviews
-{
-//    UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
-//    redView.backgroundColor = [UIColor redColor];
-//    [self.bgScrollView addSubview:redView];
-//    // 设置inset
-//    if (@available(iOS 11.0, *)) {
-//        self.bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//
-//        NSInteger type = [HTZSystemTool deviceType];
-//        if (type == iPhoneX) {
-//            self.bgScrollView.contentInset = UIEdgeInsetsMake(HTZIPhoneXNavigationBarHeight, 0, 0, 0);
-//        }else{
-//            self.bgScrollView.contentInset = UIEdgeInsetsMake(HTZNotIPhoneNavigationBarHeight, 0, 0, 0);
-//        }
-//    }else{
-//        self.automaticallyAdjustsScrollViewInsets = NO;
-//        self.bgScrollView.contentInset = UIEdgeInsetsMake(HTZNotIPhoneNavigationBarHeight, 0, 0, 0);
-//    }
-    self.navigationController.navigationBar.translucent = NO;
-    
-    //添加控件
-    [self.view addSubview:self.bgScrollView];
-    [self.bgScrollView addSubview:self.optionBarView];
-    [self.bgScrollView addSubview:self.bannerView];
-    [self.bgScrollView addSubview:self.tableView];
-    
-    //设置contentSize
-    self.bgScrollView.contentSize = CGSizeMake(HTZSCREENW, HTZSCREENH + HTZOptionBarHeight + HTZBannerHeight);
-    
-    //注册TableViewCell
-    [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:HTZHomeId];
-    self.tableView.sectionFooterHeight = 0.01;
-    
-    __weak typeof(self)weakSelf = self;
-    self.optionBarView.selectedOptionBlock = ^(HTZHomeOptionBarItem *item) {
-        //跳转相应的控制器
-        if ([item.type isEqualToString:@"HTZPlaceOrderViewController"]) {
-            [weakSelf.navigationController pushViewController:[NSClassFromString(item.type) new] animated:YES];
-        }else if ([item.type isEqualToString:@"HTZOrderViewController"]) {
-            weakSelf.tabBarController.selectedIndex = 1;
-        }else if ([item.type isEqualToString:@"HTZOrderViewController"]) {
-            weakSelf.tabBarController.selectedIndex = 1;
-        }else if ([item.type isEqualToString:@"HTZMessageCenterViewController"]) {
-            [weakSelf.navigationController pushViewController:[NSClassFromString(item.type) new] animated:YES];
-        }
-    };
-}
-
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    // 布局子控件
     [self.bgScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view.mas_top).offset(0);
         make.left.mas_equalTo(self.view.mas_left).offset(0);
@@ -123,7 +81,8 @@ typedef enum : NSInteger {
     }];
 
     [self.bannerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.bgScrollView.mas_top).offset(HTZOptionBarHeight);
+//        make.top.mas_equalTo(self.bgScrollView.mas_top).offset(HTZOptionBarHeight);
+        make.top.mas_equalTo(self.optionBarView.mas_bottom).offset(0);
         make.left.mas_equalTo(self.bgScrollView.mas_left).offset(0);
         make.width.mas_equalTo(HTZSCREENW);
         make.height.mas_equalTo(HTZBannerHeight);
@@ -144,6 +103,8 @@ typedef enum : NSInteger {
 {
     [super viewWillAppear:animated];
 //    self.navigationController.navigationBar.barTintColor = HTZMainColor;
+    
+    // 设置导航条的颜色并隐藏导航条的线
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:HTZMainColor] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
 }
@@ -152,23 +113,107 @@ typedef enum : NSInteger {
 {
     [super viewWillDisappear:animated];
 //    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    // 恢复导航条的颜色并隐藏导航条的线
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:nil];
+}
+
+#pragma mark - 初始化子控件
+- (void)setupSubviews
+{
+    //    UIView *redView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    //    redView.backgroundColor = [UIColor redColor];
+    //    [self.bgScrollView addSubview:redView];
+    //    // 设置inset
+    //    if (@available(iOS 11.0, *)) {
+    //        self.bgScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    //
+    //        NSInteger type = [HTZSystemTool deviceType];
+    //        if (type == iPhoneX) {
+    //            self.bgScrollView.contentInset = UIEdgeInsetsMake(HTZIPhoneXNavigationBarHeight, 0, 0, 0);
+    //        }else{
+    //            self.bgScrollView.contentInset = UIEdgeInsetsMake(HTZNotIPhoneNavigationBarHeight, 0, 0, 0);
+    //        }
+    //    }else{
+    //        self.automaticallyAdjustsScrollViewInsets = NO;
+    //        self.bgScrollView.contentInset = UIEdgeInsetsMake(HTZNotIPhoneNavigationBarHeight, 0, 0, 0);
+    //    }
+    self.navigationController.navigationBar.translucent = NO;
+    
+    //添加控件
+    [self.view addSubview:self.bgScrollView];
+    [self.bgScrollView addSubview:self.optionBarView];
+    [self.bgScrollView addSubview:self.bannerView];
+    [self.bgScrollView addSubview:self.tableView];
+    
+    //设置contentSize
+    self.bgScrollView.contentSize = CGSizeMake(HTZSCREENW, HTZSCREENH + HTZOptionBarHeight + HTZBannerHeight);
+    
+    //注册TableViewCell
+    [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:HTZHomeId];
+    self.tableView.sectionFooterHeight = 0.01;
+    
+    __weak typeof(self)weakSelf = self;
+    void (^block)(HTZHomeOptionBarItem *item) = ^(HTZHomeOptionBarItem *item) {
+        //跳转相应的控制器
+        if ([item.type isEqualToString:@"HTZPlaceOrderViewController"]) {
+            [weakSelf.navigationController pushViewController:[NSClassFromString(item.type) new] animated:YES];
+        }else if ([item.type isEqualToString:@"HTZOrderViewController"]) {
+            weakSelf.tabBarController.selectedIndex = 1;
+        }else if ([item.type isEqualToString:@"HTZOrderViewController"]) {
+            weakSelf.tabBarController.selectedIndex = 1;
+        }else if ([item.type isEqualToString:@"HTZMessageCenterViewController"]) {
+            [weakSelf.navigationController pushViewController:[NSClassFromString(item.type) new] animated:YES];
+        }
+    };
+    
+//    self.optionBarView.selectedOptionBlock = ^(HTZHomeOptionBarItem *item) {
+//        //跳转相应的控制器
+//        if ([item.type isEqualToString:@"HTZPlaceOrderViewController"]) {
+//            [weakSelf.navigationController pushViewController:[NSClassFromString(item.type) new] animated:YES];
+//        }else if ([item.type isEqualToString:@"HTZOrderViewController"]) {
+//            weakSelf.tabBarController.selectedIndex = 1;
+//        }else if ([item.type isEqualToString:@"HTZOrderViewController"]) {
+//            weakSelf.tabBarController.selectedIndex = 1;
+//        }else if ([item.type isEqualToString:@"HTZMessageCenterViewController"]) {
+//            [weakSelf.navigationController pushViewController:[NSClassFromString(item.type) new] animated:YES];
+//        }
+//    };
+    
+    self.optionBarView.selectedOptionBlock = block;
+    self.optionBarReplacementView.selectedOptionBlock = block;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"HTZHomeData" ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
+    NSDictionary *roleDict = dict[kHTZCustomerRole];
+    self.sectionHeaderItems = [HTZHomeTableViewHeaderItem mj_objectArrayWithKeyValuesArray:roleDict[@"section"]];
 }
 
 #pragma mark - <UITableViewDataSource>
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return HTZTableViewSections;
+    NSInteger sections;
+    NSString *role = [HTZUserDefaults objectForKey:kHTZRole];
+    if ([role isEqualToString:kHTZPlantRole]) {
+        sections = 1;
+    }else{
+        sections = HTZTableViewSections;
+    }
+    return sections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger rows;
-    if (section == 0) {
-        rows = 1;
-    }else{
+    NSInteger rows = 0;
+    NSString *role = [HTZUserDefaults objectForKey:kHTZRole];
+    if ([role isEqualToString:kHTZPlantRole]) {
         rows = 10;
+    }else{
+        if (section == 0) {
+            rows = 1;
+        }else{
+            rows = 10;
+        }
     }
     return rows;
 }
@@ -194,7 +239,13 @@ typedef enum : NSInteger {
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return HTZCellHeight;
+    CGFloat height;
+    if (indexPath.section == 0) {
+        height = HTZFirstSectionHeight;
+    }else{
+        height = HTZSecondSectionHeight;
+    }
+    return height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -204,17 +255,24 @@ typedef enum : NSInteger {
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor lightGrayColor];
-    return view;
+    HTZHomeTableViewHeader *headerView = [[HTZHomeTableViewHeader alloc] init];
+    headerView.item = self.sectionHeaderItems[section];
+    headerView.moreClickBlock = ^(HTZHomeTableViewHeaderItem *item) {
+        if ([item.type isEqualToString:@"HTZOrderViewController"]) {
+            self.tabBarController.selectedIndex = 1;
+        }
+    };
+    return headerView;
 }
 
+#pragma mark - <UIScrollViewDelegate>
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (scrollView == self.bgScrollView) {
 //        HTZLog(@"0-----%@",NSStringFromCGPoint(scrollView.contentOffset));
 //        HTZLog(@"%lf, %lf, %@, %lf, %lf", scrollView.contentOffset.y, HTZOptionBarHeight + HTZBannerHeight, NSStringFromCGSize(scrollView.contentSize), HTZSCREENH, scrollView.height);
         
+        // 根据偏移量设置tableView的偏移类型
         if (scrollView.contentOffset.y >= (HTZOptionBarHeight + HTZBannerHeight)) {
             self.sOffsetType = HTZHomeScrollViewOffsetTypeMax;
         } else if (scrollView.contentOffset.y <= 0) {
@@ -223,38 +281,48 @@ typedef enum : NSInteger {
             self.sOffsetType = HTZHomeScrollViewOffsetTypeCenter;
         }
         
+        // 根据偏移量设置optionBarView添加在不同的父控件上
         if (scrollView.contentOffset.y >= HTZOptionBarHeight) {
-            CGFloat nH = self.navigationController.navigationBar.y + self.navigationController.navigationBar.height;
-            [self.view addSubview:self.optionBarView];
-            [self.optionBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_equalTo(self.view.mas_top).offset(nH);
+            self.optionBarReplacementView.hidden = NO;
+//            CGFloat nH = self.navigationController.navigationBar.y + self.navigationController.navigationBar.height;
+            [self.view addSubview:self.optionBarReplacementView];
+            [self.optionBarReplacementView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.mas_equalTo(self.view.mas_top).offset(0);
                 make.left.mas_equalTo(self.view.mas_left).offset(0);
                 make.width.mas_equalTo(HTZSCREENW);
-                make.height.mas_equalTo(HTZOptionBarHeight);
+                make.height.mas_equalTo(HTZMargin * 5);
             }];
+            
+//            [self.view addSubview:self.optionBarView];
+//            [self.optionBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//                make.top.mas_equalTo(self.view.mas_top).offset(nH);
+//                make.left.mas_equalTo(self.view.mas_left).offset(0);
+//                make.width.mas_equalTo(HTZSCREENW);
+//                make.height.mas_equalTo(HTZOptionBarHeight);
+//            }];
         }else{
-            [self.bgScrollView addSubview:self.optionBarView];
-            [self.optionBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.top.mas_equalTo(self.bgScrollView.mas_top).offset(0);
-                make.left.mas_equalTo(self.bgScrollView.mas_left).offset(0);
-                make.width.mas_equalTo(HTZSCREENW);
-                make.height.mas_equalTo(HTZOptionBarHeight);
-            }];
+            self.optionBarReplacementView.hidden = YES;
+//            [self.bgScrollView addSubview:self.optionBarView];
+//            [self.optionBarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+//                make.top.mas_equalTo(self.bgScrollView.mas_top).offset(0);
+//                make.left.mas_equalTo(self.bgScrollView.mas_left).offset(0);
+//                make.width.mas_equalTo(HTZSCREENW);
+//                make.height.mas_equalTo(HTZOptionBarHeight);
+//            }];
         }
         
-        
+        // 如果tableView的类型为HTZHomeScrollViewOffsetTypeCenter设置bgScrollView的偏移量为HTZOptionBarHeight + HTZBannerHeight
         if (self.tOffsetType == HTZHomeScrollViewOffsetTypeCenter) {
             scrollView.contentOffset = CGPointMake(scrollView.contentOffset.x, HTZOptionBarHeight + HTZBannerHeight);
         }
     }else if (scrollView == self.tableView) {
-//        HTZLog(@"1-----%@",NSStringFromCGPoint(scrollView.contentOffset));
-//        HTZLog(@"%lf, %lf, %@, %lf, %lf", scrollView.contentOffset.y, HTZOptionBarHeight + HTZBannerHeight, NSStringFromCGSize(scrollView.contentSize), HTZSCREENH, scrollView.height);
+        // 根据偏移量设置tableView的偏移类型
         if (scrollView.contentOffset.y <= 0) {
             self.tOffsetType = HTZHomeScrollViewOffsetTypeMin;
         } else {
             self.tOffsetType = HTZHomeScrollViewOffsetTypeCenter;
         }
-        
+        // 如果bgScrollView的类型为HTZHomeScrollViewOffsetTypeMin或HTZHomeScrollViewOffsetTypeCenter设置tableView的偏移量为0
         if (self.sOffsetType == HTZHomeScrollViewOffsetTypeMin || self.sOffsetType == HTZHomeScrollViewOffsetTypeCenter) {
             scrollView.contentOffset = CGPointZero;
         }
@@ -303,6 +371,15 @@ typedef enum : NSInteger {
         _tableView.dataSource = self;
     }
     return _tableView;
+}
+
+- (HTZHomeOptionBarReplacementView *)optionBarReplacementView
+{
+    if (!_optionBarReplacementView) {
+        _optionBarReplacementView = [[HTZHomeOptionBarReplacementView alloc] init];
+        _optionBarReplacementView.backgroundColor = [UIColor lightGrayColor];
+    }
+    return _optionBarReplacementView;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
