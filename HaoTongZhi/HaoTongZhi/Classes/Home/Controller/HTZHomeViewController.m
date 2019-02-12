@@ -354,7 +354,7 @@ typedef enum : NSInteger {
 {
     if (!_bannerView) {
         _bannerView = [[HTZHomeBannerView alloc] init];
-        _bannerView.backgroundColor = [UIColor whiteColor];
+//        _bannerView.backgroundColor = [UIColor whiteColor];
     }
     return _bannerView;
 }
